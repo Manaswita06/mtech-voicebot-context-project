@@ -1,0 +1,82 @@
+{
+  "tenant_id": "3e69f8ef-bed9-45a5-a6af-12a4b179b55a",
+  "conversation_id": "4c55a61b-5b7e-41d7-9269-e346d0da0fae@0.0.0.0",
+  "correlation_id": "abea76e9-245b-4113-b365-e01d72ad827e",
+  "event_month": "2026-03-01",
+  "event_timestamp": "2026-03-08T15:13:01.980810Z",
+  "events": [
+    {
+      "event_id": "72573e8c-e0ee-4ebe-83d1-3b09493e0ddf",
+      "event_name": "USER_MESSAGE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:01.980810Z",
+      "participant": {
+        "participant_id": "user_1282",
+        "role": "user"
+      },
+      "text": "I did not receive my statement.",
+      "event_data": {},
+      "sentiment_score": 0.09335305715609421
+    },
+    {
+      "event_id": "79db85ba-566f-4c1b-86f3-a0e539ae024f",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:01.980810Z",
+      "participant": {
+        "participant_id": "agent_6943",
+        "role": "agent"
+      },
+      "text": "Okay.",
+      "event_data": {},
+      "sentiment_score": -0.5518594602292815
+    },
+    {
+      "event_id": "b0157394-5460-4458-ad91-b4c58279a008",
+      "event_name": "TOOL_RESPONSE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:01.980810Z",
+      "participant": {
+        "participant_id": "system_5224",
+        "role": "system"
+      },
+      "text": "Tool responded",
+      "event_data": {
+        "tool_name": null,
+        "tool_call_id": null,
+        "status": "success",
+        "response": {
+          "info": "ok"
+        },
+        "latency_ms": 1048
+      },
+      "sentiment_score": 0.24208142967710378
+    },
+    {
+      "event_id": "dbf2e583-e0cd-4062-9eee-45fb535c445e",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:01.981493Z",
+      "participant": {
+        "participant_id": "agent_4911",
+        "role": "agent"
+      },
+      "text": "Thank you for contacting us. Have a good day!",
+      "event_data": {},
+      "sentiment_score": -0.5384076965089354
+    }
+  ],
+  "schema_version": 1,
+  "ingestion_timestamp": "2026-03-08T15:13:01.981493Z",
+  "gt_primary_intent": "STATEMENT_REQUEST",
+  "gt_authenticated": false,
+  "gt_tool_failure": false,
+  "gt_failure_reasons": [],
+  "gt_sentiment_overall": 0.09335305715609421,
+  "gt_sentiment_trajectory": "fluctuating",
+  "gt_turn_count": 4,
+  "tool_summary": [
+    {
+      "tool_name": null,
+      "status": "success",
+      "error_code": null,
+      "latency_ms": 1048
+    }
+  ]
+}

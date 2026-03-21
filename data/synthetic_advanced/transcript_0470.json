@@ -1,0 +1,55 @@
+{
+  "tenant_id": "b2620861-8ea2-40a8-b434-bb62315b1d56",
+  "conversation_id": "fbc9556a-b923-42d8-afc8-1901c71535e4@0.0.0.0",
+  "correlation_id": "27df6026-ee81-4eee-92ba-246231ba89cd",
+  "event_month": "2026-03-01",
+  "event_timestamp": "2026-03-08T15:13:04.579956Z",
+  "events": [
+    {
+      "event_id": "cbe7ef19-2d88-45f1-ac5d-bf9786eaccb9",
+      "event_name": "USER_MESSAGE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:04.579956Z",
+      "participant": {
+        "participant_id": "user_3879",
+        "role": "user"
+      },
+      "text": "Tell me more about my rewards.",
+      "event_data": {},
+      "sentiment_score": -0.5608235837783275
+    },
+    {
+      "event_id": "1ccb1bf6-cd06-4b1f-bf47-887dfe84dfc1",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:04.580631Z",
+      "participant": {
+        "participant_id": "agent_9599",
+        "role": "agent"
+      },
+      "text": "Sure, I can help with that.",
+      "event_data": {},
+      "sentiment_score": 0.23620709323144073
+    },
+    {
+      "event_id": "1877388c-5449-43bc-ba1e-cf8490cebe7a",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:04.581008Z",
+      "participant": {
+        "participant_id": "agent_9502",
+        "role": "agent"
+      },
+      "text": "Is there anything else I can help you with?",
+      "event_data": {},
+      "sentiment_score": 1.0
+    }
+  ],
+  "schema_version": 1,
+  "ingestion_timestamp": "2026-03-08T15:13:04.581008Z",
+  "gt_primary_intent": "GENERAL_QUERY",
+  "gt_authenticated": false,
+  "gt_tool_failure": false,
+  "gt_failure_reasons": [],
+  "gt_sentiment_overall": -0.5608235837783275,
+  "gt_sentiment_trajectory": "negative_to_positive",
+  "gt_turn_count": 3,
+  "tool_summary": []
+}

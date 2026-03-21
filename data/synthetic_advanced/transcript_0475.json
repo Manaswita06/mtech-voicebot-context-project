@@ -1,0 +1,136 @@
+{
+  "tenant_id": "6fcab078-b376-4f6c-b547-94930f05f210",
+  "conversation_id": "190c428f-ca9d-4bcd-8f9f-a6636cc66705@0.0.0.0",
+  "correlation_id": "98758682-e791-4647-9268-3ab6523d690d",
+  "event_month": "2026-03-01",
+  "event_timestamp": "2026-03-08T15:13:04.614124Z",
+  "events": [
+    {
+      "event_id": "22e64e3d-6349-40a2-af1b-7a4fc3455945",
+      "event_name": "USER_MESSAGE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:04.614124Z",
+      "participant": {
+        "participant_id": "user_9781",
+        "role": "user"
+      },
+      "text": "I need a replacement card sent to my new address.",
+      "event_data": {},
+      "sentiment_score": -0.10460193098151438
+    },
+    {
+      "event_id": "872c1924-c932-4e87-b96f-a172e6df45b5",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:04.614840Z",
+      "participant": {
+        "participant_id": "agent_7994",
+        "role": "agent"
+      },
+      "text": "Can you confirm your account token or last 4 digits of SSN?",
+      "event_data": {},
+      "sentiment_score": -0.287309160797806
+    },
+    {
+      "event_id": "06ff7c77-bdfd-45d1-8207-2ad4b6a21d8c",
+      "event_name": "AGENT_TOOL_CALLED",
+      "event_timestamp": "2026-03-08T15:13:04.614840Z",
+      "participant": {
+        "participant_id": "agent_2738",
+        "role": "agent"
+      },
+      "text": "Calling Authentication",
+      "event_data": {
+        "tool_name": "Authentication",
+        "arguments": {
+          "method": "last4SSN",
+          "value": "XXXX"
+        },
+        "tool_call_id": "6266c8de-9d9c-4adb-ae59-6d8af92d4ca6"
+      },
+      "sentiment_score": 0.18800111444006617
+    },
+    {
+      "event_id": "e300e6d0-54bf-48c2-b5e1-5e1386ea9126",
+      "event_name": "TOOL_RESPONSE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:04.614840Z",
+      "participant": {
+        "participant_id": "system_6998",
+        "role": "system"
+      },
+      "text": "Authentication success",
+      "event_data": {
+        "tool_name": "Authentication",
+        "tool_call_id": "6266c8de-9d9c-4adb-ae59-6d8af92d4ca6",
+        "status": "success",
+        "latency_ms": 298
+      },
+      "sentiment_score": -0.5907653476126349
+    },
+    {
+      "event_id": "ef0a6d2a-0833-4e44-b37c-b95374a7c88d",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:04.614840Z",
+      "participant": {
+        "participant_id": "agent_2614",
+        "role": "agent"
+      },
+      "text": "Okay.",
+      "event_data": {},
+      "sentiment_score": 0.0879822304511767
+    },
+    {
+      "event_id": "4f074712-611e-4fee-9e17-b0b52f08a42a",
+      "event_name": "TOOL_RESPONSE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:04.615658Z",
+      "participant": {
+        "participant_id": "system_2720",
+        "role": "system"
+      },
+      "text": "Tool responded",
+      "event_data": {
+        "tool_name": null,
+        "tool_call_id": null,
+        "status": "success",
+        "response": {
+          "info": "ok"
+        },
+        "latency_ms": 217
+      },
+      "sentiment_score": 0.4692217600299794
+    },
+    {
+      "event_id": "663069e3-13a0-4f4b-85f1-549bbfc21795",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:04.615658Z",
+      "participant": {
+        "participant_id": "agent_9679",
+        "role": "agent"
+      },
+      "text": "Is there anything else I can help you with?",
+      "event_data": {},
+      "sentiment_score": 0.5442363134296478
+    }
+  ],
+  "schema_version": 1,
+  "ingestion_timestamp": "2026-03-08T15:13:04.616236Z",
+  "gt_primary_intent": "CARD_REPLACEMENT",
+  "gt_authenticated": true,
+  "gt_tool_failure": false,
+  "gt_failure_reasons": [],
+  "gt_sentiment_overall": -0.10460193098151438,
+  "gt_sentiment_trajectory": "fluctuating",
+  "gt_turn_count": 7,
+  "tool_summary": [
+    {
+      "tool_name": "Authentication",
+      "status": "success",
+      "error_code": null,
+      "latency_ms": 298
+    },
+    {
+      "tool_name": null,
+      "status": "success",
+      "error_code": null,
+      "latency_ms": 217
+    }
+  ]
+}

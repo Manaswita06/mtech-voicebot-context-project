@@ -1,0 +1,55 @@
+{
+  "tenant_id": "25815ffd-54ff-4c84-854e-e226d2e6866b",
+  "conversation_id": "0c279fcc-0673-4eb8-a882-e99199ccdb61@0.0.0.0",
+  "correlation_id": "dba92889-533f-47e5-9492-385910972e56",
+  "event_month": "2026-03-01",
+  "event_timestamp": "2026-03-08T15:13:02.036445Z",
+  "events": [
+    {
+      "event_id": "cf9952a8-c373-41df-854f-70f6e6793399",
+      "event_name": "USER_MESSAGE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:02.036445Z",
+      "participant": {
+        "participant_id": "user_2414",
+        "role": "user"
+      },
+      "text": "How do I change my contact preferences?",
+      "event_data": {},
+      "sentiment_score": 0.09762654829907311
+    },
+    {
+      "event_id": "13454a19-556a-4dfb-b2f0-526be33bec29",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:02.036445Z",
+      "participant": {
+        "participant_id": "agent_4970",
+        "role": "agent"
+      },
+      "text": "I can check that for you.",
+      "event_data": {},
+      "sentiment_score": 0.045478369150585445
+    },
+    {
+      "event_id": "ca7c20e6-bb41-4b6b-bce9-617b16e1dce0",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:02.036445Z",
+      "participant": {
+        "participant_id": "agent_2659",
+        "role": "agent"
+      },
+      "text": "Is there anything else I can help you with?",
+      "event_data": {},
+      "sentiment_score": 0.06329619917865835
+    }
+  ],
+  "schema_version": 1,
+  "ingestion_timestamp": "2026-03-08T15:13:02.036445Z",
+  "gt_primary_intent": "GENERAL_QUERY",
+  "gt_authenticated": false,
+  "gt_tool_failure": false,
+  "gt_failure_reasons": [],
+  "gt_sentiment_overall": 0.09762654829907311,
+  "gt_sentiment_trajectory": "neutral_to_negative",
+  "gt_turn_count": 3,
+  "tool_summary": []
+}

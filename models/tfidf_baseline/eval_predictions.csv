@@ -1,0 +1,543 @@
+text,label,pred,prob_ADDRESS_UPDATE,prob_CARD_REPLACEMENT,prob_GENERAL_QUERY,prob_PAYMENT_DUE_DATE,prob_STATEMENT_REQUEST,prob_TRANSACTION_DISPUTE
+"USER: Tell me the due date for my payment. 
+ AGENT: Sure, I can help with that. 
+ AGENT: Is there anything else I can help you with?",PAYMENT_DUE_DATE,PAYMENT_DUE_DATE,0.020459537834723387,0.019160865299922787,0.11891996256537293,0.7878848499029871,0.025447249332093417,0.028127535064900372
+"USER: Send me my monthly statement. 
+ AGENT: Okay. 
+ SYSTEM: Tool responded 
+ AGENT: Is there anything else I can help you with?",STATEMENT_REQUEST,STATEMENT_REQUEST,0.01484463626917316,0.03144700590420084,0.029874500384166558,0.036506494252122185,0.8560972777612501,0.03123008542908717
+"USER: Tell me the due date for my payment. 
+ AGENT: Sure, I can help with that. 
+ AGENT: Is there anything else I can help you with?",PAYMENT_DUE_DATE,PAYMENT_DUE_DATE,0.020459537834723387,0.019160865299922787,0.11891996256537293,0.7878848499029871,0.025447249332093417,0.028127535064900372
+"USER: I moved to a new address; please update my mailing address. 
+ AGENT: I need to verify your identity, please provide the account token. 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication success 
+ AGENT: Your address has been changed and a new card will be sent. 
+ AGENT: Thank you for contacting us. Have a good day!",ADDRESS_UPDATE,ADDRESS_UPDATE,0.901676885112351,0.03909933287153684,0.012722916346411463,0.017796458101698536,0.012363085156639765,0.016341322411362373
+"USER: Update address for card delivery. 
+ AGENT: Can you confirm your account token or last 4 digits of SSN? 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication success 
+ AGENT: I have updated your address. 
+ AGENT: Is there anything else I can help you with?",ADDRESS_UPDATE,ADDRESS_UPDATE,0.8496967776420208,0.07529029859931152,0.02055369529051333,0.0229934368784104,0.01563156512343736,0.01583422646630631
+"USER: When do I need to pay my credit card bill? 
+ AGENT: I can check that for you. 
+ AGENT: Is there anything else I can help you with?",PAYMENT_DUE_DATE,PAYMENT_DUE_DATE,0.025826168445974393,0.02689101930001624,0.08247862061286829,0.8111564075022313,0.025977736884176487,0.027670047254733154
+"USER: I need a replacement card sent to my new address. 
+ AGENT: Can you confirm your account token or last 4 digits of SSN? 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication success 
+ AGENT: Okay. 
+ SYSTEM: Tool responded 
+ AGENT: Is there anything else I can help you with?",CARD_REPLACEMENT,CARD_REPLACEMENT,0.08352736460758217,0.8222347784005092,0.018320106470997636,0.024911362831207064,0.03037470663600772,0.020631681053696293
+"USER: When do I need to pay my credit card bill? 
+ AGENT: Let me look that up. 
+ AGENT: Calling Send_Replacement_Card 
+ SYSTEM: Tool responded 
+ AGENT: Thank you for contacting us. Have a good day!",PAYMENT_DUE_DATE,PAYMENT_DUE_DATE,0.020944075847756538,0.023299722574281777,0.021986032316068556,0.8787874601218886,0.03377394511462119,0.02120876402538356
+"USER: I did not receive my statement. 
+ AGENT: Okay. 
+ SYSTEM: Tool responded 
+ AGENT: Is there anything else I can help you with?",STATEMENT_REQUEST,STATEMENT_REQUEST,0.018914637605763885,0.033649558653614235,0.033871038537653705,0.040316764018156544,0.8356317300473479,0.037616271137463596
+"USER: I see a charge I don't recognize. 
+ AGENT: Please share more details about the transaction. 
+ AGENT: Okay. 
+ SYSTEM: Tool failed 
+ AGENT: This will be escalated for further review. 
+ AGENT: Thank you for contacting us. Have a good day!",TRANSACTION_DISPUTE,TRANSACTION_DISPUTE,0.018734605071477985,0.016624567903146394,0.023205994908523056,0.0231365533543502,0.025993670967470496,0.8923046077950318
+"USER: There is an unauthorized transaction on my account. 
+ AGENT: Can you provide the transaction date and amount? 
+ AGENT: Okay. 
+ SYSTEM: Tool responded 
+ AGENT: This will be escalated for further review. 
+ AGENT: Is there anything else I can help you with?",TRANSACTION_DISPUTE,TRANSACTION_DISPUTE,0.01694076330209424,0.019823767016570397,0.02260881998096468,0.024162187940666987,0.023528915224038868,0.8929355465356649
+"USER: How do I change my contact preferences? 
+ AGENT: Sure, I can help with that. 
+ AGENT: Is there anything else I can help you with?",GENERAL_QUERY,GENERAL_QUERY,0.02467900923953696,0.020510264921514594,0.8440533646327627,0.05651242451111368,0.027268452833891708,0.02697648386118038
+"USER: I need a replacement card sent to my new address. 
+ AGENT: Can you confirm your account token or last 4 digits of SSN? 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication failed 
+ AGENT: I didn't catch that, could you repeat? 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication success 
+ AGENT: Okay. 
+ SYSTEM: Tool responded 
+ AGENT: Is there anything else I can help you with?",CARD_REPLACEMENT,CARD_REPLACEMENT,0.0471514879671848,0.8856031052952966,0.014282174636489132,0.01949953439134433,0.018073868575757157,0.01538982913392793
+"USER: I need a replacement card sent to my new address. 
+ AGENT: I need to verify your identity, please provide the account token. 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication failed 
+ AGENT: Can you re-confirm the phone number? 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication success 
+ AGENT: Okay. 
+ SYSTEM: Tool responded 
+ AGENT: Thank you for contacting us. Have a good day!",CARD_REPLACEMENT,CARD_REPLACEMENT,0.07364387635201511,0.8351455710614009,0.01589940999684149,0.026298405804282065,0.02486040613021714,0.024152330655243363
+"USER: There is an unauthorized transaction on my account. 
+ AGENT: Can you provide the transaction date and amount? 
+ AGENT: Okay. 
+ SYSTEM: Tool failed 
+ AGENT: I'll escalate this to the investigations team. 
+ AGENT: Thank you for contacting us. Have a good day!",TRANSACTION_DISPUTE,TRANSACTION_DISPUTE,0.017813219029233978,0.020002879876158675,0.021881895889657915,0.026433486871610987,0.022501758738726122,0.8913667595946123
+"USER: How do I change my contact preferences? 
+ AGENT: Sure, I can help with that. 
+ AGENT: Thank you for contacting us. Have a good day!",GENERAL_QUERY,GENERAL_QUERY,0.027481566645440117,0.01780111290027771,0.8405520161735434,0.05662421769639069,0.033512412335464925,0.024028674248883344
+"USER: I need a copy of last month's statement. 
+ AGENT: Okay. 
+ SYSTEM: Tool responded 
+ AGENT: Is there anything else I can help you with?",STATEMENT_REQUEST,STATEMENT_REQUEST,0.014947486686901428,0.03225575437806984,0.02348914684898327,0.029085010271652886,0.8730765492068095,0.027146052607582988
+"USER: Update address for card delivery. 
+ AGENT: Can you confirm your account token or last 4 digits of SSN? 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication success 
+ AGENT: I have updated your address. 
+ AGENT: Is there anything else I can help you with?",ADDRESS_UPDATE,ADDRESS_UPDATE,0.8496967776420208,0.07529029859931152,0.02055369529051333,0.0229934368784104,0.01563156512343736,0.01583422646630631
+"USER: I want to dispute a recent transaction. 
+ AGENT: Please share more details about the transaction. 
+ AGENT: Okay. 
+ SYSTEM: Tool responded 
+ AGENT: This will be escalated for further review. 
+ AGENT: Is there anything else I can help you with?",TRANSACTION_DISPUTE,TRANSACTION_DISPUTE,0.018252477030462195,0.01989231154841377,0.024414967207612288,0.02650478663362794,0.027529230968463804,0.88340622661142
+"USER: Can you replace my damaged card? 
+ AGENT: I need to verify your identity, please provide the account token. 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication success 
+ AGENT: Okay. 
+ SYSTEM: Tool responded 
+ AGENT: Thank you for contacting us. Have a good day!",CARD_REPLACEMENT,CARD_REPLACEMENT,0.1135660308984887,0.7149245875590408,0.02941428978787419,0.0472638878017521,0.053972609716520265,0.04085859423632386
+"USER: I need a replacement card sent to my new address. 
+ AGENT: Can you confirm your account token or last 4 digits of SSN? 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication failed 
+ AGENT: Can you re-confirm the phone number? 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication success 
+ AGENT: Okay. 
+ SYSTEM: Tool responded 
+ AGENT: Is there anything else I can help you with?",CARD_REPLACEMENT,CARD_REPLACEMENT,0.0608665355029671,0.8577794315669127,0.01648595927248598,0.02283915804551812,0.02109883304345279,0.020930082568663248
+"USER: Send me my monthly statement. 
+ AGENT: Okay. 
+ SYSTEM: Tool responded 
+ AGENT: Is there anything else I can help you with?",STATEMENT_REQUEST,STATEMENT_REQUEST,0.01484463626917316,0.03144700590420084,0.029874500384166558,0.036506494252122185,0.8560972777612501,0.03123008542908717
+"USER: Tell me more about my rewards. 
+ AGENT: I can check that for you. 
+ AGENT: Thank you for contacting us. Have a good day!",GENERAL_QUERY,GENERAL_QUERY,0.02231561015112677,0.016839873824475125,0.8340220402532046,0.0713810777263363,0.030952438290717522,0.02448895975413962
+"USER: Tell me more about my rewards. 
+ AGENT: Sure, I can help with that. 
+ AGENT: Is there anything else I can help you with?",GENERAL_QUERY,GENERAL_QUERY,0.016424661228806835,0.016362729395241693,0.8670566443404797,0.05513828899631337,0.021929055265284353,0.02308862077387386
+"USER: Send me my monthly statement. 
+ AGENT: Okay. 
+ SYSTEM: Tool responded 
+ AGENT: Thank you for contacting us. Have a good day!",STATEMENT_REQUEST,STATEMENT_REQUEST,0.01433283408788378,0.02175529228068809,0.022926443175371146,0.030494097385600702,0.8879045985047022,0.022586734565754222
+"USER: Change my shipping address to 123 New St. 
+ AGENT: Can you confirm your account token or last 4 digits of SSN? 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication success 
+ AGENT: Your address has been changed and a new card will be sent. 
+ AGENT: Thank you for contacting us. Have a good day!",ADDRESS_UPDATE,ADDRESS_UPDATE,0.8876095604668772,0.044138314920008984,0.01822298315627162,0.018946369053223812,0.015121849694094818,0.015960922709523623
+"USER: Tell me the due date for my payment. 
+ AGENT: Let me look that up. 
+ AGENT: Calling Send_Replacement_Card 
+ SYSTEM: Tool responded 
+ AGENT: Is there anything else I can help you with?",PAYMENT_DUE_DATE,PAYMENT_DUE_DATE,0.01573060365390095,0.019602490375237834,0.02523931498768095,0.889386375627483,0.02693215007504579,0.023109065280651236
+"USER: My card is lost/stolen; please send a new card. 
+ AGENT: I need to verify your identity, please provide the account token. 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication failed 
+ AGENT: Can you re-confirm the phone number? 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication success 
+ AGENT: Okay. 
+ SYSTEM: Tool responded 
+ AGENT: Thank you for contacting us. Have a good day!",CARD_REPLACEMENT,CARD_REPLACEMENT,0.05337853607849354,0.8615367960553506,0.015237616692675336,0.024443305883861174,0.022582993886787014,0.02282075140283217
+"USER: Change my shipping address to 123 New St. 
+ AGENT: Can you confirm your account token or last 4 digits of SSN? 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication success 
+ AGENT: Your address has been changed and a new card will be sent. 
+ AGENT: Is there anything else I can help you with?",ADDRESS_UPDATE,ADDRESS_UPDATE,0.8764274335674421,0.05137031327947497,0.020123586659527164,0.02001844304235834,0.01389003912570803,0.018170184325489346
+"USER: I see a charge I don't recognize. 
+ AGENT: Please share more details about the transaction. 
+ AGENT: Okay. 
+ SYSTEM: Tool failed 
+ AGENT: I'll escalate this to the investigations team. 
+ AGENT: Thank you for contacting us. Have a good day!",TRANSACTION_DISPUTE,TRANSACTION_DISPUTE,0.017113866369952477,0.018454546171072526,0.022410205060188745,0.026443863624153376,0.025107343719478724,0.8904701750551542
+"USER: Send me my monthly statement. 
+ AGENT: Okay. 
+ SYSTEM: Tool responded 
+ AGENT: Thank you for contacting us. Have a good day!",STATEMENT_REQUEST,STATEMENT_REQUEST,0.01433283408788378,0.02175529228068809,0.022926443175371146,0.030494097385600702,0.8879045985047022,0.022586734565754222
+"USER: I want to dispute a recent transaction. 
+ AGENT: Please share more details about the transaction. 
+ AGENT: Okay. 
+ SYSTEM: Tool responded 
+ AGENT: This will be escalated for further review. 
+ AGENT: Thank you for contacting us. Have a good day!",TRANSACTION_DISPUTE,TRANSACTION_DISPUTE,0.021783658555584083,0.019658538740935868,0.025577982517065372,0.02919975428812058,0.035262523169396286,0.8685175427288977
+"USER: I see a charge I don't recognize. 
+ AGENT: Please share more details about the transaction. 
+ AGENT: Okay. 
+ SYSTEM: Tool failed 
+ AGENT: This will be escalated for further review. 
+ AGENT: Is there anything else I can help you with?",TRANSACTION_DISPUTE,TRANSACTION_DISPUTE,0.015463749364381435,0.01672120591810996,0.021967703048444087,0.020750098194065862,0.01989804088108942,0.9051992025939092
+"USER: I did not receive my statement. 
+ AGENT: Okay. 
+ SYSTEM: Tool responded 
+ AGENT: Thank you for contacting us. Have a good day!",STATEMENT_REQUEST,STATEMENT_REQUEST,0.018286752716287397,0.023953266006066825,0.026513209421558152,0.03414594454910007,0.8692489786983952,0.027851848608592484
+"USER: There is an unauthorized transaction on my account. 
+ AGENT: Can you provide the transaction date and amount? 
+ AGENT: Okay. 
+ SYSTEM: Tool responded 
+ AGENT: This will be escalated for further review. 
+ AGENT: Is there anything else I can help you with?",TRANSACTION_DISPUTE,TRANSACTION_DISPUTE,0.01694076330209424,0.019823767016570397,0.02260881998096468,0.024162187940666987,0.023528915224038868,0.8929355465356649
+"USER: How do I change my contact preferences? 
+ AGENT: Sure, I can help with that. 
+ AGENT: Is there anything else I can help you with?",GENERAL_QUERY,GENERAL_QUERY,0.02467900923953696,0.020510264921514594,0.8440533646327627,0.05651242451111368,0.027268452833891708,0.02697648386118038
+"USER: I moved to a new address; please update my mailing address. 
+ AGENT: Can you confirm your account token or last 4 digits of SSN? 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication success 
+ AGENT: I have updated your address. 
+ AGENT: Thank you for contacting us. Have a good day!",ADDRESS_UPDATE,ADDRESS_UPDATE,0.8735901899501624,0.05785524461321795,0.017640871453858748,0.02026192200926498,0.016558372635939296,0.01409339933755681
+"USER: I have a question about my account. 
+ AGENT: Sure, I can help with that. 
+ AGENT: Is there anything else I can help you with?",GENERAL_QUERY,GENERAL_QUERY,0.020651623652844946,0.019719111082971696,0.8565200310675091,0.04889422720294373,0.024747154270473467,0.029467852723257002
+"USER: I need a replacement card sent to my new address. 
+ AGENT: Can you confirm your account token or last 4 digits of SSN? 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication failed 
+ AGENT: I didn't catch that, could you repeat? 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication success 
+ AGENT: Okay. 
+ SYSTEM: Tool responded 
+ AGENT: Is there anything else I can help you with?",CARD_REPLACEMENT,CARD_REPLACEMENT,0.0471514879671848,0.8856031052952966,0.014282174636489132,0.01949953439134433,0.018073868575757157,0.01538982913392793
+"USER: When do I need to pay my credit card bill? 
+ AGENT: I'll check your account details. 
+ AGENT: Calling Authentication 
+ SYSTEM: Tool responded 
+ AGENT: Is there anything else I can help you with?",PAYMENT_DUE_DATE,PAYMENT_DUE_DATE,0.02922248249389265,0.046463990256646256,0.021572144179929094,0.8477291378488332,0.026591826768885787,0.028420418451813152
+"USER: Change my shipping address to 123 New St. 
+ AGENT: I need to verify your identity, please provide the account token. 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication success 
+ AGENT: Your address has been changed and a new card will be sent. 
+ AGENT: Thank you for contacting us. Have a good day!",ADDRESS_UPDATE,ADDRESS_UPDATE,0.8913992409568181,0.040018612774444094,0.016483282802594163,0.019933289915625645,0.014118344350980635,0.018047229199537013
+"USER: What's my payment due date? 
+ AGENT: I'll check your account details. 
+ AGENT: Calling Transaction_Lookup 
+ SYSTEM: Tool responded 
+ AGENT: Thank you for contacting us. Have a good day!",PAYMENT_DUE_DATE,PAYMENT_DUE_DATE,0.025024209199175272,0.02409228999663991,0.02217086896163816,0.8625495942000753,0.03599027370256855,0.030172763939902866
+"USER: When do I need to pay my credit card bill? 
+ AGENT: I can check that for you. 
+ AGENT: Is there anything else I can help you with?",PAYMENT_DUE_DATE,PAYMENT_DUE_DATE,0.025826168445974393,0.02689101930001624,0.08247862061286829,0.8111564075022313,0.025977736884176487,0.027670047254733154
+"USER: I see a charge I don't recognize. 
+ AGENT: Can you provide the transaction date and amount? 
+ AGENT: Okay. 
+ SYSTEM: Tool responded 
+ AGENT: I'll escalate this to the investigations team. 
+ AGENT: Thank you for contacting us. Have a good day!",TRANSACTION_DISPUTE,TRANSACTION_DISPUTE,0.018597249637571055,0.021619821985381347,0.018777105655669542,0.0315699557912555,0.030808486394878973,0.8786273805352437
+"USER: How do I change my contact preferences? 
+ AGENT: Sure, I can help with that. 
+ AGENT: Thank you for contacting us. Have a good day!",GENERAL_QUERY,GENERAL_QUERY,0.027481566645440117,0.01780111290027771,0.8405520161735434,0.05662421769639069,0.033512412335464925,0.024028674248883344
+"USER: I moved to a new address; please update my mailing address. 
+ AGENT: I need to verify your identity, please provide the account token. 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication success 
+ AGENT: I have updated your address. 
+ AGENT: Is there anything else I can help you with?",ADDRESS_UPDATE,ADDRESS_UPDATE,0.8653027512830714,0.06146457059749276,0.017677211512195427,0.022847370681866756,0.014036321169239101,0.018671774756134317
+"USER: I did not receive my statement. 
+ AGENT: Okay. 
+ SYSTEM: Tool responded 
+ AGENT: Is there anything else I can help you with?",STATEMENT_REQUEST,STATEMENT_REQUEST,0.018914637605763885,0.033649558653614235,0.033871038537653705,0.040316764018156544,0.8356317300473479,0.037616271137463596
+"USER: Update address for card delivery. 
+ AGENT: Can you confirm your account token or last 4 digits of SSN? 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication success 
+ AGENT: Your address has been changed and a new card will be sent. 
+ AGENT: Thank you for contacting us. Have a good day!",ADDRESS_UPDATE,ADDRESS_UPDATE,0.8878580845422479,0.04711458940480284,0.015487817866195599,0.019317140223234736,0.014820503732529935,0.015401864230989137
+"USER: I have a question about my account. 
+ AGENT: I can check that for you. 
+ AGENT: Thank you for contacting us. Have a good day!",GENERAL_QUERY,GENERAL_QUERY,0.029278903414308492,0.020838901148088437,0.8157411369696295,0.0655014786818631,0.03646029599189895,0.03217928379421169
+"USER: Tell me more about my rewards. 
+ AGENT: I can check that for you. 
+ AGENT: Thank you for contacting us. Have a good day!",GENERAL_QUERY,GENERAL_QUERY,0.02231561015112677,0.016839873824475125,0.8340220402532046,0.0713810777263363,0.030952438290717522,0.02448895975413962
+"USER: Update address for card delivery. 
+ AGENT: Can you confirm your account token or last 4 digits of SSN? 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication success 
+ AGENT: Your address has been changed and a new card will be sent. 
+ AGENT: Thank you for contacting us. Have a good day!",ADDRESS_UPDATE,ADDRESS_UPDATE,0.8878580845422479,0.04711458940480284,0.015487817866195599,0.019317140223234736,0.014820503732529935,0.015401864230989137
+"USER: When do I need to pay my credit card bill? 
+ AGENT: Let me look that up. 
+ AGENT: Calling Send_Replacement_Card 
+ SYSTEM: Tool responded 
+ AGENT: Thank you for contacting us. Have a good day!",PAYMENT_DUE_DATE,PAYMENT_DUE_DATE,0.020944075847756538,0.023299722574281777,0.021986032316068556,0.8787874601218886,0.03377394511462119,0.02120876402538356
+"USER: Change my shipping address to 123 New St. 
+ AGENT: Can you confirm your account token or last 4 digits of SSN? 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication success 
+ AGENT: Your address has been changed and a new card will be sent. 
+ AGENT: Is there anything else I can help you with?",ADDRESS_UPDATE,ADDRESS_UPDATE,0.8764274335674421,0.05137031327947497,0.020123586659527164,0.02001844304235834,0.01389003912570803,0.018170184325489346
+"USER: I have a question about my account. 
+ AGENT: I can check that for you. 
+ AGENT: Thank you for contacting us. Have a good day!",GENERAL_QUERY,GENERAL_QUERY,0.029278903414308492,0.020838901148088437,0.8157411369696295,0.0655014786818631,0.03646029599189895,0.03217928379421169
+"USER: Update address for card delivery. 
+ AGENT: I need to verify your identity, please provide the account token. 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication success 
+ AGENT: Your address has been changed and a new card will be sent. 
+ AGENT: Thank you for contacting us. Have a good day!",ADDRESS_UPDATE,ADDRESS_UPDATE,0.8939379863247978,0.04185951829320242,0.013601999443306615,0.019937318250848664,0.01346706710625235,0.01719611058159217
+"USER: What's my payment due date? 
+ AGENT: I'll check your account details. 
+ AGENT: Calling Send_Replacement_Card 
+ SYSTEM: Tool responded 
+ AGENT: Is there anything else I can help you with?",PAYMENT_DUE_DATE,PAYMENT_DUE_DATE,0.0211083194009265,0.025760516744788613,0.021899563286887302,0.8722738598253581,0.027739017336975976,0.031218723405063424
+"USER: There is an unauthorized transaction on my account. 
+ AGENT: Can you provide the transaction date and amount? 
+ AGENT: Okay. 
+ SYSTEM: Tool responded 
+ AGENT: This will be escalated for further review. 
+ AGENT: Thank you for contacting us. Have a good day!",TRANSACTION_DISPUTE,TRANSACTION_DISPUTE,0.019539276554409037,0.018958867626901667,0.022850937738373836,0.02562572948920554,0.02925633765402762,0.8837688509370822
+"USER: I want to dispute a recent transaction. 
+ AGENT: Please share more details about the transaction. 
+ AGENT: Okay. 
+ SYSTEM: Tool responded 
+ AGENT: I'll escalate this to the investigations team. 
+ AGENT: Is there anything else I can help you with?",TRANSACTION_DISPUTE,TRANSACTION_DISPUTE,0.01724811522364351,0.02250988705798783,0.024294187535853405,0.03102141586080358,0.027342270551585748,0.8775841237701258
+"USER: My card is lost/stolen; please send a new card. 
+ AGENT: I need to verify your identity, please provide the account token. 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication success 
+ AGENT: Okay. 
+ SYSTEM: Tool responded 
+ AGENT: Is there anything else I can help you with?",CARD_REPLACEMENT,CARD_REPLACEMENT,0.06339818183924846,0.8334034683457557,0.018418649885773398,0.028988344485997988,0.029064614625374276,0.026726740817850293
+"USER: I need a replacement card sent to my new address. 
+ AGENT: I need to verify your identity, please provide the account token. 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication failed 
+ AGENT: Can you re-confirm the phone number? 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication success 
+ AGENT: Okay. 
+ SYSTEM: Tool responded 
+ AGENT: Thank you for contacting us. Have a good day!",CARD_REPLACEMENT,CARD_REPLACEMENT,0.07364387635201511,0.8351455710614009,0.01589940999684149,0.026298405804282065,0.02486040613021714,0.024152330655243363
+"USER: I did not receive my statement. 
+ AGENT: Okay. 
+ SYSTEM: Tool responded 
+ AGENT: Is there anything else I can help you with?",STATEMENT_REQUEST,STATEMENT_REQUEST,0.018914637605763885,0.033649558653614235,0.033871038537653705,0.040316764018156544,0.8356317300473479,0.037616271137463596
+"USER: When do I need to pay my credit card bill? 
+ AGENT: Sure, I can help with that. 
+ AGENT: Thank you for contacting us. Have a good day!",PAYMENT_DUE_DATE,PAYMENT_DUE_DATE,0.02947992191403691,0.024382667839098274,0.09428925047456449,0.7913744798001294,0.034667256789356185,0.02580642318281487
+"USER: Send me my monthly statement. 
+ AGENT: Okay. 
+ SYSTEM: Tool responded 
+ AGENT: Thank you for contacting us. Have a good day!",STATEMENT_REQUEST,STATEMENT_REQUEST,0.01433283408788378,0.02175529228068809,0.022926443175371146,0.030494097385600702,0.8879045985047022,0.022586734565754222
+"USER: Send me my monthly statement. 
+ AGENT: Okay. 
+ SYSTEM: Tool responded 
+ AGENT: Thank you for contacting us. Have a good day!",STATEMENT_REQUEST,STATEMENT_REQUEST,0.01433283408788378,0.02175529228068809,0.022926443175371146,0.030494097385600702,0.8879045985047022,0.022586734565754222
+"USER: Update address for card delivery. 
+ AGENT: I need to verify your identity, please provide the account token. 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication success 
+ AGENT: I have updated your address. 
+ AGENT: Is there anything else I can help you with?",ADDRESS_UPDATE,ADDRESS_UPDATE,0.8618429974095094,0.0654849273414034,0.01747673766748645,0.023587180710408752,0.013807475750964256,0.01780068112022779
+"USER: Tell me more about my rewards. 
+ AGENT: Sure, I can help with that. 
+ AGENT: Thank you for contacting us. Have a good day!",GENERAL_QUERY,GENERAL_QUERY,0.018218963749040487,0.01389816029901891,0.8654557047710688,0.055029996802040675,0.027199023368028947,0.020198151010802197
+"USER: Tell me more about my rewards. 
+ AGENT: Sure, I can help with that. 
+ AGENT: Is there anything else I can help you with?",GENERAL_QUERY,GENERAL_QUERY,0.016424661228806835,0.016362729395241693,0.8670566443404797,0.05513828899631337,0.021929055265284353,0.02308862077387386
+"USER: I did not receive my statement. 
+ AGENT: Okay. 
+ SYSTEM: Tool responded 
+ AGENT: Is there anything else I can help you with?",STATEMENT_REQUEST,STATEMENT_REQUEST,0.018914637605763885,0.033649558653614235,0.033871038537653705,0.040316764018156544,0.8356317300473479,0.037616271137463596
+"USER: Can you replace my damaged card? 
+ AGENT: I need to verify your identity, please provide the account token. 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication failed 
+ AGENT: Can you re-confirm the phone number? 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication success 
+ AGENT: Okay. 
+ SYSTEM: Tool responded 
+ AGENT: Is there anything else I can help you with?",CARD_REPLACEMENT,CARD_REPLACEMENT,0.06669823243913708,0.817361773561428,0.02233412922031031,0.033520954974048986,0.02608652663101216,0.03399838317406343
+"USER: Change my shipping address to 123 New St. 
+ AGENT: Can you confirm your account token or last 4 digits of SSN? 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication success 
+ AGENT: Your address has been changed and a new card will be sent. 
+ AGENT: Is there anything else I can help you with?",ADDRESS_UPDATE,ADDRESS_UPDATE,0.8764274335674421,0.05137031327947497,0.020123586659527164,0.02001844304235834,0.01389003912570803,0.018170184325489346
+"USER: I did not receive my statement. 
+ AGENT: Okay. 
+ SYSTEM: Tool responded 
+ AGENT: Thank you for contacting us. Have a good day!",STATEMENT_REQUEST,STATEMENT_REQUEST,0.018286752716287397,0.023953266006066825,0.026513209421558152,0.03414594454910007,0.8692489786983952,0.027851848608592484
+"USER: Tell me the due date for my payment. 
+ AGENT: Let me look that up. 
+ AGENT: Calling Transaction_Lookup 
+ SYSTEM: Tool responded 
+ AGENT: Is there anything else I can help you with?",PAYMENT_DUE_DATE,PAYMENT_DUE_DATE,0.016460134032867328,0.020445900087014444,0.026360326401625396,0.8843986209272143,0.02815493384318759,0.024180084708090816
+"USER: There is an unauthorized transaction on my account. 
+ AGENT: Please share more details about the transaction. 
+ AGENT: Okay. 
+ SYSTEM: Tool failed 
+ AGENT: I'll escalate this to the investigations team. 
+ AGENT: Thank you for contacting us. Have a good day!",TRANSACTION_DISPUTE,TRANSACTION_DISPUTE,0.01637916719288815,0.017909097866394188,0.02560602646297211,0.02448428851958733,0.02315479365587846,0.8924666263022798
+"USER: When do I need to pay my credit card bill? 
+ AGENT: Let me look that up. 
+ AGENT: Calling Authentication 
+ SYSTEM: Tool responded 
+ AGENT: Is there anything else I can help you with?",PAYMENT_DUE_DATE,PAYMENT_DUE_DATE,0.023195688192488836,0.03890985875677061,0.022452329550167904,0.8649385697421791,0.02812540320794848,0.022378150550445033
+"USER: I need a copy of last month's statement. 
+ AGENT: Okay. 
+ SYSTEM: Tool responded 
+ AGENT: Is there anything else I can help you with?",STATEMENT_REQUEST,STATEMENT_REQUEST,0.014947486686901428,0.03225575437806984,0.02348914684898327,0.029085010271652886,0.8730765492068095,0.027146052607582988
+"USER: I want to dispute a recent transaction. 
+ AGENT: Please share more details about the transaction. 
+ AGENT: Okay. 
+ SYSTEM: Tool failed 
+ AGENT: I'll escalate this to the investigations team. 
+ AGENT: Thank you for contacting us. Have a good day!",TRANSACTION_DISPUTE,TRANSACTION_DISPUTE,0.020196516462139148,0.021042898209734793,0.024885403283689347,0.03056551985394051,0.027576617555747685,0.8757330446347485
+"USER: I see a charge I don't recognize. 
+ AGENT: Can you provide the transaction date and amount? 
+ AGENT: Okay. 
+ SYSTEM: Tool failed 
+ AGENT: This will be escalated for further review. 
+ AGENT: Is there anything else I can help you with?",TRANSACTION_DISPUTE,TRANSACTION_DISPUTE,0.017017764633220394,0.01892678643691356,0.018558383103381378,0.022616803821131674,0.019334851148633907,0.9035454108567191
+"USER: Send me my monthly statement. 
+ AGENT: Okay. 
+ SYSTEM: Tool responded 
+ AGENT: Is there anything else I can help you with?",STATEMENT_REQUEST,STATEMENT_REQUEST,0.01484463626917316,0.03144700590420084,0.029874500384166558,0.036506494252122185,0.8560972777612501,0.03123008542908717
+"USER: Change my shipping address to 123 New St. 
+ AGENT: Can you confirm your account token or last 4 digits of SSN? 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication success 
+ AGENT: I have updated your address. 
+ AGENT: Thank you for contacting us. Have a good day!",ADDRESS_UPDATE,ADDRESS_UPDATE,0.8615619005011217,0.05886196112485842,0.023125006436920253,0.022398183370317043,0.018804920419750806,0.015248028147031712
+"USER: I see a charge I don't recognize. 
+ AGENT: Can you provide the transaction date and amount? 
+ AGENT: Okay. 
+ SYSTEM: Tool failed 
+ AGENT: This will be escalated for further review. 
+ AGENT: Thank you for contacting us. Have a good day!",TRANSACTION_DISPUTE,TRANSACTION_DISPUTE,0.020458198358150603,0.018616011780922183,0.019437157748369464,0.02496109395484482,0.025130569306087484,0.8913969688516253
+"USER: Tell me more about my rewards. 
+ AGENT: Sure, I can help with that. 
+ AGENT: Is there anything else I can help you with?",GENERAL_QUERY,GENERAL_QUERY,0.016424661228806835,0.016362729395241693,0.8670566443404797,0.05513828899631337,0.021929055265284353,0.02308862077387386
+"USER: I have a question about my account. 
+ AGENT: Sure, I can help with that. 
+ AGENT: Thank you for contacting us. Have a good day!",GENERAL_QUERY,GENERAL_QUERY,0.023799546120026466,0.017117161769897374,0.8508047665924288,0.049877434536532,0.03196354980260269,0.026437541178512738
+"USER: Can you replace my damaged card? 
+ AGENT: I need to verify your identity, please provide the account token. 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication failed 
+ AGENT: Can you re-confirm the phone number? 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication success 
+ AGENT: Okay. 
+ SYSTEM: Tool responded 
+ AGENT: Is there anything else I can help you with?",CARD_REPLACEMENT,CARD_REPLACEMENT,0.06669823243913708,0.817361773561428,0.02233412922031031,0.033520954974048986,0.02608652663101216,0.03399838317406343
+"USER: Update address for card delivery. 
+ AGENT: Can you confirm your account token or last 4 digits of SSN? 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication success 
+ AGENT: Your address has been changed and a new card will be sent. 
+ AGENT: Is there anything else I can help you with?",ADDRESS_UPDATE,ADDRESS_UPDATE,0.876963032816137,0.055019138545942065,0.016992242891308913,0.02021007301827472,0.013349937478476454,0.017465575249860837
+"USER: I moved to a new address; please update my mailing address. 
+ AGENT: I need to verify your identity, please provide the account token. 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication success 
+ AGENT: I have updated your address. 
+ AGENT: Is there anything else I can help you with?",ADDRESS_UPDATE,ADDRESS_UPDATE,0.8653027512830714,0.06146457059749276,0.017677211512195427,0.022847370681866756,0.014036321169239101,0.018671774756134317
+"USER: Tell me the due date for my payment. 
+ AGENT: I'll check your account details. 
+ AGENT: Calling Transaction_Lookup 
+ SYSTEM: Tool responded 
+ AGENT: Is there anything else I can help you with?",PAYMENT_DUE_DATE,PAYMENT_DUE_DATE,0.0195648783394687,0.02286636790982537,0.02467672626321394,0.8774025787952257,0.02578717323541593,0.029702275456850415
+"USER: Can you replace my damaged card? 
+ AGENT: I need to verify your identity, please provide the account token. 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication success 
+ AGENT: Okay. 
+ SYSTEM: Tool responded 
+ AGENT: Thank you for contacting us. Have a good day!",CARD_REPLACEMENT,CARD_REPLACEMENT,0.1135660308984887,0.7149245875590408,0.02941428978787419,0.0472638878017521,0.053972609716520265,0.04085859423632386
+"USER: There is an unauthorized transaction on my account. 
+ AGENT: Can you provide the transaction date and amount? 
+ AGENT: Okay. 
+ SYSTEM: Tool responded 
+ AGENT: I'll escalate this to the investigations team. 
+ AGENT: Thank you for contacting us. Have a good day!",TRANSACTION_DISPUTE,TRANSACTION_DISPUTE,0.017859558368582214,0.02093415558513149,0.022061512656379064,0.029115739743742455,0.028214317601302847,0.881814716044862
+"USER: What's my payment due date? 
+ AGENT: I'll check your account details. 
+ AGENT: Calling SMS 
+ SYSTEM: Tool responded 
+ AGENT: Is there anything else I can help you with?",PAYMENT_DUE_DATE,PAYMENT_DUE_DATE,0.01954681562776829,0.0239679261066689,0.020277208907530153,0.881477888399307,0.025766339977935395,0.028963820980790523
+"USER: I did not receive my statement. 
+ AGENT: Okay. 
+ SYSTEM: Tool responded 
+ AGENT: Thank you for contacting us. Have a good day!",STATEMENT_REQUEST,STATEMENT_REQUEST,0.018286752716287397,0.023953266006066825,0.026513209421558152,0.03414594454910007,0.8692489786983952,0.027851848608592484
+"USER: Update address for card delivery. 
+ AGENT: Can you confirm your account token or last 4 digits of SSN? 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication success 
+ AGENT: Your address has been changed and a new card will be sent. 
+ AGENT: Thank you for contacting us. Have a good day!",ADDRESS_UPDATE,ADDRESS_UPDATE,0.8878580845422479,0.04711458940480284,0.015487817866195599,0.019317140223234736,0.014820503732529935,0.015401864230989137
+"USER: I see a charge I don't recognize. 
+ AGENT: Can you provide the transaction date and amount? 
+ AGENT: Okay. 
+ SYSTEM: Tool failed 
+ AGENT: This will be escalated for further review. 
+ AGENT: Thank you for contacting us. Have a good day!",TRANSACTION_DISPUTE,TRANSACTION_DISPUTE,0.020458198358150603,0.018616011780922183,0.019437157748369464,0.02496109395484482,0.025130569306087484,0.8913969688516253
+"USER: I see a charge I don't recognize. 
+ AGENT: Please share more details about the transaction. 
+ AGENT: Okay. 
+ SYSTEM: Tool responded 
+ AGENT: I'll escalate this to the investigations team. 
+ AGENT: Is there anything else I can help you with?",TRANSACTION_DISPUTE,TRANSACTION_DISPUTE,0.014268619957019328,0.019647435972827722,0.02161961343423605,0.02656413593084705,0.02464760536174629,0.8932525893433236
+"USER: I need a replacement card sent to my new address. 
+ AGENT: I need to verify your identity, please provide the account token. 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication failed 
+ AGENT: I didn't catch that, could you repeat? 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication success 
+ AGENT: Okay. 
+ SYSTEM: Tool responded 
+ AGENT: Thank you for contacting us. Have a good day!",CARD_REPLACEMENT,CARD_REPLACEMENT,0.060476443303886546,0.8578065900745527,0.014939189578049543,0.024463208508922422,0.023058761433227676,0.019255807101360996
+"USER: My card is lost/stolen; please send a new card. 
+ AGENT: Can you confirm your account token or last 4 digits of SSN? 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication failed 
+ AGENT: I didn't catch that, could you repeat? 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication success 
+ AGENT: Okay. 
+ SYSTEM: Tool responded 
+ AGENT: Is there anything else I can help you with?",CARD_REPLACEMENT,CARD_REPLACEMENT,0.03461193305094898,0.9009801919633044,0.014014985988231608,0.01861510294216904,0.01681375733413995,0.014964028721206233
+"USER: What's my payment due date? 
+ AGENT: I can check that for you. 
+ AGENT: Thank you for contacting us. Have a good day!",PAYMENT_DUE_DATE,PAYMENT_DUE_DATE,0.02484940694328678,0.018060604747414798,0.08938727884638425,0.8102837073416963,0.03195578996597725,0.02546321215524044
+"USER: My card is lost/stolen; please send a new card. 
+ AGENT: I need to verify your identity, please provide the account token. 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication failed 
+ AGENT: Can you re-confirm the phone number? 
+ AGENT: Calling Authentication 
+ SYSTEM: Authentication success 
+ AGENT: Okay. 
+ SYSTEM: Tool responded 
+ AGENT: Is there anything else I can help you with?",CARD_REPLACEMENT,CARD_REPLACEMENT,0.04682029855624358,0.8737544416842937,0.014882605764627679,0.022954756353495108,0.01870039337312871,0.022887504268211074
+"USER: I need a copy of last month's statement. 
+ AGENT: Okay. 
+ SYSTEM: Tool responded 
+ AGENT: Thank you for contacting us. Have a good day!",STATEMENT_REQUEST,STATEMENT_REQUEST,0.014369039074385134,0.02248481142970769,0.018154068161421125,0.02438884466242725,0.9008141040779115,0.019789132594147215
+"USER: When do I need to pay my credit card bill? 
+ AGENT: I'll check your account details. 
+ AGENT: Calling Address_Update 
+ SYSTEM: Tool responded 
+ AGENT: Is there anything else I can help you with?",PAYMENT_DUE_DATE,PAYMENT_DUE_DATE,0.024151010763959094,0.030767904975921617,0.022821403428550456,0.8646907628433909,0.027867780217709862,0.02970113777046808
+"USER: Tell me the due date for my payment. 
+ AGENT: I'll check your account details. 
+ AGENT: Calling SMS 
+ SYSTEM: Tool responded 
+ AGENT: Thank you for contacting us. Have a good day!",PAYMENT_DUE_DATE,PAYMENT_DUE_DATE,0.019769809307781366,0.018572547918385276,0.02143130904145539,0.8870944989897954,0.028419541499462016,0.024712293243120662

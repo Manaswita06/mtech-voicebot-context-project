@@ -1,0 +1,82 @@
+{
+  "tenant_id": "e0178ed3-1aa3-4379-98ff-9ef05323e104",
+  "conversation_id": "78fbd470-50c4-4463-9107-06b85b91bdee@0.0.0.0",
+  "correlation_id": "6e283bb7-9603-4f57-b566-d99091e2979b",
+  "event_month": "2026-03-01",
+  "event_timestamp": "2026-03-08T15:13:04.419233Z",
+  "events": [
+    {
+      "event_id": "c7e5a6ce-f3f6-41e5-a25f-5d1105392b6c",
+      "event_name": "USER_MESSAGE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:04.419233Z",
+      "participant": {
+        "participant_id": "user_7158",
+        "role": "user"
+      },
+      "text": "I need a copy of last month's statement.",
+      "event_data": {},
+      "sentiment_score": 0.24740319051885762
+    },
+    {
+      "event_id": "8c7eaac0-fe2e-456f-9940-dca0b68175e1",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:04.419233Z",
+      "participant": {
+        "participant_id": "agent_2612",
+        "role": "agent"
+      },
+      "text": "Okay.",
+      "event_data": {},
+      "sentiment_score": -0.5288089016748823
+    },
+    {
+      "event_id": "43bd7198-704e-4222-9812-b1aa64d83404",
+      "event_name": "TOOL_RESPONSE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:04.419233Z",
+      "participant": {
+        "participant_id": "system_8378",
+        "role": "system"
+      },
+      "text": "Tool responded",
+      "event_data": {
+        "tool_name": null,
+        "tool_call_id": null,
+        "status": "fail",
+        "error_code": "INVALID_PHONE",
+        "latency_ms": 1047
+      },
+      "sentiment_score": -0.22841557818155966
+    },
+    {
+      "event_id": "f1324ba0-06b8-4490-b1fa-7c798be95bf2",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:04.419923Z",
+      "participant": {
+        "participant_id": "agent_2392",
+        "role": "agent"
+      },
+      "text": "Is there anything else I can help you with?",
+      "event_data": {},
+      "sentiment_score": 0.17236720039865694
+    }
+  ],
+  "schema_version": 1,
+  "ingestion_timestamp": "2026-03-08T15:13:04.419923Z",
+  "gt_primary_intent": "STATEMENT_REQUEST",
+  "gt_authenticated": false,
+  "gt_tool_failure": true,
+  "gt_failure_reasons": [
+    "INVALID_PHONE"
+  ],
+  "gt_sentiment_overall": 0.24740319051885762,
+  "gt_sentiment_trajectory": "fluctuating",
+  "gt_turn_count": 4,
+  "tool_summary": [
+    {
+      "tool_name": null,
+      "status": "fail",
+      "error_code": "INVALID_PHONE",
+      "latency_ms": 1047
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "tenant_id": "8de6b186-7463-4568-a412-b9dbc1efde45",
+  "conversation_id": "8d1d116f-45fa-40e6-b7f9-90bb2463a67f@0.0.0.0",
+  "correlation_id": "a3dd23c1-7c42-47be-8606-2275d0ed4156",
+  "event_month": "2026-03-01",
+  "event_timestamp": "2026-03-08T15:13:02.813529Z",
+  "events": [
+    {
+      "event_id": "c907c190-fbfe-4ea1-b480-188b0d799bf8",
+      "event_name": "USER_MESSAGE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:02.813529Z",
+      "participant": {
+        "participant_id": "user_7715",
+        "role": "user"
+      },
+      "text": "When do I need to pay my credit card bill?",
+      "event_data": {},
+      "sentiment_score": -0.09083683451158019
+    },
+    {
+      "event_id": "cfc33ec5-65df-4686-bcb8-58a409952a13",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:02.813529Z",
+      "participant": {
+        "participant_id": "agent_8850",
+        "role": "agent"
+      },
+      "text": "I can check that for you.",
+      "event_data": {},
+      "sentiment_score": -0.09132239612482551
+    },
+    {
+      "event_id": "36331ccc-7ea0-433f-a9b9-d6ab223dec32",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:02.813529Z",
+      "participant": {
+        "participant_id": "agent_6880",
+        "role": "agent"
+      },
+      "text": "Is there anything else I can help you with?",
+      "event_data": {},
+      "sentiment_score": -0.02305469590474714
+    }
+  ],
+  "schema_version": 1,
+  "ingestion_timestamp": "2026-03-08T15:13:02.814211Z",
+  "gt_primary_intent": "PAYMENT_DUE_DATE",
+  "gt_authenticated": false,
+  "gt_tool_failure": false,
+  "gt_failure_reasons": [],
+  "gt_sentiment_overall": -0.09083683451158019,
+  "gt_sentiment_trajectory": "stable_neutral",
+  "gt_turn_count": 3,
+  "tool_summary": []
+}

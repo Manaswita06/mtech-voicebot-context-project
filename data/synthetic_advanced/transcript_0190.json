@@ -1,0 +1,110 @@
+{
+  "tenant_id": "76d0f2f5-e848-4aa3-90bb-34463f0ae19c",
+  "conversation_id": "2e6420c0-4685-4c45-8f07-b1889b73f6da@0.0.0.0",
+  "correlation_id": "c4e27922-0103-444c-935a-6852c570f30f",
+  "event_month": "2026-03-01",
+  "event_timestamp": "2026-03-08T15:13:02.495860Z",
+  "events": [
+    {
+      "event_id": "039cc4ea-a488-4351-ae22-37a5faee31e2",
+      "event_name": "USER_MESSAGE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:02.495860Z",
+      "participant": {
+        "participant_id": "user_1674",
+        "role": "user"
+      },
+      "text": "Update address for card delivery.",
+      "event_data": {},
+      "sentiment_score": 0.008686656677281898
+    },
+    {
+      "event_id": "ce0dde09-3493-4643-84cd-169776bfe895",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:02.495860Z",
+      "participant": {
+        "participant_id": "agent_2187",
+        "role": "agent"
+      },
+      "text": "I need to verify your identity, please provide the account token.",
+      "event_data": {},
+      "sentiment_score": 0.01515878125105112
+    },
+    {
+      "event_id": "b22d9649-2ebf-4b67-a7d3-4ae724c9cfd9",
+      "event_name": "AGENT_TOOL_CALLED",
+      "event_timestamp": "2026-03-08T15:13:02.495860Z",
+      "participant": {
+        "participant_id": "agent_8485",
+        "role": "agent"
+      },
+      "text": "Calling Authentication",
+      "event_data": {
+        "tool_name": "Authentication",
+        "arguments": {
+          "method": "last4SSN",
+          "value": "XXXX"
+        },
+        "tool_call_id": "57ad8c6d-e627-472a-a79a-54d242e0d5f7"
+      },
+      "sentiment_score": 0.04010189897524835
+    },
+    {
+      "event_id": "107e3c97-e604-4494-b7de-45d36b0f9cac",
+      "event_name": "TOOL_RESPONSE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:02.495860Z",
+      "participant": {
+        "participant_id": "system_3582",
+        "role": "system"
+      },
+      "text": "Authentication success",
+      "event_data": {
+        "tool_name": "Authentication",
+        "tool_call_id": "57ad8c6d-e627-472a-a79a-54d242e0d5f7",
+        "status": "success",
+        "latency_ms": 234
+      },
+      "sentiment_score": -0.0664039718319904
+    },
+    {
+      "event_id": "c4daebed-509d-407b-8e5e-92d0782565c4",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:02.495860Z",
+      "participant": {
+        "participant_id": "agent_3808",
+        "role": "agent"
+      },
+      "text": "I have updated your address.",
+      "event_data": {},
+      "sentiment_score": -0.013606234545350218
+    },
+    {
+      "event_id": "d73a711c-a6ac-43d7-bbfe-c59b764c0dad",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:02.495860Z",
+      "participant": {
+        "participant_id": "agent_3352",
+        "role": "agent"
+      },
+      "text": "Is there anything else I can help you with?",
+      "event_data": {},
+      "sentiment_score": 0.029107867047657054
+    }
+  ],
+  "schema_version": 1,
+  "ingestion_timestamp": "2026-03-08T15:13:02.495860Z",
+  "gt_primary_intent": "ADDRESS_UPDATE",
+  "gt_authenticated": true,
+  "gt_tool_failure": false,
+  "gt_failure_reasons": [],
+  "gt_sentiment_overall": 0.008686656677281898,
+  "gt_sentiment_trajectory": "stable_neutral",
+  "gt_turn_count": 6,
+  "tool_summary": [
+    {
+      "tool_name": "Authentication",
+      "status": "success",
+      "error_code": null,
+      "latency_ms": 234
+    }
+  ]
+}

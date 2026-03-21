@@ -1,0 +1,100 @@
+{
+  "tenant_id": "d266995b-a359-486e-9e94-34d63be3c0af",
+  "conversation_id": "79357d34-530b-4770-a1cf-951d4a3c6412@0.0.0.0",
+  "correlation_id": "7ee3cab9-4f23-47a1-babb-d60911bf003b",
+  "event_month": "2026-03-01",
+  "event_timestamp": "2026-03-08T15:13:03.251938Z",
+  "events": [
+    {
+      "event_id": "67892b81-2ea0-41d4-9cb2-5f0dd4c4fa58",
+      "event_name": "USER_MESSAGE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:03.251938Z",
+      "participant": {
+        "participant_id": "user_6171",
+        "role": "user"
+      },
+      "text": "When do I need to pay my credit card bill?",
+      "event_data": {},
+      "sentiment_score": 0.005635669337426236
+    },
+    {
+      "event_id": "6db0bed6-7b0a-40bb-9651-17901d67c457",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:03.251938Z",
+      "participant": {
+        "participant_id": "agent_1821",
+        "role": "agent"
+      },
+      "text": "Let me look that up.",
+      "event_data": {},
+      "sentiment_score": 0.09679794640519981
+    },
+    {
+      "event_id": "6a2f1aac-02a3-405b-af75-36f1153cf642",
+      "event_name": "AGENT_TOOL_CALLED",
+      "event_timestamp": "2026-03-08T15:13:03.251938Z",
+      "participant": {
+        "participant_id": "agent_5893",
+        "role": "agent"
+      },
+      "text": "Calling Send_Replacement_Card",
+      "event_data": {
+        "tool_name": "Send_Replacement_Card",
+        "arguments": {
+          "query": "details"
+        },
+        "tool_call_id": "5f19ab6f-25e1-4d5f-8d52-daf96ec7b4b7"
+      },
+      "sentiment_score": 0.007394838968169726
+    },
+    {
+      "event_id": "43d1cb6b-8699-474f-bd3d-53186e726416",
+      "event_name": "TOOL_RESPONSE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:03.251938Z",
+      "participant": {
+        "participant_id": "system_6463",
+        "role": "system"
+      },
+      "text": "Tool responded",
+      "event_data": {
+        "tool_name": "Send_Replacement_Card",
+        "tool_call_id": "5f19ab6f-25e1-4d5f-8d52-daf96ec7b4b7",
+        "status": "success",
+        "response": {
+          "info": "ok"
+        },
+        "latency_ms": 710
+      },
+      "sentiment_score": -0.09515845335846303
+    },
+    {
+      "event_id": "9764ed46-2be8-4f43-9a5f-8f82bb5b44c0",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:03.252634Z",
+      "participant": {
+        "participant_id": "agent_8757",
+        "role": "agent"
+      },
+      "text": "Is there anything else I can help you with?",
+      "event_data": {},
+      "sentiment_score": 0.08242341564650393
+    }
+  ],
+  "schema_version": 1,
+  "ingestion_timestamp": "2026-03-08T15:13:03.252634Z",
+  "gt_primary_intent": "PAYMENT_DUE_DATE",
+  "gt_authenticated": false,
+  "gt_tool_failure": false,
+  "gt_failure_reasons": [],
+  "gt_sentiment_overall": 0.005635669337426236,
+  "gt_sentiment_trajectory": "stable_neutral",
+  "gt_turn_count": 5,
+  "tool_summary": [
+    {
+      "tool_name": "Send_Replacement_Card",
+      "status": "success",
+      "error_code": null,
+      "latency_ms": 710
+    }
+  ]
+}

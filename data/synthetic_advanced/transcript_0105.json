@@ -1,0 +1,100 @@
+{
+  "tenant_id": "6171d503-6ab4-44e1-aa32-07fc4d597597",
+  "conversation_id": "97b2a00a-a7cb-4bb9-becb-157831ae6ffd@0.0.0.0",
+  "correlation_id": "6c013c5a-7a4a-4eff-ac4b-0b5f388e58d2",
+  "event_month": "2026-03-01",
+  "event_timestamp": "2026-03-08T15:13:02.082053Z",
+  "events": [
+    {
+      "event_id": "44277ffe-0af6-4ff3-85e9-75d01ba327bb",
+      "event_name": "USER_MESSAGE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:02.082053Z",
+      "participant": {
+        "participant_id": "user_6154",
+        "role": "user"
+      },
+      "text": "Tell me the due date for my payment.",
+      "event_data": {},
+      "sentiment_score": 0.08513643496317948
+    },
+    {
+      "event_id": "e8164a12-173e-4537-9c19-3e3568df1b26",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:02.082053Z",
+      "participant": {
+        "participant_id": "agent_6787",
+        "role": "agent"
+      },
+      "text": "Let me look that up.",
+      "event_data": {},
+      "sentiment_score": 0.05863790909737886
+    },
+    {
+      "event_id": "a03f34ac-47a6-4040-ad23-c067374fcbad",
+      "event_name": "AGENT_TOOL_CALLED",
+      "event_timestamp": "2026-03-08T15:13:02.082053Z",
+      "participant": {
+        "participant_id": "agent_5481",
+        "role": "agent"
+      },
+      "text": "Calling Transaction_Lookup",
+      "event_data": {
+        "tool_name": "Transaction_Lookup",
+        "arguments": {
+          "query": "details"
+        },
+        "tool_call_id": "8a2f2f66-047e-49c8-acc2-9250c71d4b4c"
+      },
+      "sentiment_score": -0.02922972967223124
+    },
+    {
+      "event_id": "5c01cbfc-c7f1-496d-9eb9-f4aeab7574dc",
+      "event_name": "TOOL_RESPONSE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:02.082706Z",
+      "participant": {
+        "participant_id": "system_6374",
+        "role": "system"
+      },
+      "text": "Tool responded",
+      "event_data": {
+        "tool_name": "Transaction_Lookup",
+        "tool_call_id": "8a2f2f66-047e-49c8-acc2-9250c71d4b4c",
+        "status": "fail",
+        "error_code": "INVALID_PHONE",
+        "latency_ms": 241
+      },
+      "sentiment_score": -0.056719363993421174
+    },
+    {
+      "event_id": "87c9f806-d4ce-42a0-8e12-796969816d15",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:02.082706Z",
+      "participant": {
+        "participant_id": "agent_2340",
+        "role": "agent"
+      },
+      "text": "Is there anything else I can help you with?",
+      "event_data": {},
+      "sentiment_score": -0.09253747816244431
+    }
+  ],
+  "schema_version": 1,
+  "ingestion_timestamp": "2026-03-08T15:13:02.082706Z",
+  "gt_primary_intent": "PAYMENT_DUE_DATE",
+  "gt_authenticated": false,
+  "gt_tool_failure": true,
+  "gt_failure_reasons": [
+    "INVALID_PHONE"
+  ],
+  "gt_sentiment_overall": 0.08513643496317948,
+  "gt_sentiment_trajectory": "neutral_to_negative",
+  "gt_turn_count": 5,
+  "tool_summary": [
+    {
+      "tool_name": "Transaction_Lookup",
+      "status": "fail",
+      "error_code": "INVALID_PHONE",
+      "latency_ms": 241
+    }
+  ]
+}

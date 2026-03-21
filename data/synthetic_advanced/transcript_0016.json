@@ -1,0 +1,100 @@
+{
+  "tenant_id": "680baded-3332-4021-ba7e-3c05a7c0498a",
+  "conversation_id": "dcfe56df-0f39-41aa-b276-b07becc66383@0.0.0.0",
+  "correlation_id": "a66de770-0581-4638-a4ad-68cc3b52cba9",
+  "event_month": "2026-03-01",
+  "event_timestamp": "2026-03-08T15:13:01.662931Z",
+  "events": [
+    {
+      "event_id": "bf3f8acc-8770-4d63-a7d3-a511feafce62",
+      "event_name": "USER_MESSAGE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:01.662931Z",
+      "participant": {
+        "participant_id": "user_2040",
+        "role": "user"
+      },
+      "text": "Tell me the due date for my payment.",
+      "event_data": {},
+      "sentiment_score": -0.009049154464399162
+    },
+    {
+      "event_id": "d9a45c34-9afd-4405-b097-e985d43e43a7",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:01.662931Z",
+      "participant": {
+        "participant_id": "agent_3104",
+        "role": "agent"
+      },
+      "text": "Let me look that up.",
+      "event_data": {},
+      "sentiment_score": 0.00980099768907898
+    },
+    {
+      "event_id": "5fb440bc-bccc-4c28-a580-7e9ee36cdb27",
+      "event_name": "AGENT_TOOL_CALLED",
+      "event_timestamp": "2026-03-08T15:13:01.662931Z",
+      "participant": {
+        "participant_id": "agent_7686",
+        "role": "agent"
+      },
+      "text": "Calling Address_Update",
+      "event_data": {
+        "tool_name": "Address_Update",
+        "arguments": {
+          "query": "details"
+        },
+        "tool_call_id": "1330d221-d22a-4c3f-96f4-4d5269f8a8a5"
+      },
+      "sentiment_score": -0.038918236408372754
+    },
+    {
+      "event_id": "b8be3332-c995-4aef-853a-01d959b2ec82",
+      "event_name": "TOOL_RESPONSE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:01.662931Z",
+      "participant": {
+        "participant_id": "system_3431",
+        "role": "system"
+      },
+      "text": "Tool responded",
+      "event_data": {
+        "tool_name": "Address_Update",
+        "tool_call_id": "1330d221-d22a-4c3f-96f4-4d5269f8a8a5",
+        "status": "success",
+        "response": {
+          "info": "ok"
+        },
+        "latency_ms": 1164
+      },
+      "sentiment_score": -0.09003330815572397
+    },
+    {
+      "event_id": "171348db-286d-4ab7-acc9-5de09b66cd73",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:01.662931Z",
+      "participant": {
+        "participant_id": "agent_8255",
+        "role": "agent"
+      },
+      "text": "Thank you for contacting us. Have a good day!",
+      "event_data": {},
+      "sentiment_score": -0.07742467275829859
+    }
+  ],
+  "schema_version": 1,
+  "ingestion_timestamp": "2026-03-08T15:13:01.662931Z",
+  "gt_primary_intent": "PAYMENT_DUE_DATE",
+  "gt_authenticated": false,
+  "gt_tool_failure": false,
+  "gt_failure_reasons": [],
+  "gt_sentiment_overall": -0.009049154464399162,
+  "gt_sentiment_trajectory": "stable_neutral",
+  "gt_turn_count": 5,
+  "tool_summary": [
+    {
+      "tool_name": "Address_Update",
+      "status": "success",
+      "error_code": null,
+      "latency_ms": 1164
+    }
+  ]
+}

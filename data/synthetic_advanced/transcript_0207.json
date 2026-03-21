@@ -1,0 +1,100 @@
+{
+  "tenant_id": "261e75bc-9f84-4186-bb7f-ed68d552f1bb",
+  "conversation_id": "38354d7a-2926-4ec3-a5a2-6369fc2e0016@0.0.0.0",
+  "correlation_id": "530230b2-5a6b-4ed6-8924-6a7db5b7f045",
+  "event_month": "2026-03-01",
+  "event_timestamp": "2026-03-08T15:13:02.588964Z",
+  "events": [
+    {
+      "event_id": "9ace4e54-8a06-4b29-99e1-74508a379a7b",
+      "event_name": "USER_MESSAGE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:02.588964Z",
+      "participant": {
+        "participant_id": "user_6089",
+        "role": "user"
+      },
+      "text": "Tell me the due date for my payment.",
+      "event_data": {},
+      "sentiment_score": -0.09024759246510347
+    },
+    {
+      "event_id": "fe8b6cd6-3feb-467e-b54e-18741a4e41df",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:02.588964Z",
+      "participant": {
+        "participant_id": "agent_7889",
+        "role": "agent"
+      },
+      "text": "I'll check your account details.",
+      "event_data": {},
+      "sentiment_score": -0.024896950594536837
+    },
+    {
+      "event_id": "9a9431e7-e84b-4923-a4fb-721668cc749b",
+      "event_name": "AGENT_TOOL_CALLED",
+      "event_timestamp": "2026-03-08T15:13:02.588964Z",
+      "participant": {
+        "participant_id": "agent_2803",
+        "role": "agent"
+      },
+      "text": "Calling Transaction_Lookup",
+      "event_data": {
+        "tool_name": "Transaction_Lookup",
+        "arguments": {
+          "query": "details"
+        },
+        "tool_call_id": "d83a11d7-7047-4336-902a-42073805f3da"
+      },
+      "sentiment_score": -0.04188992991218489
+    },
+    {
+      "event_id": "c188d2fa-45cb-4066-932d-75901a3e8f2b",
+      "event_name": "TOOL_RESPONSE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:02.588964Z",
+      "participant": {
+        "participant_id": "system_8343",
+        "role": "system"
+      },
+      "text": "Tool responded",
+      "event_data": {
+        "tool_name": "Transaction_Lookup",
+        "tool_call_id": "d83a11d7-7047-4336-902a-42073805f3da",
+        "status": "success",
+        "response": {
+          "info": "ok"
+        },
+        "latency_ms": 414
+      },
+      "sentiment_score": 0.020225039201759373
+    },
+    {
+      "event_id": "551c8fb7-91b9-4c4e-95e6-a75119122472",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:02.588964Z",
+      "participant": {
+        "participant_id": "agent_1664",
+        "role": "agent"
+      },
+      "text": "Is there anything else I can help you with?",
+      "event_data": {},
+      "sentiment_score": 0.012716958157429223
+    }
+  ],
+  "schema_version": 1,
+  "ingestion_timestamp": "2026-03-08T15:13:02.588964Z",
+  "gt_primary_intent": "PAYMENT_DUE_DATE",
+  "gt_authenticated": false,
+  "gt_tool_failure": false,
+  "gt_failure_reasons": [],
+  "gt_sentiment_overall": -0.09024759246510347,
+  "gt_sentiment_trajectory": "neutral_to_positive",
+  "gt_turn_count": 5,
+  "tool_summary": [
+    {
+      "tool_name": "Transaction_Lookup",
+      "status": "success",
+      "error_code": null,
+      "latency_ms": 414
+    }
+  ]
+}

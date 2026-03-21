@@ -1,0 +1,136 @@
+{
+  "tenant_id": "d730c84e-ac36-4dcf-90fa-172a7a7ab498",
+  "conversation_id": "54476b67-2a21-4134-bcf0-2bcbd198f6b8@0.0.0.0",
+  "correlation_id": "ca67a73a-4096-4d6b-bab1-a2e0aca723d9",
+  "event_month": "2026-03-01",
+  "event_timestamp": "2026-03-08T15:13:03.177555Z",
+  "events": [
+    {
+      "event_id": "07b84048-218d-40c8-8fb6-cfe8eb9186d5",
+      "event_name": "USER_MESSAGE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:03.177555Z",
+      "participant": {
+        "participant_id": "user_6736",
+        "role": "user"
+      },
+      "text": "I need a replacement card sent to my new address.",
+      "event_data": {},
+      "sentiment_score": -0.09310018300154105
+    },
+    {
+      "event_id": "d1b7c0cd-b96f-4022-b8ce-73955f1c9e7e",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:03.177555Z",
+      "participant": {
+        "participant_id": "agent_5280",
+        "role": "agent"
+      },
+      "text": "I need to verify your identity, please provide the account token.",
+      "event_data": {},
+      "sentiment_score": -0.02837462703941332
+    },
+    {
+      "event_id": "1cffecfd-fad2-4500-b44a-5bfe80c12d4b",
+      "event_name": "AGENT_TOOL_CALLED",
+      "event_timestamp": "2026-03-08T15:13:03.177555Z",
+      "participant": {
+        "participant_id": "agent_5174",
+        "role": "agent"
+      },
+      "text": "Calling Authentication",
+      "event_data": {
+        "tool_name": "Authentication",
+        "arguments": {
+          "method": "last4SSN",
+          "value": "XXXX"
+        },
+        "tool_call_id": "50fcf71d-ddda-4989-bf07-a2be800f5b16"
+      },
+      "sentiment_score": -0.06641618610382337
+    },
+    {
+      "event_id": "4f191339-f65e-4dd2-a4a4-72d85b908f6a",
+      "event_name": "TOOL_RESPONSE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:03.177555Z",
+      "participant": {
+        "participant_id": "system_7931",
+        "role": "system"
+      },
+      "text": "Authentication success",
+      "event_data": {
+        "tool_name": "Authentication",
+        "tool_call_id": "50fcf71d-ddda-4989-bf07-a2be800f5b16",
+        "status": "success",
+        "latency_ms": 267
+      },
+      "sentiment_score": -0.05705667743775117
+    },
+    {
+      "event_id": "8a662f29-e9e4-4aad-b5d9-f1c2bf4b360f",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:03.177555Z",
+      "participant": {
+        "participant_id": "agent_3051",
+        "role": "agent"
+      },
+      "text": "Okay.",
+      "event_data": {},
+      "sentiment_score": 0.05319906454711873
+    },
+    {
+      "event_id": "700fbd9e-075b-4c00-be10-227943bb29f5",
+      "event_name": "TOOL_RESPONSE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:03.177555Z",
+      "participant": {
+        "participant_id": "system_8263",
+        "role": "system"
+      },
+      "text": "Tool responded",
+      "event_data": {
+        "tool_name": null,
+        "tool_call_id": null,
+        "status": "fail",
+        "error_code": "INVALID_PHONE",
+        "latency_ms": 1444
+      },
+      "sentiment_score": 0.028454518945658834
+    },
+    {
+      "event_id": "d4509edf-f443-4da6-a1e1-b4f47285ad1a",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:03.177555Z",
+      "participant": {
+        "participant_id": "agent_8450",
+        "role": "agent"
+      },
+      "text": "Thank you for contacting us. Have a good day!",
+      "event_data": {},
+      "sentiment_score": 0.039474496068009436
+    }
+  ],
+  "schema_version": 1,
+  "ingestion_timestamp": "2026-03-08T15:13:03.177555Z",
+  "gt_primary_intent": "CARD_REPLACEMENT",
+  "gt_authenticated": true,
+  "gt_tool_failure": true,
+  "gt_failure_reasons": [
+    "INVALID_PHONE"
+  ],
+  "gt_sentiment_overall": -0.09310018300154105,
+  "gt_sentiment_trajectory": "neutral_to_positive",
+  "gt_turn_count": 7,
+  "tool_summary": [
+    {
+      "tool_name": "Authentication",
+      "status": "success",
+      "error_code": null,
+      "latency_ms": 267
+    },
+    {
+      "tool_name": null,
+      "status": "fail",
+      "error_code": "INVALID_PHONE",
+      "latency_ms": 1444
+    }
+  ]
+}

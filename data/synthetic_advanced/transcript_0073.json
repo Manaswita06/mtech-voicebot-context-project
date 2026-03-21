@@ -1,0 +1,106 @@
+{
+  "tenant_id": "a719f17c-f755-45c0-a1de-f131381690b6",
+  "conversation_id": "6abe64a3-1cf9-4edf-a979-0787fa1be78a@0.0.0.0",
+  "correlation_id": "3e333e17-0068-4c00-a9a3-a7c47c58ae07",
+  "event_month": "2026-03-01",
+  "event_timestamp": "2026-03-08T15:13:01.937612Z",
+  "events": [
+    {
+      "event_id": "00df7db5-8f07-4c2a-8cf6-8f05c750d697",
+      "event_name": "USER_MESSAGE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:01.937612Z",
+      "participant": {
+        "participant_id": "user_5919",
+        "role": "user"
+      },
+      "text": "I see a charge I don't recognize.",
+      "event_data": {},
+      "sentiment_score": 0.0560113982897299
+    },
+    {
+      "event_id": "a2eae581-87f8-497a-9222-d6a64fa12e1e",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:01.937612Z",
+      "participant": {
+        "participant_id": "agent_2795",
+        "role": "agent"
+      },
+      "text": "Please share more details about the transaction.",
+      "event_data": {},
+      "sentiment_score": 0.5151263392499966
+    },
+    {
+      "event_id": "de9e514d-9636-4682-9ea9-efa01f9daff7",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:01.937612Z",
+      "participant": {
+        "participant_id": "agent_6968",
+        "role": "agent"
+      },
+      "text": "Okay.",
+      "event_data": {},
+      "sentiment_score": 0.23274150316031827
+    },
+    {
+      "event_id": "1af58aeb-1105-4c7b-80fa-f69de557a18c",
+      "event_name": "TOOL_RESPONSE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:01.937612Z",
+      "participant": {
+        "participant_id": "system_9579",
+        "role": "system"
+      },
+      "text": "Tool responded",
+      "event_data": {
+        "tool_name": null,
+        "tool_call_id": null,
+        "status": "fail",
+        "error_code": "INVALID_PHONE",
+        "latency_ms": 484
+      },
+      "sentiment_score": -0.5855585304764636
+    },
+    {
+      "event_id": "c43aaa6f-65a0-4a4c-aefc-7214d47f6f71",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:01.937612Z",
+      "participant": {
+        "participant_id": "agent_4517",
+        "role": "agent"
+      },
+      "text": "This will be escalated for further review.",
+      "event_data": {},
+      "sentiment_score": 0.5025330080713678
+    },
+    {
+      "event_id": "09c298f5-52cb-40fc-ab9a-013b2490c993",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:01.938315Z",
+      "participant": {
+        "participant_id": "agent_4831",
+        "role": "agent"
+      },
+      "text": "Is there anything else I can help you with?",
+      "event_data": {},
+      "sentiment_score": -0.04458565875842224
+    }
+  ],
+  "schema_version": 1,
+  "ingestion_timestamp": "2026-03-08T15:13:01.938315Z",
+  "gt_primary_intent": "TRANSACTION_DISPUTE",
+  "gt_authenticated": false,
+  "gt_tool_failure": true,
+  "gt_failure_reasons": [
+    "INVALID_PHONE"
+  ],
+  "gt_sentiment_overall": 0.0560113982897299,
+  "gt_sentiment_trajectory": "fluctuating",
+  "gt_turn_count": 6,
+  "tool_summary": [
+    {
+      "tool_name": null,
+      "status": "fail",
+      "error_code": "INVALID_PHONE",
+      "latency_ms": 484
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "tenant_id": "80cf179b-8af5-4832-b29c-fc254d820682",
+  "conversation_id": "27f0035f-3110-43bd-8b3c-b2d4fac97a2a@0.0.0.0",
+  "correlation_id": "f5858c32-ac69-4d9c-858b-f8e70f748ea2",
+  "event_month": "2026-03-01",
+  "event_timestamp": "2026-03-08T15:13:01.933601Z",
+  "events": [
+    {
+      "event_id": "7def650b-ebe3-4900-9f54-77d1fb178bc9",
+      "event_name": "USER_MESSAGE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:01.933601Z",
+      "participant": {
+        "participant_id": "user_1570",
+        "role": "user"
+      },
+      "text": "When do I need to pay my credit card bill?",
+      "event_data": {},
+      "sentiment_score": 0.08243622426240713
+    },
+    {
+      "event_id": "f60032e2-14bd-42cb-b80d-c501a44c1f17",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:01.933601Z",
+      "participant": {
+        "participant_id": "agent_9719",
+        "role": "agent"
+      },
+      "text": "Let me look that up.",
+      "event_data": {},
+      "sentiment_score": 0.03382310690425806
+    },
+    {
+      "event_id": "3c30a0e9-1876-48fe-8da1-d35d200bb301",
+      "event_name": "AGENT_TOOL_CALLED",
+      "event_timestamp": "2026-03-08T15:13:01.933601Z",
+      "participant": {
+        "participant_id": "agent_7105",
+        "role": "agent"
+      },
+      "text": "Calling SMS",
+      "event_data": {
+        "tool_name": "SMS",
+        "arguments": {
+          "query": "details"
+        },
+        "tool_call_id": "6bac560d-5702-42a2-a00c-ed3bd9834221"
+      },
+      "sentiment_score": 0.029359684765083938
+    },
+    {
+      "event_id": "ac0a5912-8fd7-4499-8d7c-823fdffacfe2",
+      "event_name": "TOOL_RESPONSE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:01.933601Z",
+      "participant": {
+        "participant_id": "system_6949",
+        "role": "system"
+      },
+      "text": "Tool responded",
+      "event_data": {
+        "tool_name": "SMS",
+        "tool_call_id": "6bac560d-5702-42a2-a00c-ed3bd9834221",
+        "status": "success",
+        "response": {
+          "info": "ok"
+        },
+        "latency_ms": 499
+      },
+      "sentiment_score": 0.009493034351673466
+    },
+    {
+      "event_id": "70012e11-2aca-4961-b26f-68d5d6edaebf",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:01.933601Z",
+      "participant": {
+        "participant_id": "agent_9634",
+        "role": "agent"
+      },
+      "text": "Thank you for contacting us. Have a good day!",
+      "event_data": {},
+      "sentiment_score": -0.029922188039861422
+    }
+  ],
+  "schema_version": 1,
+  "ingestion_timestamp": "2026-03-08T15:13:01.933601Z",
+  "gt_primary_intent": "PAYMENT_DUE_DATE",
+  "gt_authenticated": false,
+  "gt_tool_failure": false,
+  "gt_failure_reasons": [],
+  "gt_sentiment_overall": 0.08243622426240713,
+  "gt_sentiment_trajectory": "neutral_to_negative",
+  "gt_turn_count": 5,
+  "tool_summary": [
+    {
+      "tool_name": "SMS",
+      "status": "success",
+      "error_code": null,
+      "latency_ms": 499
+    }
+  ]
+}

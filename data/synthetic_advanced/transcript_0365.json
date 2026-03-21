@@ -1,0 +1,106 @@
+{
+  "tenant_id": "ac4f5b88-f4f6-4f5f-b327-ce94446635e7",
+  "conversation_id": "50b08bce-67ae-4edb-816a-807912eede9b@0.0.0.0",
+  "correlation_id": "47e74139-55fa-4224-8aa6-96dafd479fd6",
+  "event_month": "2026-03-01",
+  "event_timestamp": "2026-03-08T15:13:03.656887Z",
+  "events": [
+    {
+      "event_id": "410220e6-32c7-49fb-9eef-66e386c2596b",
+      "event_name": "USER_MESSAGE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:03.656887Z",
+      "participant": {
+        "participant_id": "user_2180",
+        "role": "user"
+      },
+      "text": "I want to dispute a recent transaction.",
+      "event_data": {},
+      "sentiment_score": -0.5535781139570853
+    },
+    {
+      "event_id": "a99b3e42-6029-44e9-ad48-bc84a13577e2",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:03.656887Z",
+      "participant": {
+        "participant_id": "agent_7978",
+        "role": "agent"
+      },
+      "text": "Can you provide the transaction date and amount?",
+      "event_data": {},
+      "sentiment_score": -0.23341169040173954
+    },
+    {
+      "event_id": "3d4fadb8-b079-45ec-8e14-f013c698fd1a",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:03.656887Z",
+      "participant": {
+        "participant_id": "agent_5094",
+        "role": "agent"
+      },
+      "text": "Okay.",
+      "event_data": {},
+      "sentiment_score": 0.07202645895562053
+    },
+    {
+      "event_id": "9b19bcd4-403f-4ad1-98c2-df0ecbe55534",
+      "event_name": "TOOL_RESPONSE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:03.656887Z",
+      "participant": {
+        "participant_id": "system_5393",
+        "role": "system"
+      },
+      "text": "Tool responded",
+      "event_data": {
+        "tool_name": null,
+        "tool_call_id": null,
+        "status": "success",
+        "response": {
+          "info": "ok"
+        },
+        "latency_ms": 541
+      },
+      "sentiment_score": 0.3767736155633058
+    },
+    {
+      "event_id": "ef05a3b5-1252-49fa-aca5-bbdc492973b7",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:03.656887Z",
+      "participant": {
+        "participant_id": "agent_7727",
+        "role": "agent"
+      },
+      "text": "This will be escalated for further review.",
+      "event_data": {},
+      "sentiment_score": 0.6612911086063415
+    },
+    {
+      "event_id": "e05e2e39-bbec-42c5-bcc6-546b06c5fa94",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:03.657589Z",
+      "participant": {
+        "participant_id": "agent_1976",
+        "role": "agent"
+      },
+      "text": "Thank you for contacting us. Have a good day!",
+      "event_data": {},
+      "sentiment_score": 0.9823861247420054
+    }
+  ],
+  "schema_version": 1,
+  "ingestion_timestamp": "2026-03-08T15:13:03.657589Z",
+  "gt_primary_intent": "TRANSACTION_DISPUTE",
+  "gt_authenticated": false,
+  "gt_tool_failure": false,
+  "gt_failure_reasons": [],
+  "gt_sentiment_overall": -0.5535781139570853,
+  "gt_sentiment_trajectory": "negative_to_positive",
+  "gt_turn_count": 6,
+  "tool_summary": [
+    {
+      "tool_name": null,
+      "status": "success",
+      "error_code": null,
+      "latency_ms": 541
+    }
+  ]
+}

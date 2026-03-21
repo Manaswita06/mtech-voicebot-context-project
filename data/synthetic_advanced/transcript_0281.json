@@ -1,0 +1,100 @@
+{
+  "tenant_id": "b6b5b759-6f8b-435f-bb30-42b93d07db27",
+  "conversation_id": "f3c244fa-906d-47b7-871a-f576659149f3@0.0.0.0",
+  "correlation_id": "3b014ee7-ba05-486a-bf88-fef376bb5855",
+  "event_month": "2026-03-01",
+  "event_timestamp": "2026-03-08T15:13:03.045450Z",
+  "events": [
+    {
+      "event_id": "aa047740-f4a0-46cd-9295-5b10d5b204d1",
+      "event_name": "USER_MESSAGE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:03.045450Z",
+      "participant": {
+        "participant_id": "user_4200",
+        "role": "user"
+      },
+      "text": "Tell me the due date for my payment.",
+      "event_data": {},
+      "sentiment_score": 0.108251071039076
+    },
+    {
+      "event_id": "f783643e-c16e-4684-8e0c-5a4449cc092d",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:03.045450Z",
+      "participant": {
+        "participant_id": "agent_3666",
+        "role": "agent"
+      },
+      "text": "I'll check your account details.",
+      "event_data": {},
+      "sentiment_score": 0.02167561024251881
+    },
+    {
+      "event_id": "2d3e7959-e97e-4363-8b95-348664f12858",
+      "event_name": "AGENT_TOOL_CALLED",
+      "event_timestamp": "2026-03-08T15:13:03.045450Z",
+      "participant": {
+        "participant_id": "agent_2670",
+        "role": "agent"
+      },
+      "text": "Calling Authentication",
+      "event_data": {
+        "tool_name": "Authentication",
+        "arguments": {
+          "query": "details"
+        },
+        "tool_call_id": "cc415ad8-b92a-4b3c-8a83-85f91b5ff08b"
+      },
+      "sentiment_score": -0.025798323221907865
+    },
+    {
+      "event_id": "36638b1b-920d-41d6-9026-efb0a8162881",
+      "event_name": "TOOL_RESPONSE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:03.046099Z",
+      "participant": {
+        "participant_id": "system_1720",
+        "role": "system"
+      },
+      "text": "Tool responded",
+      "event_data": {
+        "tool_name": "Authentication",
+        "tool_call_id": "cc415ad8-b92a-4b3c-8a83-85f91b5ff08b",
+        "status": "success",
+        "response": {
+          "info": "ok"
+        },
+        "latency_ms": 120
+      },
+      "sentiment_score": -0.05941241404009681
+    },
+    {
+      "event_id": "8ccf6e1b-b330-464b-b7b4-a63a9fe2d935",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:03.046099Z",
+      "participant": {
+        "participant_id": "agent_6875",
+        "role": "agent"
+      },
+      "text": "Is there anything else I can help you with?",
+      "event_data": {},
+      "sentiment_score": -0.03942645037773326
+    }
+  ],
+  "schema_version": 1,
+  "ingestion_timestamp": "2026-03-08T15:13:03.046099Z",
+  "gt_primary_intent": "PAYMENT_DUE_DATE",
+  "gt_authenticated": true,
+  "gt_tool_failure": false,
+  "gt_failure_reasons": [],
+  "gt_sentiment_overall": 0.108251071039076,
+  "gt_sentiment_trajectory": "neutral_to_negative",
+  "gt_turn_count": 5,
+  "tool_summary": [
+    {
+      "tool_name": "Authentication",
+      "status": "success",
+      "error_code": null,
+      "latency_ms": 120
+    }
+  ]
+}

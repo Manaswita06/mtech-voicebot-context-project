@@ -1,0 +1,82 @@
+{
+  "tenant_id": "e8863a41-595e-4c5d-b58d-d2cf1ab7c965",
+  "conversation_id": "29b74afe-49be-4e6b-ac4d-b5950cf3224e@0.0.0.0",
+  "correlation_id": "6e306858-3e2a-47c2-9ebc-27462fd0ce15",
+  "event_month": "2026-03-01",
+  "event_timestamp": "2026-03-08T15:13:04.325495Z",
+  "events": [
+    {
+      "event_id": "5ab8a8b8-a042-4f9e-95d8-187d38eee6a2",
+      "event_name": "USER_MESSAGE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:04.325495Z",
+      "participant": {
+        "participant_id": "user_2422",
+        "role": "user"
+      },
+      "text": "I did not receive my statement.",
+      "event_data": {},
+      "sentiment_score": -0.14072711414190794
+    },
+    {
+      "event_id": "1e00738b-d778-4c0e-a08e-9f2dfdfbad74",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:04.325495Z",
+      "participant": {
+        "participant_id": "agent_6072",
+        "role": "agent"
+      },
+      "text": "Okay.",
+      "event_data": {},
+      "sentiment_score": -0.07867538964871891
+    },
+    {
+      "event_id": "fff99a53-edd4-4850-b28f-925aec1c32ea",
+      "event_name": "TOOL_RESPONSE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:04.328240Z",
+      "participant": {
+        "participant_id": "system_3667",
+        "role": "system"
+      },
+      "text": "Tool responded",
+      "event_data": {
+        "tool_name": null,
+        "tool_call_id": null,
+        "status": "fail",
+        "error_code": "INVALID_PHONE",
+        "latency_ms": 332
+      },
+      "sentiment_score": 0.008140725323032796
+    },
+    {
+      "event_id": "480916d9-fafe-426a-beaa-a344d30c687a",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:04.328240Z",
+      "participant": {
+        "participant_id": "agent_1546",
+        "role": "agent"
+      },
+      "text": "Thank you for contacting us. Have a good day!",
+      "event_data": {},
+      "sentiment_score": -0.03967719392154184
+    }
+  ],
+  "schema_version": 1,
+  "ingestion_timestamp": "2026-03-08T15:13:04.328935Z",
+  "gt_primary_intent": "STATEMENT_REQUEST",
+  "gt_authenticated": false,
+  "gt_tool_failure": true,
+  "gt_failure_reasons": [
+    "INVALID_PHONE"
+  ],
+  "gt_sentiment_overall": -0.14072711414190794,
+  "gt_sentiment_trajectory": "neutral_to_positive",
+  "gt_turn_count": 4,
+  "tool_summary": [
+    {
+      "tool_name": null,
+      "status": "fail",
+      "error_code": "INVALID_PHONE",
+      "latency_ms": 332
+    }
+  ]
+}

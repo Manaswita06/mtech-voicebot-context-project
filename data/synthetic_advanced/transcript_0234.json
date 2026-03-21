@@ -1,0 +1,100 @@
+{
+  "tenant_id": "4e657e7f-0624-4bf6-855e-171c922de68e",
+  "conversation_id": "0d7493ac-4539-4b27-bb5e-2465375439f1@0.0.0.0",
+  "correlation_id": "4a36c626-bc9a-4583-ae55-f151d2aa8f3d",
+  "event_month": "2026-03-01",
+  "event_timestamp": "2026-03-08T15:13:02.733836Z",
+  "events": [
+    {
+      "event_id": "e45797bd-4a85-4131-b5dd-f5741c1d932d",
+      "event_name": "USER_MESSAGE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:02.733836Z",
+      "participant": {
+        "participant_id": "user_7760",
+        "role": "user"
+      },
+      "text": "When do I need to pay my credit card bill?",
+      "event_data": {},
+      "sentiment_score": 0.09042636132057816
+    },
+    {
+      "event_id": "c332d4fd-0ffe-44c6-bb5d-92ed9500dc14",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:02.733836Z",
+      "participant": {
+        "participant_id": "agent_5659",
+        "role": "agent"
+      },
+      "text": "I'll check your account details.",
+      "event_data": {},
+      "sentiment_score": 0.06583450491751922
+    },
+    {
+      "event_id": "2cee558f-5c77-45b2-b379-1d38df0b291f",
+      "event_name": "AGENT_TOOL_CALLED",
+      "event_timestamp": "2026-03-08T15:13:02.733836Z",
+      "participant": {
+        "participant_id": "agent_8638",
+        "role": "agent"
+      },
+      "text": "Calling Address_Update",
+      "event_data": {
+        "tool_name": "Address_Update",
+        "arguments": {
+          "query": "details"
+        },
+        "tool_call_id": "05bbd18c-f584-4400-96ac-24c692bfdb26"
+      },
+      "sentiment_score": -0.06142443641321176
+    },
+    {
+      "event_id": "c9b5798d-da3f-4483-b981-a8c6592a9616",
+      "event_name": "TOOL_RESPONSE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:02.733836Z",
+      "participant": {
+        "participant_id": "system_9371",
+        "role": "system"
+      },
+      "text": "Tool responded",
+      "event_data": {
+        "tool_name": "Address_Update",
+        "tool_call_id": "05bbd18c-f584-4400-96ac-24c692bfdb26",
+        "status": "success",
+        "response": {
+          "info": "ok"
+        },
+        "latency_ms": 805
+      },
+      "sentiment_score": 0.021665455272758122
+    },
+    {
+      "event_id": "93245491-c7d5-43d2-b19a-c118bcc74f9a",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:02.733836Z",
+      "participant": {
+        "participant_id": "agent_9293",
+        "role": "agent"
+      },
+      "text": "Is there anything else I can help you with?",
+      "event_data": {},
+      "sentiment_score": 0.06531120459367185
+    }
+  ],
+  "schema_version": 1,
+  "ingestion_timestamp": "2026-03-08T15:13:02.733836Z",
+  "gt_primary_intent": "PAYMENT_DUE_DATE",
+  "gt_authenticated": false,
+  "gt_tool_failure": false,
+  "gt_failure_reasons": [],
+  "gt_sentiment_overall": 0.09042636132057816,
+  "gt_sentiment_trajectory": "stable_neutral",
+  "gt_turn_count": 5,
+  "tool_summary": [
+    {
+      "tool_name": "Address_Update",
+      "status": "success",
+      "error_code": null,
+      "latency_ms": 805
+    }
+  ]
+}

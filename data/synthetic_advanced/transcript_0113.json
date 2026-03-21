@@ -1,0 +1,193 @@
+{
+  "tenant_id": "5f996902-5684-48b1-938c-ff3246207cee",
+  "conversation_id": "519ad9b8-c676-4391-91f2-3ee3d46ee71c@0.0.0.0",
+  "correlation_id": "cfe813ba-70b6-40e8-9c7f-dcda313497c7",
+  "event_month": "2026-03-01",
+  "event_timestamp": "2026-03-08T15:13:02.118774Z",
+  "events": [
+    {
+      "event_id": "30d5cd55-49dc-4e87-9ff1-369855b11c72",
+      "event_name": "USER_MESSAGE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:02.118774Z",
+      "participant": {
+        "participant_id": "user_8022",
+        "role": "user"
+      },
+      "text": "My card is lost/stolen; please send a new card.",
+      "event_data": {},
+      "sentiment_score": 0.2181810141570264
+    },
+    {
+      "event_id": "0bd65ce3-5a2f-4c00-b87b-c86657ae1c7d",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:02.118774Z",
+      "participant": {
+        "participant_id": "agent_9413",
+        "role": "agent"
+      },
+      "text": "Can you confirm your account token or last 4 digits of SSN?",
+      "event_data": {},
+      "sentiment_score": -0.4079621425426062
+    },
+    {
+      "event_id": "8ae4eaa3-056a-48de-b012-4cecd3a22c89",
+      "event_name": "AGENT_TOOL_CALLED",
+      "event_timestamp": "2026-03-08T15:13:02.118774Z",
+      "participant": {
+        "participant_id": "agent_3101",
+        "role": "agent"
+      },
+      "text": "Calling Authentication",
+      "event_data": {
+        "tool_name": "Authentication",
+        "arguments": {
+          "method": "last4SSN",
+          "value": "XXXX"
+        },
+        "tool_call_id": "31b616a1-0911-449e-9eb9-c76d1b994753"
+      },
+      "sentiment_score": 0.3584512161156984
+    },
+    {
+      "event_id": "a862cc4b-0eb9-45bb-876b-d4c23f61a8f1",
+      "event_name": "TOOL_RESPONSE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:02.118774Z",
+      "participant": {
+        "participant_id": "system_3082",
+        "role": "system"
+      },
+      "text": "Authentication failed",
+      "event_data": {
+        "tool_name": "Authentication",
+        "tool_call_id": "31b616a1-0911-449e-9eb9-c76d1b994753",
+        "status": "fail",
+        "error_code": "AUTH_FAIL",
+        "latency_ms": 301
+      },
+      "sentiment_score": -0.30170175963565643
+    },
+    {
+      "event_id": "99eec6f4-d4e5-4f3a-8ab6-58f9f4e47b8f",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:02.118774Z",
+      "participant": {
+        "participant_id": "agent_9545",
+        "role": "agent"
+      },
+      "text": "Can you re-confirm the phone number?",
+      "event_data": {},
+      "sentiment_score": 0.40031743531836794
+    },
+    {
+      "event_id": "54608ce2-4781-4384-89f9-fd197f83aed3",
+      "event_name": "AGENT_TOOL_CALLED",
+      "event_timestamp": "2026-03-08T15:13:02.119417Z",
+      "participant": {
+        "participant_id": "agent_4470",
+        "role": "agent"
+      },
+      "text": "Calling Authentication",
+      "event_data": {
+        "tool_name": "Authentication",
+        "arguments": {
+          "method": "last4SSN",
+          "value": "XXXX"
+        },
+        "tool_call_id": "5dd20bf5-a907-4f1c-b0e1-e3945139d564"
+      },
+      "sentiment_score": -0.28328448850920945
+    },
+    {
+      "event_id": "765d0c5b-dd67-4f02-a642-421004be8a17",
+      "event_name": "TOOL_RESPONSE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:02.119417Z",
+      "participant": {
+        "participant_id": "system_5617",
+        "role": "system"
+      },
+      "text": "Authentication success",
+      "event_data": {
+        "tool_name": "Authentication",
+        "tool_call_id": "5dd20bf5-a907-4f1c-b0e1-e3945139d564",
+        "status": "success",
+        "latency_ms": 206
+      },
+      "sentiment_score": -0.4104845832131793
+    },
+    {
+      "event_id": "6ad80b11-da26-41f4-aa0b-c06e5e7c804d",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:02.119417Z",
+      "participant": {
+        "participant_id": "agent_6806",
+        "role": "agent"
+      },
+      "text": "Okay.",
+      "event_data": {},
+      "sentiment_score": 0.44460663909439113
+    },
+    {
+      "event_id": "bfd85b8c-27b4-4dd5-af03-d9ae6a029ba8",
+      "event_name": "TOOL_RESPONSE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:02.119417Z",
+      "participant": {
+        "participant_id": "system_8825",
+        "role": "system"
+      },
+      "text": "Tool responded",
+      "event_data": {
+        "tool_name": null,
+        "tool_call_id": null,
+        "status": "success",
+        "response": {
+          "info": "ok"
+        },
+        "latency_ms": 329
+      },
+      "sentiment_score": -0.41740618019216746
+    },
+    {
+      "event_id": "ca98ba3d-d2f5-4df7-bf27-6d43518276f2",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:02.119417Z",
+      "participant": {
+        "participant_id": "agent_6752",
+        "role": "agent"
+      },
+      "text": "Is there anything else I can help you with?",
+      "event_data": {},
+      "sentiment_score": 0.5518277943496913
+    }
+  ],
+  "schema_version": 1,
+  "ingestion_timestamp": "2026-03-08T15:13:02.120084Z",
+  "gt_primary_intent": "CARD_REPLACEMENT",
+  "gt_authenticated": true,
+  "gt_tool_failure": true,
+  "gt_failure_reasons": [
+    "AUTH_FAIL"
+  ],
+  "gt_sentiment_overall": 0.2181810141570264,
+  "gt_sentiment_trajectory": "fluctuating",
+  "gt_turn_count": 10,
+  "tool_summary": [
+    {
+      "tool_name": "Authentication",
+      "status": "fail",
+      "error_code": "AUTH_FAIL",
+      "latency_ms": 301
+    },
+    {
+      "tool_name": "Authentication",
+      "status": "success",
+      "error_code": null,
+      "latency_ms": 206
+    },
+    {
+      "tool_name": null,
+      "status": "success",
+      "error_code": null,
+      "latency_ms": 329
+    }
+  ]
+}

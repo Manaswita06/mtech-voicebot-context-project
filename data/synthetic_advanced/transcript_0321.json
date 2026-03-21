@@ -1,0 +1,100 @@
+{
+  "tenant_id": "d357c47e-98c3-40a2-b202-f32a9d17c874",
+  "conversation_id": "bf7fb49f-382a-4657-9f6a-ba1d95553715@0.0.0.0",
+  "correlation_id": "c0dccb42-cd8a-480e-ac80-390915889d33",
+  "event_month": "2026-03-01",
+  "event_timestamp": "2026-03-08T15:13:03.270636Z",
+  "events": [
+    {
+      "event_id": "76ca97f1-a33d-4140-bcd5-cfd738548165",
+      "event_name": "USER_MESSAGE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:03.270636Z",
+      "participant": {
+        "participant_id": "user_6939",
+        "role": "user"
+      },
+      "text": "What's my payment due date?",
+      "event_data": {},
+      "sentiment_score": -0.5762505170707615
+    },
+    {
+      "event_id": "cad8dae3-f723-4c84-a8b6-eada50c5bb88",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:03.270636Z",
+      "participant": {
+        "participant_id": "agent_8828",
+        "role": "agent"
+      },
+      "text": "Let me look that up.",
+      "event_data": {},
+      "sentiment_score": -0.16246995693038396
+    },
+    {
+      "event_id": "fc64f347-fdce-486b-9936-5db34bd61f61",
+      "event_name": "AGENT_TOOL_CALLED",
+      "event_timestamp": "2026-03-08T15:13:03.270636Z",
+      "participant": {
+        "participant_id": "agent_5474",
+        "role": "agent"
+      },
+      "text": "Calling Authentication",
+      "event_data": {
+        "tool_name": "Authentication",
+        "arguments": {
+          "query": "details"
+        },
+        "tool_call_id": "bdb5af1a-4843-40b8-89d4-5ef0d6ba58da"
+      },
+      "sentiment_score": 0.18944784893335698
+    },
+    {
+      "event_id": "fd66eb55-924e-4f45-9226-3f72edc70cc7",
+      "event_name": "TOOL_RESPONSE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:03.270636Z",
+      "participant": {
+        "participant_id": "system_6108",
+        "role": "system"
+      },
+      "text": "Tool responded",
+      "event_data": {
+        "tool_name": "Authentication",
+        "tool_call_id": "bdb5af1a-4843-40b8-89d4-5ef0d6ba58da",
+        "status": "fail",
+        "error_code": "INVALID_PHONE",
+        "latency_ms": 258
+      },
+      "sentiment_score": 0.6370179653751419
+    },
+    {
+      "event_id": "9c41f9dd-e9c7-48b4-94d8-4505373b0590",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:03.270636Z",
+      "participant": {
+        "participant_id": "agent_4090",
+        "role": "agent"
+      },
+      "text": "Is there anything else I can help you with?",
+      "event_data": {},
+      "sentiment_score": 1.0
+    }
+  ],
+  "schema_version": 1,
+  "ingestion_timestamp": "2026-03-08T15:13:03.270636Z",
+  "gt_primary_intent": "PAYMENT_DUE_DATE",
+  "gt_authenticated": false,
+  "gt_tool_failure": true,
+  "gt_failure_reasons": [
+    "INVALID_PHONE"
+  ],
+  "gt_sentiment_overall": -0.5762505170707615,
+  "gt_sentiment_trajectory": "negative_to_positive",
+  "gt_turn_count": 5,
+  "tool_summary": [
+    {
+      "tool_name": "Authentication",
+      "status": "fail",
+      "error_code": "INVALID_PHONE",
+      "latency_ms": 258
+    }
+  ]
+}

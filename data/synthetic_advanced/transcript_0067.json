@@ -1,0 +1,55 @@
+{
+  "tenant_id": "b30972d4-65e8-4f43-b986-92a387369462",
+  "conversation_id": "40cdfb79-c721-4b21-aa8d-c8970b09ba21@0.0.0.0",
+  "correlation_id": "40fbc595-76fc-4105-a615-017f5aab3cfc",
+  "event_month": "2026-03-01",
+  "event_timestamp": "2026-03-08T15:13:01.914392Z",
+  "events": [
+    {
+      "event_id": "e89d30aa-5900-4775-9c00-7ecc4ab8e30e",
+      "event_name": "USER_MESSAGE_RECEIVED",
+      "event_timestamp": "2026-03-08T15:13:01.914392Z",
+      "participant": {
+        "participant_id": "user_1471",
+        "role": "user"
+      },
+      "text": "Tell me the due date for my payment.",
+      "event_data": {},
+      "sentiment_score": 0.2598234371548318
+    },
+    {
+      "event_id": "17a1ddc0-5a94-4feb-8f55-65997f821d7b",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:01.914392Z",
+      "participant": {
+        "participant_id": "agent_2404",
+        "role": "agent"
+      },
+      "text": "I can check that for you.",
+      "event_data": {},
+      "sentiment_score": -0.4086343182708891
+    },
+    {
+      "event_id": "c2f6cf0f-85cf-4fe7-95cb-393cb2a802e9",
+      "event_name": "AGENT_MESSAGE_SENT",
+      "event_timestamp": "2026-03-08T15:13:01.914392Z",
+      "participant": {
+        "participant_id": "agent_5862",
+        "role": "agent"
+      },
+      "text": "Is there anything else I can help you with?",
+      "event_data": {},
+      "sentiment_score": 0.4549469933976801
+    }
+  ],
+  "schema_version": 1,
+  "ingestion_timestamp": "2026-03-08T15:13:01.914392Z",
+  "gt_primary_intent": "PAYMENT_DUE_DATE",
+  "gt_authenticated": false,
+  "gt_tool_failure": false,
+  "gt_failure_reasons": [],
+  "gt_sentiment_overall": 0.2598234371548318,
+  "gt_sentiment_trajectory": "fluctuating",
+  "gt_turn_count": 3,
+  "tool_summary": []
+}

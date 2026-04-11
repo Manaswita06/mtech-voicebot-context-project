@@ -25,7 +25,7 @@ from tqdm import tqdm
 
 def load_transcripts(input_dir: str):
     p = Path(input_dir)
-    files = sorted(p.glob("*.json"))
+    files = sorted(p.glob("transcript_*.json"))
     for f in files:
         try:
             with open(f, "r", encoding="utf-8") as fh:

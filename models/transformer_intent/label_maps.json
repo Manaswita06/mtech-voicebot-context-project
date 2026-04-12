@@ -1,0 +1,16 @@
+{
+  "label2id": {
+    "ADDRESS_UPDATE": 0,
+    "CARD_REPLACEMENT": 1,
+    "PAYMENT_DUE_DATE": 2,
+    "PAYMENT_ISSUE": 3,
+    "TRANSACTION_DISPUTE": 4
+  },
+  "id2label": {
+    "0": "ADDRESS_UPDATE",
+    "1": "CARD_REPLACEMENT",
+    "2": "PAYMENT_DUE_DATE",
+    "3": "PAYMENT_ISSUE",
+    "4": "TRANSACTION_DISPUTE"
+  }
+}

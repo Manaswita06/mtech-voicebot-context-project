@@ -1,0 +1,9 @@
+{
+  "classes": [
+    "ADDRESS_UPDATE",
+    "CARD_REPLACEMENT",
+    "PAYMENT_DUE_DATE",
+    "PAYMENT_ISSUE",
+    "TRANSACTION_DISPUTE"
+  ]
+}

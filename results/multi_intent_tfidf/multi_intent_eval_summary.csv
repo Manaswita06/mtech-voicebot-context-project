@@ -1,0 +1,2 @@
+subset_accuracy,micro_f1,macro_f1,weighted_f1,jaccard_samples,label_count_mae,n_samples,n_labels
+0.967,0.971627675460428,0.9716615458313737,0.9716595216052168,0.9715,0.009,2000,5

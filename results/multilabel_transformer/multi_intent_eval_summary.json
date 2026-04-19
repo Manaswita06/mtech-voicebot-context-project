@@ -1,0 +1,80 @@
+{
+  "n_samples": 2000,
+  "n_labels": 5,
+  "classes": [
+    "ADDRESS_UPDATE",
+    "CARD_REPLACEMENT",
+    "PAYMENT_DUE_DATE",
+    "PAYMENT_ISSUE",
+    "TRANSACTION_DISPUTE"
+  ],
+  "subset_accuracy": 1.0,
+  "micro_precision": 1.0,
+  "micro_recall": 1.0,
+  "micro_f1": 1.0,
+  "macro_precision": 1.0,
+  "macro_recall": 1.0,
+  "macro_f1": 1.0,
+  "weighted_precision": 1.0,
+  "weighted_recall": 1.0,
+  "weighted_f1": 1.0,
+  "jaccard_samples": 1.0,
+  "average_jaccard_manual": 1.0,
+  "label_count_mae": 0.0,
+  "classification_report": {
+    "ADDRESS_UPDATE": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 403.0
+    },
+    "CARD_REPLACEMENT": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 400.0
+    },
+    "PAYMENT_DUE_DATE": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 409.0
+    },
+    "PAYMENT_ISSUE": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 389.0
+    },
+    "TRANSACTION_DISPUTE": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 399.0
+    },
+    "micro avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 2000.0
+    },
+    "macro avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 2000.0
+    },
+    "weighted avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 2000.0
+    },
+    "samples avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 2000.0
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "model_name": "distilbert-base-uncased",
+  "max_length": 256,
+  "epochs": 3,
+  "validation": {
+    "micro_precision": 1.0,
+    "micro_recall": 1.0,
+    "micro_f1": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "macro_f1": 1.0,
+    "subset_accuracy": 1.0
+  },
+  "test": {
+    "micro_precision": 1.0,
+    "micro_recall": 1.0,
+    "micro_f1": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "macro_f1": 1.0,
+    "subset_accuracy": 1.0
+  },
+  "classes": [
+    "ADDRESS_UPDATE",
+    "CARD_REPLACEMENT",
+    "PAYMENT_DUE_DATE",
+    "PAYMENT_ISSUE",
+    "TRANSACTION_DISPUTE"
+  ]
+}

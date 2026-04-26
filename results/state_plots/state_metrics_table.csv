@@ -1,0 +1,3 @@
+method,primary_intent_accuracy,secondary_intents_f1,secondary_intents_exact_match,multi_intent_accuracy,tool_failure_accuracy,ambiguity_mae,sentiment_mae,schema_valid_rate
+NLP,0.38666666666666666,0.2495049504950495,0.26,0.72,1.0,0.19311333333333333,0.0,1.0
+LLM,0.38666666666666666,0.2495049504950495,0.26,0.72,1.0,0.19311333333333333,0.0,1.0

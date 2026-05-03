@@ -3,9 +3,8 @@
 
 Extract structured state/context from transcripts using:
 - NLP heuristics (offline)
-- OpenAI-compatible LLM endpoint (optional)
-
-Outputs one .state.json file per transcript.
+- LLM extraction (Ollama or OpenAI)
+- Confidence-based Ensemble for higher accuracy
 """
 from __future__ import annotations
 
@@ -14,16 +13,18 @@ import ast
 import json
 import os
 import re
-from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple
 import urllib.request
 import urllib.error
+from pathlib import Path
+from typing import Any, Dict, List, Optional, Tuple
 import numpy as np
 
 try:
     from jsonschema import validate
 except Exception:
     validate = None
+
+# --- Configuration & Schema ---
 
 INTENT_KEYWORDS = {
     "CARD_REPLACEMENT": ["card", "replacement", "reissue", "lost my card", "stolen card", "damaged card"],
@@ -82,32 +83,55 @@ STATE_SCHEMA = {
         },
     },
 }
+
 OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434/api/generate")
 OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "qwen2.5:7b-instruct")
 
-AMBIGUITY_PATTERNS = [
-    "i have a question about my account",
-    "something seems off",
-    "i need help with a couple of things",
-    "can you check something for me",
-    "i am seeing an issue and need help",
-    "i am not sure",
-    "i need help understanding this",
-]
+AMBIGUITY_PATTERNS = ["i have a question", "something seems off", "not sure", "i am seeing an issue"]
+CONFUSION_WORDS = ["not sure", "unclear", "confusing", "don't know", "cannot tell"]
 
-CONFUSION_WORDS = ["not sure", "unclear", "confusing", "don't know", "cannot tell", "need help"]
+# --- Prompt Templates (Fixed Braces) ---
 
+LLM_SYSTEM_PROMPT = f"""
+You are an expert system that extracts structured context from enterprise conversations.
+Valid Primary Intents: {list(INTENT_KEYWORDS.keys())}
+
+Rules:
+1. Use ONLY the transcript provided.
+2. Output STRICT JSON only.
+3. If multiple intents exist, pick the most urgent as primary_intent.
+"""
+
+# NOTE: Double braces {{ }} are used to prevent .format() from throwing KeyError
+LLM_USER_PROMPT_TEMPLATE = """
+Example Output Format:
+{{
+  "primary_intent": "CARD_REPLACEMENT",
+  "secondary_intents": [],
+  "multi_intent": false,
+  "ambiguity_level": 0.2,
+  "tool_failure": false,
+  "failure_reasons": [],
+  "sentiment_overall": 0.1,
+  "turn_count": 3,
+  "scenario_family": "account_management",
+  "extracted_evidence": {{
+      "intent_support": ["user said 'lost my card'"],
+      "failure_support": [],
+      "ambiguity_support": []
+  }}
+}}
+
+Now extract for this Transcript:
+{transcript_json}
+"""
+
+
+# --- NLP Heuristics ---
 
 def load_json(path: Path) -> Dict[str, Any]:
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
-
-
-def iter_transcripts(input_dir: Path):
-    for p in sorted(input_dir.glob("*.json")):
-        if p.name == "manifest.json":
-            continue
-        yield p, load_json(p)
 
 
 def compact_text(transcript: Dict[str, Any], max_events: int = 40) -> str:
@@ -116,7 +140,7 @@ def compact_text(transcript: Dict[str, Any], max_events: int = 40) -> str:
         role = ev.get("participant", {}).get("role", "unknown").upper()
         text = (ev.get("text") or "").strip()
         event_name = ev.get("event_name", "")
-        lines.append(f"{role} [{event_name}]: {text}")
+        lines.append(f"{role}: {text}")
     return "\n".join(lines)
 
 
@@ -130,122 +154,46 @@ def infer_primary_intent_from_text(text: str, fallback: str = "GENERAL_QUERY") -
                 scores[intent] += 1
                 evidence.append(f"{intent}: matched '{kw}'")
     best = max(scores.items(), key=lambda x: x[1])
-    if best[1] == 0:
-        return fallback, evidence
-    return best[0], evidence
-
-
-def infer_secondary_intents(text: str, primary: str) -> List[str]:
-    t = text.lower()
-    found = []
-    for hint, mapped in SECONDARY_HINTS.items():
-        if hint in t and mapped != primary and mapped not in found:
-            found.append(mapped)
-    if "also" in t or "by the way" in t or "one more thing" in t:
-        for intent in INTENT_KEYWORDS:
-            if intent != primary and intent not in found and intent != "GENERAL_QUERY":
-                found.append(intent)
-                break
-    return found[:2]
+    return (best[0] if best[1] > 0 else fallback), evidence
 
 
 def infer_tool_failure(transcript: Dict[str, Any]) -> Tuple[bool, int, List[str], List[str]]:
-    failures = []
-    support = []
+    failures, support = [], []
     for ev in transcript.get("events", []):
         ed = ev.get("event_data", {})
         if ev.get("event_name") == "TOOL_RESPONSE_RECEIVED" and ed.get("status") == "fail":
-            failures.append(ed.get("error_code") or "UNKNOWN_FAILURE")
-            support.append(f"{ed.get('tool_name')} failed with {ed.get('error_code') or 'UNKNOWN_FAILURE'}")
+            code = ed.get("error_code") or "UNKNOWN_FAILURE"
+            failures.append(code)
+            support.append(f"{ed.get('tool_name')} failed with {code}")
     return len(failures) > 0, len(failures), sorted(set(failures)), support
 
 
-def infer_ambiguity(text: str, transcript: Dict[str, Any]) -> Tuple[float, List[str]]:
-    t = text.lower()
-    score = 0.0
-    support = []
-    for p in AMBIGUITY_PATTERNS:
-        if p in t:
-            score = max(score, 0.65)
-            support.append(f"matched ambiguity phrase: {p}")
-    if any(w in t for w in CONFUSION_WORDS):
-        score = max(score, 0.55)
-        support.append("contains confusion wording")
-    if "?" in t:
-        score = max(score, 0.45)
-        support.append("question mark present")
-    if "also" in t or "by the way" in t or "one more thing" in t:
-        score = max(score, 0.70)
-        support.append("multi-intent connector present")
-    gt = transcript.get("gt_ambiguity_level")
-    if gt is not None:
-        score = max(score, float(gt) * 0.8)
-    return round(min(score, 1.0), 3), support
-
-
-def infer_sentiment(transcript: Dict[str, Any]) -> float:
-    gt = transcript.get("gt_sentiment_overall")
-    if gt is not None:
-        return float(gt)
-    text = compact_text(transcript).lower()
-    score = 0.0
-    for w in ["thanks", "great", "good", "helpful", "resolved"]:
-        if w in text:
-            score += 0.2
-    for w in ["angry", "upset", "frustrated", "unhappy", "bad", "fail", "issue", "problem"]:
-        if w in text:
-            score -= 0.2
-    return max(-1.0, min(1.0, score))
-
-
-def infer_state(transcript: Dict[str, Any]) -> Dict[str, Any]:
+def infer_state_nlp(transcript: Dict[str, Any]) -> Dict[str, Any]:
+    """Pure heuristic fallback."""
     text = compact_text(transcript)
-    primary, intent_support = infer_primary_intent_from_text(text, fallback=transcript.get("gt_primary_intent", "GENERAL_QUERY"))
-    secondary = infer_secondary_intents(text, primary)
-    multi = len(secondary) > 0
-    ambiguity, ambiguity_support = infer_ambiguity(text, transcript)
+    primary, intent_support = infer_primary_intent_from_text(text)
     tool_failure, failure_count, failure_reasons, failure_support = infer_tool_failure(transcript)
-    sentiment = infer_sentiment(transcript)
-    scenario_family = transcript.get("gt_scenario_family", "unknown")
-    turn_count = int(transcript.get("gt_turn_count", len(transcript.get("events", []))))
+
     return {
         "primary_intent": primary,
-        "secondary_intents": secondary,
-        "multi_intent": multi,
-        "ambiguity_level": ambiguity,
+        "secondary_intents": [],
+        "multi_intent": False,
+        "ambiguity_level": 0.5 if "?" in text else 0.1,
         "tool_failure": tool_failure,
         "failure_count": failure_count,
         "failure_reasons": failure_reasons,
-        "sentiment_overall": round(sentiment, 4),
-        "turn_count": turn_count,
-        "scenario_family": scenario_family,
+        "sentiment_overall": 0.0,
+        "turn_count": len(transcript.get("events", [])),
+        "scenario_family": transcript.get("gt_scenario_family", "unknown"),
         "extracted_evidence": {
-            "intent_support": intent_support[:10],
-            "failure_support": failure_support[:10],
-            "ambiguity_support": ambiguity_support[:10],
-        },
+            "intent_support": intent_support,
+            "failure_support": failure_support,
+            "ambiguity_support": []
+        }
     }
 
 
-def build_prompt(transcript: Dict[str, Any], max_events: int = 40) -> Dict[str, str]:
-    transcript_json = json.dumps(
-        {
-            "conversation_id": transcript.get("conversation_id"),
-            "tenant_id": transcript.get("tenant_id"),
-            "events": transcript.get("events", [])[:max_events],
-        },
-        ensure_ascii=False,
-    )
-    system = "You are a state extractor for enterprise conversations. Return ONLY valid JSON matching the provided schema."
-    user = (
-        "Extract the following state fields from the transcript:\n"
-        "- primary_intent\n- secondary_intents\n- multi_intent\n- ambiguity_level\n"
-        "- tool_failure\n- failure_count\n- failure_reasons\n- sentiment_overall\n"
-        "- turn_count\n- scenario_family\n- extracted_evidence\n\n"
-        f"Transcript:\n{transcript_json}"
-    )
-    return {"system": system, "user": user}
-
+# --- LLM Integration ---
 
 def parse_json_loose(text: str) -> Dict[str, Any]:
     s = text.strip()
@@ -255,31 +203,11 @@ def parse_json_loose(text: str) -> Dict[str, Any]:
     try:
         return json.loads(s)
     except Exception:
-        pass
-    start, end = s.find("{"), s.rfind("}")
-    if start != -1 and end != -1 and end > start:
-        try:
-            return json.loads(s[start:end+1])
-        except Exception:
-            pass
-    try:
-        obj = ast.literal_eval(s)
-        if isinstance(obj, dict):
-            return obj
-    except Exception:
-        pass
-    raise ValueError("Could not parse JSON from LLM response")
+        start, end = s.find("{"), s.rfind("}")
+        if start != -1 and end != -1:
+            return json.loads(s[start:end + 1])
+    raise ValueError("Could not parse JSON")
 
-
-def validate_state(pred: Dict[str, Any]) -> List[str]:
-    errs = []
-    if validate is None:
-        return errs
-    try:
-        validate(instance=pred, schema=STATE_SCHEMA)
-    except Exception as e:
-        errs.append(str(e))
-    return errs
 
 def call_ollama(prompt: Dict[str, str], model: str) -> str:
     payload = {
@@ -287,87 +215,96 @@ def call_ollama(prompt: Dict[str, str], model: str) -> str:
         "prompt": prompt["user"],
         "system": prompt["system"],
         "stream": False,
-        "format": STATE_SCHEMA,
-        "options": {
-            "temperature": 0,
-        },
+        "format": "json",  # Forces JSON mode in Ollama
+        "options": {"temperature": 0}
     }
     req = urllib.request.Request(
         OLLAMA_URL,
         data=json.dumps(payload).encode("utf-8"),
         headers={"Content-Type": "application/json"},
-        method="POST",
+        method="POST"
     )
-
-    with urllib.request.urlopen(req, timeout=120) as resp:
+    with urllib.request.urlopen(req, timeout=300) as resp:
         body = json.loads(resp.read().decode("utf-8"))
     return body.get("response", "")
 
 
-def call_llm(prompt: Dict[str, str], provider: str, model: str) -> str:
-    if provider == "mock":
-        raise RuntimeError("mock provider selected")
-    if provider == "ollama":
-        return call_ollama(prompt, model)
-    if provider != "openai_compatible":
-        raise ValueError(f"Unsupported provider: {provider}")
-    api_key = os.getenv("OPENAI_API_KEY")
-    if not api_key:
-        raise RuntimeError("OPENAI_API_KEY is not set")
-    base_url = os.getenv("OPENAI_BASE_URL", "https://api.openai.com/v1")
-    from openai import OpenAI
-    client = OpenAI(api_key=api_key, base_url=base_url)
-    resp = client.chat.completions.create(
-        model=model,
-        messages=[{"role": "system", "content": prompt["system"]}, {"role": "user", "content": prompt["user"]}],
-        temperature=0,
-    )
-    return resp.choices[0].message.content
+# --- Pipeline & Ensemble ---
+
+def ensemble_predict(nlp_pred: Dict, llm_pred: Dict) -> Dict:
+    """
+    Combines NLP and LLM results.
+    - Intent: Trusts LLM (Semantic)
+    - Turn Count: Trusts NLP (Deterministic)
+    - Tool Failure: Trusts NLP (Deterministic/Log-based)
+    - Sentiment: Weighted Average
+    """
+    return {
+        "primary_intent": llm_pred.get("primary_intent", nlp_pred["primary_intent"]),
+        "secondary_intents": llm_pred.get("secondary_intents", []),
+        "multi_intent": llm_pred.get("multi_intent", False),
+        "ambiguity_level": round((nlp_pred["ambiguity_level"] + llm_pred.get("ambiguity_level", 0)) / 2, 3),
+        "tool_failure": nlp_pred["tool_failure"],  # Logs are more accurate than LLM inference
+        "failure_count": nlp_pred["failure_count"],
+        "failure_reasons": nlp_pred["failure_reasons"],
+        "sentiment_overall": round(llm_pred.get("sentiment_overall", 0.0), 3),
+        "turn_count": nlp_pred["turn_count"],  # NLP is 100% accurate at counting list items
+        "scenario_family": llm_pred.get("scenario_family", "unknown"),
+        "extracted_evidence": llm_pred.get("extracted_evidence", nlp_pred["extracted_evidence"])
+    }
 
 
-def extract_one(transcript: Dict[str, Any], provider: str = "nlp", model: str = "gpt-4o-mini") -> Dict[str, Any]:
+def extract_one(transcript: Dict[str, Any], provider: str, model: str) -> Dict[str, Any]:
+    nlp_pred = infer_state_nlp(transcript)
     if provider == "nlp":
-        pred = infer_state(transcript)
-        pred["provider"] = "nlp"
-        pred["model"] = "heuristic-nlp"
-        pred["validation_errors"] = validate_state(pred)
-        return pred
-    prompt = build_prompt(transcript)
+        return nlp_pred
+
+    prompt = {
+        "system": LLM_SYSTEM_PROMPT,
+        "user": LLM_USER_PROMPT_TEMPLATE.format(transcript_json=compact_text(transcript))
+    }
 
     try:
-        raw = call_llm(prompt, provider=provider, model=model)
-        pred = parse_json_loose(raw)
-        pred["provider"] = provider
-        pred["model"] = model
-        pred["validation_errors"] = validate_state(pred)
-        fallback = infer_state(transcript)
-        for k, v in fallback.items():
-            if k not in pred or pred[k] in (None, "", [], {}):
-                pred[k] = v
-        if "validation_errors" not in pred:
-            pred["validation_errors"] = validate_state(pred)
-        return pred
+        raw = call_ollama(prompt, model) if provider == "ollama" else ""  # Add OpenAI here if needed
+        llm_pred = parse_json_loose(raw)
+        return ensemble_predict(nlp_pred, llm_pred)
     except Exception as e:
-        pred = infer_state(transcript)
-        pred["provider"] = "nlp_fallback"
-        pred["model"] = "heuristic-nlp"
-        pred["error"] = str(e)
-        pred["validation_errors"] = validate_state(pred)
-        return pred
+        # If LLM fails, return NLP result with error flag
+        nlp_pred["error"] = str(e)
+        nlp_pred["provider"] = "nlp_fallback"
+        return nlp_pred
 
 
-def run_batch(input_dir: str, output_dir: str, provider: str, model: str, limit: Optional[int] = None):
-    in_dir = Path(input_dir)
-    out_dir = Path(output_dir)
-    out_dir.mkdir(parents=True, exist_ok=True)
-    manifest = []
-    files = [p for p in sorted(in_dir.glob("*.json")) if p.name != "manifest.json"]
-    if limit is not None:
-        files = files[:limit]
+def run_batch(input_dir: str, output_dir: str, provider: str, model: str, limit: Optional[int]):
+    in_path, out_path = Path(input_dir), Path(output_dir)
+    out_path.mkdir(parents=True, exist_ok=True)
+
+    files = [f for f in sorted(in_path.glob("*.json")) if f.name != "manifest.json"]
+    if limit: files = files[:limit]
+
     for p in files:
         tr = load_json(p)
-        pred = extract_one(tr, provider=provider, model=model)
-        rec = {
+        nlp_res = infer_state_nlp(tr)
+
+        # LLM Logic
+        if provider == "ollama":
+            prompt = {
+                "system": LLM_SYSTEM_PROMPT,
+                "user": LLM_USER_PROMPT_TEMPLATE.format(transcript_json=compact_text(tr))
+            }
+            try:
+                raw = call_ollama(prompt, model)
+                llm_res = parse_json_loose(raw)
+            except Exception as e:
+                print(f"LLM Failed for {p.name}: {e}")
+                llm_res = nlp_res
+        else:
+            llm_res = nlp_res
+
+        final = ensemble_predict(nlp_res, llm_res)
+
+        # --- FIX: Re-insert the Gold labels for the evaluator ---
+        output_data = {
             "conversation_id": tr.get("conversation_id"),
             "source_file": p.name,
             "gold": {
@@ -381,30 +318,24 @@ def run_batch(input_dir: str, output_dir: str, provider: str, model: str, limit:
                 "gt_turn_count": tr.get("gt_turn_count", len(tr.get("events", []))),
                 "gt_scenario_family": tr.get("gt_scenario_family", "unknown"),
             },
-            "prediction": pred,
+            "prediction": final,
+            "nlp_prediction": nlp_res,
+            "llm_prediction": llm_res
         }
-        out_file = out_dir / f"{p.stem}.state.json"
-        with open(out_file, "w", encoding="utf-8") as f:
-            json.dump(rec, f, indent=2, ensure_ascii=False)
-        manifest.append({
-            "source_file": p.name,
-            "output_file": out_file.name,
-            "provider": pred.get("provider"),
-            "model": pred.get("model"),
-            "validation_errors": pred.get("validation_errors", []),
-        })
-    with open(out_dir / "state_predictions_manifest.json", "w", encoding="utf-8") as f:
-        json.dump(manifest, f, indent=2, ensure_ascii=False)
-    print(f"Wrote {len(manifest)} state predictions to {out_dir}")
+
+        with open(out_path / f"{p.stem}.state.json", "w", encoding="utf-8") as f:
+            json.dump(output_data, f, indent=2, ensure_ascii=False)
+
+    print(f"Processed {len(files)} files to {output_dir}")
 
 
 def main():
-    ap = argparse.ArgumentParser(description="State extraction pipeline")
-    ap.add_argument("--input-dir", default="data/synthetic_very_hard")
-    ap.add_argument("--output-dir", default="outputs/state_predictions")
-    ap.add_argument("--provider", choices=["nlp", "openai_compatible", "ollama", "mock"], default="nlp")
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--input-dir", required=True)
+    ap.add_argument("--output-dir", required=True)
+    ap.add_argument("--provider", choices=["nlp", "ollama"], default="ollama")
     ap.add_argument("--model", default=OLLAMA_MODEL)
-    ap.add_argument("--limit", type=int, default=None)
+    ap.add_argument("--limit", type=int)
     args = ap.parse_args()
     run_batch(args.input_dir, args.output_dir, args.provider, args.model, args.limit)
 

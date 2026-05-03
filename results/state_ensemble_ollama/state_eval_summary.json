@@ -1,0 +1,33 @@
+{
+  "n_samples": 300,
+  "provider": null,
+  "model": null,
+  "primary_intent": {
+    "accuracy": 0.8133333333333334,
+    "macro_precision": 0.7061552390674731,
+    "macro_recall": 0.6677595827206743,
+    "macro_f1": 0.6742261583341005
+  },
+  "secondary_intents": {
+    "precision": 0.4439252336448598,
+    "recall": 0.5792682926829268,
+    "f1": 0.5026455026455026,
+    "exact_match": 0.58
+  },
+  "multi_intent_accuracy": 0.8233333333333334,
+  "tool_failure_accuracy": 1.0,
+  "ambiguity": {
+    "mae": 0.15411000000000002,
+    "rmse": 0.20162102238275323,
+    "pearson": 0.07829476306418873
+  },
+  "sentiment_overall": {
+    "mae": 0.3939909999999999,
+    "rmse": 0.48974969998289264,
+    "pearson": -0.025856494631260375
+  },
+  "turn_count_mae": 0.0,
+  "failure_count_mae": 0.0,
+  "schema_valid_rate": 1.0,
+  "average_jaccard_secondary": 0.6111111111111112
+}

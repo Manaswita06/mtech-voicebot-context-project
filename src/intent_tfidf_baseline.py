@@ -25,6 +25,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 import joblib
+import json
 
 def load_dataset(csv_path: str, text_col: str = "conversation_text", label_col: str = "gt_primary_intent"):
     df = pd.read_csv(csv_path)
@@ -33,6 +34,7 @@ def load_dataset(csv_path: str, text_col: str = "conversation_text", label_col: 
     df[text_col] = df[text_col].astype(str)
     df[label_col] = df[label_col].astype(str)
     return df
+
 
 def train_eval(df: pd.DataFrame, text_col: str, label_col: str, output_dir: str, test_size: float, random_state: int):
     X = df[text_col].values
@@ -46,51 +48,71 @@ def train_eval(df: pd.DataFrame, text_col: str, label_col: str, output_dir: str,
     print(f"Train size: {len(X_train)}, Test size: {len(X_test)}")
 
     # TF-IDF vectorizer
-    vect = TfidfVectorizer(max_features=20000, ngram_range=(1,2), analyzer="word")
+    vect = TfidfVectorizer(max_features=20000, ngram_range=(1, 2), analyzer="word")
     X_train_t = vect.fit_transform(X_train)
     X_test_t = vect.transform(X_test)
 
-    # classifier (you can tune C or use class_weight='balanced' if needed)
+    # classifier
     clf = LogisticRegression(max_iter=1000, solver="lbfgs", multi_class="auto")
     clf.fit(X_train_t, y_train)
 
     # predictions
     y_pred = clf.predict(X_test_t)
-    y_proba = None
-    if hasattr(clf, "predict_proba"):
-        y_proba = clf.predict_proba(X_test_t)
+    y_proba = clf.predict_proba(X_test_t) if hasattr(clf, "predict_proba") else None
 
+    # --- METRICS CALCULATION ---
     acc = accuracy_score(y_test, y_pred)
+
+    # Get report as a string for printing
+    report_str = classification_report(y_test, y_pred)
+    # Get report as a dictionary for saving
+    report_dict = classification_report(y_test, y_pred, output_dict=True)
+
+    # Add overall accuracy to the dictionary for the JSON file
+    report_dict["accuracy_overall"] = acc
+
     print(f"\nTest accuracy: {acc:.4f}\n")
     print("Classification report:")
-    print(classification_report(y_test, y_pred))
-    print("Confusion matrix (rows=true, cols=pred):")
-    print(confusion_matrix(y_test, y_pred))
+    print(report_str)
 
-    # prepare evaluation dataframe
+    # --- PREPARE EVAL DATA ---
     eval_df = pd.DataFrame({
         "text": X_test,
         "label": y_test,
         "pred": y_pred
     })
-    # attach per-class probabilities if available
     if y_proba is not None:
         labels = clf.classes_
         for i, lab in enumerate(labels):
             eval_df[f"prob_{lab}"] = y_proba[:, i]
 
-    # save artifacts
+    # --- SAVE ARTIFACTS ---
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
+
+    # 1. Save Models
     joblib.dump(vect, out / "tfidf_vectorizer.joblib")
     joblib.dump(clf, out / "tfidf_logreg.joblib")
+
+    # 2. Save Prediction CSV
     eval_df.to_csv(out / "eval_predictions.csv", index=False)
 
-    print(f"\nSaved artifacts to {out.resolve()}")
+    # 3. Save Metrics as JSON
+    with open(out / "metrics.json", "w", encoding="utf-8") as f:
+        json.dump(report_dict, f, indent=4)
+
+    # 4. Save Metrics as CSV (Classification Report)
+    # Transposing makes it look like the standard report table
+    metrics_df = pd.DataFrame(report_dict).transpose()
+    metrics_df.to_csv(out / "metrics.csv", index=True)
+
+    print(f"\nSaved artifacts, metrics.json, and metrics.csv to {out.resolve()}")
+
     return {
         "vectorizer_path": str((out / "tfidf_vectorizer.joblib").resolve()),
         "model_path": str((out / "tfidf_logreg.joblib").resolve()),
-        "eval_csv": str((out / "eval_predictions.csv").resolve())
+        "metrics_json": str((out / "metrics.json").resolve()),
+        "metrics_csv": str((out / "metrics.csv").resolve())
     }
 
 def main():

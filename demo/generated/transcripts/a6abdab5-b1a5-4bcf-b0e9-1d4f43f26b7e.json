@@ -1,0 +1,70 @@
+{
+  "conversation_id": "a6abdab5-b1a5-4bcf-b0e9-1d4f43f26b7e",
+  "customer_id": "CUST_3407",
+  "events": [
+    {
+      "participant": {
+        "role": "customer"
+      },
+      "text": "I lost my card.",
+      "timestamp": "2026-06-28T05:31:45.870957"
+    },
+    {
+      "participant": {
+        "role": "assistant"
+      },
+      "text": "Sure. Let me verify the details.",
+      "timestamp": "2026-06-28T05:31:45.870957"
+    },
+    {
+      "participant": {
+        "role": "assistant"
+      },
+      "text": "When did you notice it?",
+      "timestamp": "2026-06-28T05:31:45.870957"
+    },
+    {
+      "participant": {
+        "role": "customer"
+      },
+      "text": "I noticed this morning.",
+      "timestamp": "2026-06-28T05:31:45.870957"
+    },
+    {
+      "event_name": "TOOL_REQUESTED",
+      "event_data": {
+        "tool_name": "CARD_LOOKUP"
+      },
+      "timestamp": "2026-06-28T05:31:45.870957"
+    },
+    {
+      "event_name": "TOOL_RESPONSE_RECEIVED",
+      "event_data": {
+        "tool_name": "CARD_LOOKUP",
+        "status": "success",
+        "latency": 0.316,
+        "error_code": null
+      },
+      "timestamp": "2026-06-28T05:31:46.020830"
+    },
+    {
+      "participant": {
+        "role": "assistant"
+      },
+      "text": "The requested information has been retrieved successfully.",
+      "timestamp": "2026-06-28T05:31:46.020830"
+    },
+    {
+      "participant": {
+        "role": "customer"
+      },
+      "text": "Thank you.",
+      "timestamp": "2026-06-28T05:31:46.020830"
+    }
+  ],
+  "gt_primary_intent": "CARD_REPLACEMENT",
+  "gt_turn_count": 8,
+  "gt_tool_failure": false,
+  "gt_failure_count": 0,
+  "gt_failure_reasons": []
+}

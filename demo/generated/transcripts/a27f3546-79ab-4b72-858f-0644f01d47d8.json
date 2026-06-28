@@ -1,0 +1,52 @@
+{
+  "conversation_id": "a27f3546-79ab-4b72-858f-0644f01d47d8",
+  "customer_id": "CUST_7649",
+  "events": [
+    {
+      "participant": {
+        "role": "customer"
+      },
+      "text": "I have a general enquiry.",
+      "timestamp": "2026-06-28T17:54:04.005389"
+    },
+    {
+      "participant": {
+        "role": "assistant"
+      },
+      "text": "Let me look into it.",
+      "timestamp": "2026-06-28T17:54:04.005389"
+    },
+    {
+      "participant": {
+        "role": "assistant"
+      },
+      "text": "Is there a specific problem you're facing?",
+      "timestamp": "2026-06-28T17:54:04.005389"
+    },
+    {
+      "participant": {
+        "role": "customer"
+      },
+      "text": "I'm not completely sure.",
+      "timestamp": "2026-06-28T17:54:04.005389"
+    },
+    {
+      "participant": {
+        "role": "customer"
+      },
+      "text": "Thanks.",
+      "timestamp": "2026-06-28T17:54:04.005389"
+    }
+  ],
+  "gt_primary_intent": "GENERAL_QUERY",
+  "gt_secondary_intents": [],
+  "gt_multi_intent": false,
+  "gt_turn_count": 5,
+  "gt_tool_failure": false,
+  "gt_failure_count": 0,
+  "gt_failure_reasons": [],
+  "gt_sentiment_overall": 0.0,
+  "gt_ambiguity_level": 0.0,
+  "gt_followup_required": false,
+  "gt_scenario_family": "GENERAL_QUERY"
+}

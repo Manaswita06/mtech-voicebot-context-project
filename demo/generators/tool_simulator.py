@@ -29,7 +29,17 @@ class ToolSimulator:
         "AUTHORIZATION_FAILED",
     ]
 
-    def execute(self, tool_name: str) -> Dict:
+    def execute(
+
+            self,
+
+            tool_name,
+
+            tool_failure=None,
+
+            failure_reason=None
+
+    ):
 
         latency = round(random.uniform(0.2, 2.0), 3)
 
@@ -53,4 +63,6 @@ class ToolSimulator:
             "status": "fail",
             "latency": latency,
             "error_code": random.choice(self.FAILURE_CODES),
+            "tool_failure": tool_failure,
+            "failure_reason": failure_reason,
         }

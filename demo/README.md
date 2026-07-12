@@ -140,3 +140,69 @@ generated/states/
 
 conversation_001.state.json
 ```
+
+Run for extracting states:
+```aiignore
+python -m demo.extraction.extractor_pipeline
+```
+
+New demo folder structure
+
+```aiignore
+demo/
+│
+├── run_demo.py                # Main entry point
+│
+├── context_memory.py          # Stores & retrieves previous conversation context
+│
+├── context_formatter.py       # Formats previous state for prompt/context
+│
+├── response_generator.py      # Generates context-aware bot response
+│
+├── scenario_selector.py       # Picks demo scenarios
+│
+├── printer.py                 # Pretty console output
+│
+├── sample_inputs/
+│   ├── payment_issue.json
+│   ├── payment_followup.json
+│   ├── card_lost.json
+│   └── dispute.json
+│
+└── README.md
+```
+
+Demo flow:
+
+```aiignore
+Conversation 1
+        │
+        ▼
+State Extraction Pipeline
+        │
+        ▼
+State JSON
+        │
+        ▼
+ContextMemory.save()
+        │
+──────── Time Passes ────────
+        │
+Conversation 2
+        │
+        ▼
+ContextMemory.load()
+        │
+        ▼
+Previous Context
+        │
+        ▼
+LLM Response Generator
+```
+
+"Unlike the state extraction module, which processes one conversation at a time, the Context Memory persists the extracted state across customer interactions. When the same customer contacts the system again, the previous conversational context can be retrieved and reused, enabling context-aware responses."
+
+- context_memory.py: simply stores and retrieves the structured state produced by your existing pipeline.
+- context_formatter.py: Its only responsibility is to convert the structured state stored in ContextMemory into a concise natural-language summary that can be supplied to the LLM (or displayed during the demo).
+- response_generator.py: Its job is simply to generate a context-aware response using the current transcript and the formatted context from ContextFormatter.
+- scenario_selector.py: This file simply selects transcripts from your existing dataset for the demo.

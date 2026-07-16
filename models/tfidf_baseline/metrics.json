@@ -1,0 +1,46 @@
+{
+    "ADDRESS_UPDATE": {
+        "precision": 0.9702233250620348,
+        "recall": 0.9702233250620348,
+        "f1-score": 0.9702233250620348,
+        "support": 403.0
+    },
+    "CARD_REPLACEMENT": {
+        "precision": 0.9872773536895675,
+        "recall": 0.97,
+        "f1-score": 0.978562421185372,
+        "support": 400.0
+    },
+    "PAYMENT_DUE_DATE": {
+        "precision": 0.9660194174757282,
+        "recall": 0.9731051344743277,
+        "f1-score": 0.9695493300852619,
+        "support": 409.0
+    },
+    "PAYMENT_ISSUE": {
+        "precision": 0.9717948717948718,
+        "recall": 0.974293059125964,
+        "f1-score": 0.9730423620025674,
+        "support": 389.0
+    },
+    "TRANSACTION_DISPUTE": {
+        "precision": 0.9751243781094527,
+        "recall": 0.9824561403508771,
+        "f1-score": 0.978776529338327,
+        "support": 399.0
+    },
+    "accuracy": 0.974,
+    "macro avg": {
+        "precision": 0.9740878692263311,
+        "recall": 0.9740155318026407,
+        "f1-score": 0.9740307935347126,
+        "support": 2000.0
+    },
+    "weighted avg": {
+        "precision": 0.9740578576086384,
+        "recall": 0.974,
+        "f1-score": 0.974007979252006,
+        "support": 2000.0
+    },
+    "accuracy_overall": 0.974
+}

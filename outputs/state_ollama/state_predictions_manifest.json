@@ -1,0 +1,2102 @@
+[
+  {
+    "source_file": "transcript_00000.json",
+    "output_file": "transcript_00000.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00001.json",
+    "output_file": "transcript_00001.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00002.json",
+    "output_file": "transcript_00002.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00003.json",
+    "output_file": "transcript_00003.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00004.json",
+    "output_file": "transcript_00004.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00005.json",
+    "output_file": "transcript_00005.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00006.json",
+    "output_file": "transcript_00006.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00007.json",
+    "output_file": "transcript_00007.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00008.json",
+    "output_file": "transcript_00008.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00009.json",
+    "output_file": "transcript_00009.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00010.json",
+    "output_file": "transcript_00010.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00011.json",
+    "output_file": "transcript_00011.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00012.json",
+    "output_file": "transcript_00012.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00013.json",
+    "output_file": "transcript_00013.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00014.json",
+    "output_file": "transcript_00014.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00015.json",
+    "output_file": "transcript_00015.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00016.json",
+    "output_file": "transcript_00016.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00017.json",
+    "output_file": "transcript_00017.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00018.json",
+    "output_file": "transcript_00018.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00019.json",
+    "output_file": "transcript_00019.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00020.json",
+    "output_file": "transcript_00020.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00021.json",
+    "output_file": "transcript_00021.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00022.json",
+    "output_file": "transcript_00022.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00023.json",
+    "output_file": "transcript_00023.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00024.json",
+    "output_file": "transcript_00024.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00025.json",
+    "output_file": "transcript_00025.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00026.json",
+    "output_file": "transcript_00026.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00027.json",
+    "output_file": "transcript_00027.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00028.json",
+    "output_file": "transcript_00028.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00029.json",
+    "output_file": "transcript_00029.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00030.json",
+    "output_file": "transcript_00030.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00031.json",
+    "output_file": "transcript_00031.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00032.json",
+    "output_file": "transcript_00032.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00033.json",
+    "output_file": "transcript_00033.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00034.json",
+    "output_file": "transcript_00034.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00035.json",
+    "output_file": "transcript_00035.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00036.json",
+    "output_file": "transcript_00036.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00037.json",
+    "output_file": "transcript_00037.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00038.json",
+    "output_file": "transcript_00038.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00039.json",
+    "output_file": "transcript_00039.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00040.json",
+    "output_file": "transcript_00040.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00041.json",
+    "output_file": "transcript_00041.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00042.json",
+    "output_file": "transcript_00042.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00043.json",
+    "output_file": "transcript_00043.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00044.json",
+    "output_file": "transcript_00044.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00045.json",
+    "output_file": "transcript_00045.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00046.json",
+    "output_file": "transcript_00046.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00047.json",
+    "output_file": "transcript_00047.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00048.json",
+    "output_file": "transcript_00048.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00049.json",
+    "output_file": "transcript_00049.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00050.json",
+    "output_file": "transcript_00050.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00051.json",
+    "output_file": "transcript_00051.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00052.json",
+    "output_file": "transcript_00052.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00053.json",
+    "output_file": "transcript_00053.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00054.json",
+    "output_file": "transcript_00054.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00055.json",
+    "output_file": "transcript_00055.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00056.json",
+    "output_file": "transcript_00056.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00057.json",
+    "output_file": "transcript_00057.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00058.json",
+    "output_file": "transcript_00058.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00059.json",
+    "output_file": "transcript_00059.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00060.json",
+    "output_file": "transcript_00060.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00061.json",
+    "output_file": "transcript_00061.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00062.json",
+    "output_file": "transcript_00062.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00063.json",
+    "output_file": "transcript_00063.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00064.json",
+    "output_file": "transcript_00064.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00065.json",
+    "output_file": "transcript_00065.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00066.json",
+    "output_file": "transcript_00066.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00067.json",
+    "output_file": "transcript_00067.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00068.json",
+    "output_file": "transcript_00068.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00069.json",
+    "output_file": "transcript_00069.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00070.json",
+    "output_file": "transcript_00070.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00071.json",
+    "output_file": "transcript_00071.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00072.json",
+    "output_file": "transcript_00072.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00073.json",
+    "output_file": "transcript_00073.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00074.json",
+    "output_file": "transcript_00074.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00075.json",
+    "output_file": "transcript_00075.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00076.json",
+    "output_file": "transcript_00076.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00077.json",
+    "output_file": "transcript_00077.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00078.json",
+    "output_file": "transcript_00078.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00079.json",
+    "output_file": "transcript_00079.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00080.json",
+    "output_file": "transcript_00080.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00081.json",
+    "output_file": "transcript_00081.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00082.json",
+    "output_file": "transcript_00082.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00083.json",
+    "output_file": "transcript_00083.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00084.json",
+    "output_file": "transcript_00084.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00085.json",
+    "output_file": "transcript_00085.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00086.json",
+    "output_file": "transcript_00086.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00087.json",
+    "output_file": "transcript_00087.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00088.json",
+    "output_file": "transcript_00088.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00089.json",
+    "output_file": "transcript_00089.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00090.json",
+    "output_file": "transcript_00090.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00091.json",
+    "output_file": "transcript_00091.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00092.json",
+    "output_file": "transcript_00092.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00093.json",
+    "output_file": "transcript_00093.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00094.json",
+    "output_file": "transcript_00094.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00095.json",
+    "output_file": "transcript_00095.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00096.json",
+    "output_file": "transcript_00096.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00097.json",
+    "output_file": "transcript_00097.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00098.json",
+    "output_file": "transcript_00098.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00099.json",
+    "output_file": "transcript_00099.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00100.json",
+    "output_file": "transcript_00100.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00101.json",
+    "output_file": "transcript_00101.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00102.json",
+    "output_file": "transcript_00102.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00103.json",
+    "output_file": "transcript_00103.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00104.json",
+    "output_file": "transcript_00104.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00105.json",
+    "output_file": "transcript_00105.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00106.json",
+    "output_file": "transcript_00106.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00107.json",
+    "output_file": "transcript_00107.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00108.json",
+    "output_file": "transcript_00108.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00109.json",
+    "output_file": "transcript_00109.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00110.json",
+    "output_file": "transcript_00110.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00111.json",
+    "output_file": "transcript_00111.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00112.json",
+    "output_file": "transcript_00112.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00113.json",
+    "output_file": "transcript_00113.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00114.json",
+    "output_file": "transcript_00114.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00115.json",
+    "output_file": "transcript_00115.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00116.json",
+    "output_file": "transcript_00116.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00117.json",
+    "output_file": "transcript_00117.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00118.json",
+    "output_file": "transcript_00118.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00119.json",
+    "output_file": "transcript_00119.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00120.json",
+    "output_file": "transcript_00120.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00121.json",
+    "output_file": "transcript_00121.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00122.json",
+    "output_file": "transcript_00122.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00123.json",
+    "output_file": "transcript_00123.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00124.json",
+    "output_file": "transcript_00124.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00125.json",
+    "output_file": "transcript_00125.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00126.json",
+    "output_file": "transcript_00126.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00127.json",
+    "output_file": "transcript_00127.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00128.json",
+    "output_file": "transcript_00128.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00129.json",
+    "output_file": "transcript_00129.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00130.json",
+    "output_file": "transcript_00130.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00131.json",
+    "output_file": "transcript_00131.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00132.json",
+    "output_file": "transcript_00132.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00133.json",
+    "output_file": "transcript_00133.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00134.json",
+    "output_file": "transcript_00134.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00135.json",
+    "output_file": "transcript_00135.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00136.json",
+    "output_file": "transcript_00136.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00137.json",
+    "output_file": "transcript_00137.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00138.json",
+    "output_file": "transcript_00138.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00139.json",
+    "output_file": "transcript_00139.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00140.json",
+    "output_file": "transcript_00140.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00141.json",
+    "output_file": "transcript_00141.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00142.json",
+    "output_file": "transcript_00142.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00143.json",
+    "output_file": "transcript_00143.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00144.json",
+    "output_file": "transcript_00144.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00145.json",
+    "output_file": "transcript_00145.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00146.json",
+    "output_file": "transcript_00146.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00147.json",
+    "output_file": "transcript_00147.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00148.json",
+    "output_file": "transcript_00148.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00149.json",
+    "output_file": "transcript_00149.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00150.json",
+    "output_file": "transcript_00150.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00151.json",
+    "output_file": "transcript_00151.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00152.json",
+    "output_file": "transcript_00152.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00153.json",
+    "output_file": "transcript_00153.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00154.json",
+    "output_file": "transcript_00154.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00155.json",
+    "output_file": "transcript_00155.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00156.json",
+    "output_file": "transcript_00156.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00157.json",
+    "output_file": "transcript_00157.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00158.json",
+    "output_file": "transcript_00158.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00159.json",
+    "output_file": "transcript_00159.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00160.json",
+    "output_file": "transcript_00160.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00161.json",
+    "output_file": "transcript_00161.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00162.json",
+    "output_file": "transcript_00162.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00163.json",
+    "output_file": "transcript_00163.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00164.json",
+    "output_file": "transcript_00164.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00165.json",
+    "output_file": "transcript_00165.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00166.json",
+    "output_file": "transcript_00166.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00167.json",
+    "output_file": "transcript_00167.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00168.json",
+    "output_file": "transcript_00168.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00169.json",
+    "output_file": "transcript_00169.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00170.json",
+    "output_file": "transcript_00170.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00171.json",
+    "output_file": "transcript_00171.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00172.json",
+    "output_file": "transcript_00172.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00173.json",
+    "output_file": "transcript_00173.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00174.json",
+    "output_file": "transcript_00174.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00175.json",
+    "output_file": "transcript_00175.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00176.json",
+    "output_file": "transcript_00176.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00177.json",
+    "output_file": "transcript_00177.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00178.json",
+    "output_file": "transcript_00178.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00179.json",
+    "output_file": "transcript_00179.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00180.json",
+    "output_file": "transcript_00180.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00181.json",
+    "output_file": "transcript_00181.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00182.json",
+    "output_file": "transcript_00182.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00183.json",
+    "output_file": "transcript_00183.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00184.json",
+    "output_file": "transcript_00184.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00185.json",
+    "output_file": "transcript_00185.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00186.json",
+    "output_file": "transcript_00186.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00187.json",
+    "output_file": "transcript_00187.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00188.json",
+    "output_file": "transcript_00188.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00189.json",
+    "output_file": "transcript_00189.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00190.json",
+    "output_file": "transcript_00190.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00191.json",
+    "output_file": "transcript_00191.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00192.json",
+    "output_file": "transcript_00192.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00193.json",
+    "output_file": "transcript_00193.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00194.json",
+    "output_file": "transcript_00194.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00195.json",
+    "output_file": "transcript_00195.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00196.json",
+    "output_file": "transcript_00196.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00197.json",
+    "output_file": "transcript_00197.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00198.json",
+    "output_file": "transcript_00198.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00199.json",
+    "output_file": "transcript_00199.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00200.json",
+    "output_file": "transcript_00200.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00201.json",
+    "output_file": "transcript_00201.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00202.json",
+    "output_file": "transcript_00202.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00203.json",
+    "output_file": "transcript_00203.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00204.json",
+    "output_file": "transcript_00204.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00205.json",
+    "output_file": "transcript_00205.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00206.json",
+    "output_file": "transcript_00206.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00207.json",
+    "output_file": "transcript_00207.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00208.json",
+    "output_file": "transcript_00208.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00209.json",
+    "output_file": "transcript_00209.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00210.json",
+    "output_file": "transcript_00210.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00211.json",
+    "output_file": "transcript_00211.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00212.json",
+    "output_file": "transcript_00212.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00213.json",
+    "output_file": "transcript_00213.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00214.json",
+    "output_file": "transcript_00214.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00215.json",
+    "output_file": "transcript_00215.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00216.json",
+    "output_file": "transcript_00216.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00217.json",
+    "output_file": "transcript_00217.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00218.json",
+    "output_file": "transcript_00218.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00219.json",
+    "output_file": "transcript_00219.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00220.json",
+    "output_file": "transcript_00220.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00221.json",
+    "output_file": "transcript_00221.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00222.json",
+    "output_file": "transcript_00222.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00223.json",
+    "output_file": "transcript_00223.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00224.json",
+    "output_file": "transcript_00224.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00225.json",
+    "output_file": "transcript_00225.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00226.json",
+    "output_file": "transcript_00226.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00227.json",
+    "output_file": "transcript_00227.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00228.json",
+    "output_file": "transcript_00228.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00229.json",
+    "output_file": "transcript_00229.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00230.json",
+    "output_file": "transcript_00230.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00231.json",
+    "output_file": "transcript_00231.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00232.json",
+    "output_file": "transcript_00232.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00233.json",
+    "output_file": "transcript_00233.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00234.json",
+    "output_file": "transcript_00234.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00235.json",
+    "output_file": "transcript_00235.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00236.json",
+    "output_file": "transcript_00236.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00237.json",
+    "output_file": "transcript_00237.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00238.json",
+    "output_file": "transcript_00238.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00239.json",
+    "output_file": "transcript_00239.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00240.json",
+    "output_file": "transcript_00240.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00241.json",
+    "output_file": "transcript_00241.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00242.json",
+    "output_file": "transcript_00242.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00243.json",
+    "output_file": "transcript_00243.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00244.json",
+    "output_file": "transcript_00244.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00245.json",
+    "output_file": "transcript_00245.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00246.json",
+    "output_file": "transcript_00246.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00247.json",
+    "output_file": "transcript_00247.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00248.json",
+    "output_file": "transcript_00248.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00249.json",
+    "output_file": "transcript_00249.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00250.json",
+    "output_file": "transcript_00250.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00251.json",
+    "output_file": "transcript_00251.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00252.json",
+    "output_file": "transcript_00252.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00253.json",
+    "output_file": "transcript_00253.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00254.json",
+    "output_file": "transcript_00254.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00255.json",
+    "output_file": "transcript_00255.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00256.json",
+    "output_file": "transcript_00256.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00257.json",
+    "output_file": "transcript_00257.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00258.json",
+    "output_file": "transcript_00258.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00259.json",
+    "output_file": "transcript_00259.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00260.json",
+    "output_file": "transcript_00260.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00261.json",
+    "output_file": "transcript_00261.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00262.json",
+    "output_file": "transcript_00262.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00263.json",
+    "output_file": "transcript_00263.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00264.json",
+    "output_file": "transcript_00264.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00265.json",
+    "output_file": "transcript_00265.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00266.json",
+    "output_file": "transcript_00266.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00267.json",
+    "output_file": "transcript_00267.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00268.json",
+    "output_file": "transcript_00268.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00269.json",
+    "output_file": "transcript_00269.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00270.json",
+    "output_file": "transcript_00270.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00271.json",
+    "output_file": "transcript_00271.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00272.json",
+    "output_file": "transcript_00272.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00273.json",
+    "output_file": "transcript_00273.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00274.json",
+    "output_file": "transcript_00274.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00275.json",
+    "output_file": "transcript_00275.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00276.json",
+    "output_file": "transcript_00276.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00277.json",
+    "output_file": "transcript_00277.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00278.json",
+    "output_file": "transcript_00278.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00279.json",
+    "output_file": "transcript_00279.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00280.json",
+    "output_file": "transcript_00280.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00281.json",
+    "output_file": "transcript_00281.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00282.json",
+    "output_file": "transcript_00282.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00283.json",
+    "output_file": "transcript_00283.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00284.json",
+    "output_file": "transcript_00284.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00285.json",
+    "output_file": "transcript_00285.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00286.json",
+    "output_file": "transcript_00286.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00287.json",
+    "output_file": "transcript_00287.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00288.json",
+    "output_file": "transcript_00288.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00289.json",
+    "output_file": "transcript_00289.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00290.json",
+    "output_file": "transcript_00290.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00291.json",
+    "output_file": "transcript_00291.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00292.json",
+    "output_file": "transcript_00292.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00293.json",
+    "output_file": "transcript_00293.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00294.json",
+    "output_file": "transcript_00294.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00295.json",
+    "output_file": "transcript_00295.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00296.json",
+    "output_file": "transcript_00296.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00297.json",
+    "output_file": "transcript_00297.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00298.json",
+    "output_file": "transcript_00298.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  },
+  {
+    "source_file": "transcript_00299.json",
+    "output_file": "transcript_00299.state.json",
+    "provider": "nlp_fallback",
+    "model": "heuristic-nlp",
+    "validation_errors": []
+  }
+]

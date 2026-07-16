@@ -1,0 +1,72 @@
+{
+  "subset_accuracy": 0.967,
+  "micro_precision": 0.9672943508424182,
+  "micro_recall": 0.976,
+  "micro_f1": 0.971627675460428,
+  "macro_precision": 0.9674433645547456,
+  "macro_recall": 0.9760161992235984,
+  "macro_f1": 0.9716615458313737,
+  "classes": [
+    "ADDRESS_UPDATE",
+    "CARD_REPLACEMENT",
+    "PAYMENT_DUE_DATE",
+    "PAYMENT_ISSUE",
+    "TRANSACTION_DISPUTE"
+  ],
+  "classification_report": {
+    "ADDRESS_UPDATE": {
+      "precision": 0.9631449631449631,
+      "recall": 0.9727047146401985,
+      "f1-score": 0.9679012345679012,
+      "support": 403.0
+    },
+    "CARD_REPLACEMENT": {
+      "precision": 0.9872773536895675,
+      "recall": 0.97,
+      "f1-score": 0.978562421185372,
+      "support": 400.0
+    },
+    "PAYMENT_DUE_DATE": {
+      "precision": 0.9568345323741008,
+      "recall": 0.9755501222493888,
+      "f1-score": 0.9661016949152542,
+      "support": 409.0
+    },
+    "PAYMENT_ISSUE": {
+      "precision": 0.9547738693467337,
+      "recall": 0.9768637532133676,
+      "f1-score": 0.96569250317662,
+      "support": 389.0
+    },
+    "TRANSACTION_DISPUTE": {
+      "precision": 0.9751861042183623,
+      "recall": 0.9849624060150376,
+      "f1-score": 0.9800498753117207,
+      "support": 399.0
+    },
+    "micro avg": {
+      "precision": 0.9672943508424182,
+      "recall": 0.976,
+      "f1-score": 0.971627675460428,
+      "support": 2000.0
+    },
+    "macro avg": {
+      "precision": 0.9674433645547456,
+      "recall": 0.9760161992235984,
+      "f1-score": 0.9716615458313737,
+      "support": 2000.0
+    },
+    "weighted avg": {
+      "precision": 0.96745498806163,
+      "recall": 0.976,
+      "f1-score": 0.9716595216052168,
+      "support": 2000.0
+    },
+    "samples avg": {
+      "precision": 0.9715,
+      "recall": 0.976,
+      "f1-score": 0.973,
+      "support": 2000.0
+    }
+  }
+}

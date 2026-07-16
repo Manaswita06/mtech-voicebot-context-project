@@ -75,7 +75,7 @@ class ScenarioSelector:
 
         return self._load(
 
-            self.transcripts[1]
+            self.transcripts[0]
 
         )
 

@@ -1,33 +1,33 @@
 {
-  "n_samples": 300,
+  "n_samples": 5000,
   "provider": null,
   "model": null,
   "primary_intent": {
-    "accuracy": 0.8133333333333334,
-    "macro_precision": 0.7061552390674731,
-    "macro_recall": 0.6677595827206743,
-    "macro_f1": 0.6742261583341005
+    "accuracy": 0.778,
+    "macro_precision": 0.5181357483690069,
+    "macro_recall": 0.4886197732861973,
+    "macro_f1": 0.4909982908397044
   },
   "secondary_intents": {
-    "precision": 0.4439252336448598,
-    "recall": 0.5792682926829268,
-    "f1": 0.5026455026455026,
-    "exact_match": 0.58
+    "precision": 0.4460893854748603,
+    "recall": 0.6088448341593595,
+    "f1": 0.5149121392874415,
+    "exact_match": 0.5848
   },
-  "multi_intent_accuracy": 0.8233333333333334,
+  "multi_intent_accuracy": 0.8222,
   "tool_failure_accuracy": 1.0,
   "ambiguity": {
-    "mae": 0.15411000000000002,
-    "rmse": 0.20162102238275323,
-    "pearson": 0.07829476306418873
+    "mae": 0.16094160000000002,
+    "rmse": 0.20926652957412947,
+    "pearson": 0.11209081853179526
   },
   "sentiment_overall": {
-    "mae": 0.3939909999999999,
-    "rmse": 0.48974969998289264,
-    "pearson": -0.025856494631260375
+    "mae": 0.40174722,
+    "rmse": 0.4963533680695639,
+    "pearson": 0.0022449210956669986
   },
   "turn_count_mae": 0.0,
   "failure_count_mae": 0.0,
   "schema_valid_rate": 1.0,
-  "average_jaccard_secondary": 0.6111111111111112
+  "average_jaccard_secondary": 0.6252333333333334
 }

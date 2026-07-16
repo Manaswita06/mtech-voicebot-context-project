@@ -17,7 +17,7 @@ import urllib.request
 import urllib.error
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
-import numpy as np
+from tqdm import tqdm
 
 try:
     from jsonschema import validate
@@ -282,24 +282,49 @@ def run_batch(input_dir: str, output_dir: str, provider: str, model: str, limit:
     files = [f for f in sorted(in_path.glob("*.json")) if f.name != "manifest.json"]
     if limit: files = files[:limit]
 
-    for p in files:
+    progress = tqdm(
+        files,
+        desc="Extracting States",
+        unit="conversation",
+        colour="green"
+    )
+
+    for p in progress:
+
+        progress.set_postfix(file=p.stem)
+
         tr = load_json(p)
+
         nlp_res = infer_state_nlp(tr)
 
-        # LLM Logic
         if provider == "ollama":
+
+            progress.set_postfix(
+                file=p.stem,
+                status="Calling LLM"
+            )
+
             prompt = {
                 "system": LLM_SYSTEM_PROMPT,
-                "user": LLM_USER_PROMPT_TEMPLATE.format(transcript_json=compact_text(tr))
+                "user": LLM_USER_PROMPT_TEMPLATE.format(
+                    transcript_json=compact_text(tr)
+                )
             }
+
             try:
                 raw = call_ollama(prompt, model)
                 llm_res = parse_json_loose(raw)
             except Exception as e:
-                print(f"LLM Failed for {p.name}: {e}")
+                print(f"\nLLM Failed for {p.name}: {e}")
                 llm_res = nlp_res
+
         else:
             llm_res = nlp_res
+
+        progress.set_postfix(
+            file=p.stem,
+            status="Saving"
+        )
 
         final = ensemble_predict(nlp_res, llm_res)
 

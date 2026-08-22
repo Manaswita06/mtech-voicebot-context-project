@@ -1,5 +1,20 @@
+#!/usr/bin/env python3
+
+# ============================================================
+# generate_emotional_audio.py
+#
+# Generate emotional WAV files from conversations created by
+# generate_dataset.py.
+#
+# This script uses the speaker assignments already stored in:
+#
+#     customer_speaker
+#     agent_speaker
+#
+# For now, only the first 3 conversations are generated.
+# ============================================================
+
 import json
-import random
 from pathlib import Path
 
 import torch
@@ -13,25 +28,16 @@ from qwen_tts import Qwen3TTSModel
 
 INPUT_FILE = Path("data/emotional_conversations.json")
 
-OUTPUT_DIR = Path("generated_turns")
+OUTPUT_DIR = Path("new_generated_turns")
 
-# Separate JSON file to store speaker assignments
-SPEAKER_INFO_FILE = Path(
-    "data/speaker_assignments.json"
-)
+# Keep this as 3 for now.
+NUM_CONVERSATIONS_TO_GENERATE = 3
+
 
 OUTPUT_DIR.mkdir(
     parents=True,
     exist_ok=True
 )
-
-SPEAKER_INFO_FILE.parent.mkdir(
-    parents=True,
-    exist_ok=True
-)
-
-# Makes speaker assignments reproducible
-random.seed(42)
 
 
 # ============================================================
@@ -51,49 +57,6 @@ print("Qwen3-TTS model loaded successfully.")
 
 
 # ============================================================
-# AVAILABLE SPEAKERS
-# ============================================================
-
-# All speakers can be assigned to either role
-CUSTOMER_SPEAKERS = ["aiden", "serena", "eric", "sohee"]
-AGENT_SPEAKERS = ["dylan", "ono_anna", "ryan", "uncle_fu", "vivian"]
-
-
-print("\nAvailable speakers:")
-
-for speaker in CUSTOMER_SPEAKERS+AGENT_SPEAKERS:
-    print(f" - {speaker}")
-
-
-# ============================================================
-# LOAD EXISTING SPEAKER ASSIGNMENTS
-# ============================================================
-
-if SPEAKER_INFO_FILE.exists():
-
-    with open(
-        SPEAKER_INFO_FILE,
-        "r",
-        encoding="utf-8"
-    ) as f:
-
-        speaker_assignments = json.load(f)
-
-    print(
-        f"\nLoaded existing speaker assignments for "
-        f"{len(speaker_assignments)} conversations."
-    )
-
-else:
-
-    speaker_assignments = {}
-
-    print(
-        "\nNo existing speaker assignment file found."
-    )
-
-
-# ============================================================
 # BUILD VOICE INSTRUCTION
 # ============================================================
 
@@ -104,7 +67,6 @@ def build_voice_instruction(
     speaking_rate,
     prosody
 ):
-
     base = (
         f"Speak as a {role} in an enterprise customer "
         f"support phone conversation. "
@@ -116,28 +78,25 @@ def build_voice_instruction(
     )
 
     if speaking_rate == "fast":
-
         rate_instruction = (
             "Speak noticeably faster than normal, "
             "but remain understandable. "
         )
 
     elif speaking_rate == "slow":
-
         rate_instruction = (
             "Speak slowly with natural hesitation "
             "and clear pauses. "
         )
 
     else:
-
         rate_instruction = (
             "Speak at a natural conversational pace. "
         )
 
     prosody_instruction = (
         f"Use {prosody} prosody with natural variation "
-        "in pitch, rhythm, and emphasis. "
+        f"in pitch, rhythm, and emphasis. "
     )
 
     return (
@@ -160,7 +119,6 @@ def generate_turn_audio(
     voice_attributes,
     output_path
 ):
-
     instruction = build_voice_instruction(
         role=role,
         emotion=voice_attributes["emotion"],
@@ -170,7 +128,6 @@ def generate_turn_audio(
     )
 
     print("\n" + "=" * 70)
-
     print(f"Generating {role} audio")
     print(f"Speaker: {speaker}")
     print(f"Emotion: {voice_attributes['emotion']}")
@@ -195,7 +152,6 @@ def generate_turn_audio(
 
     print("=" * 70)
 
-
     # --------------------------------------------------------
     # GENERATE AUDIO
     # --------------------------------------------------------
@@ -211,7 +167,6 @@ def generate_turn_audio(
         repetition_penalty=1.05
     )
 
-
     # --------------------------------------------------------
     # ENSURE OUTPUT DIRECTORY EXISTS
     # --------------------------------------------------------
@@ -223,7 +178,6 @@ def generate_turn_audio(
         exist_ok=True
     )
 
-
     # --------------------------------------------------------
     # SAVE WAV FILE
     # --------------------------------------------------------
@@ -234,9 +188,7 @@ def generate_turn_audio(
         sample_rate
     )
 
-    print(
-        f"\nSaved: {output_path}"
-    )
+    print(f"\nSaved: {output_path}")
 
 
 # ============================================================
@@ -248,7 +200,6 @@ with open(
     "r",
     encoding="utf-8"
 ) as f:
-
     conversations = json.load(f)
 
 
@@ -258,80 +209,51 @@ print(
 
 
 # ============================================================
+# GENERATE ONLY FIRST 3 CONVERSATIONS
+# ============================================================
+
+# conversations_to_generate = conversations[
+#     :NUM_CONVERSATIONS_TO_GENERATE
+# ]
+conversations_to_generate = conversations
+
+
+print(
+    f"\nGenerating audio for "
+    f"{len(conversations_to_generate)} conversations."
+)
+
+
+# ============================================================
 # GENERATE ALL CONVERSATIONS
 # ============================================================
 
 for conversation_index, conversation in enumerate(
-    conversations[:2],
+    conversations_to_generate,
     start=1
 ):
 
     conversation_id = conversation["conversation_id"]
 
+    scenario = conversation["scenario"]
 
     # ========================================================
-    # SELECT OR REUSE SPEAKERS
+    # USE SPEAKERS ALREADY ASSIGNED BY generate_dataset.py
     # ========================================================
 
-    if conversation_id in speaker_assignments:
+    customer_speaker = conversation["customer_speaker"]
 
-        customer_speaker = (
-            speaker_assignments[conversation_id]
-            ["customer_speaker"]
-        )
+    agent_speaker = conversation["agent_speaker"]
 
-        agent_speaker = (
-            speaker_assignments[conversation_id]
-            ["agent_speaker"]
-        )
+    customer_gender = conversation.get(
+        "customer_gender",
+        "unknown"
+    )
 
-        print(
-            f"\nReusing existing speaker assignments "
-            f"for {conversation_id}"
-        )
-
-    else:
-
-        # Select customer speaker
-        # customer_speaker = random.choice(
-        #     CUSTOMER_SPEAKERS
-        # )
-        customer_speaker = conversation["customer_name"]
-
-        agent_speaker = random.choice(
-            AGENT_SPEAKERS
-        )
-
-
-        # ====================================================
-        # STORE SPEAKER INFORMATION
-        # ====================================================
-
-        speaker_assignments[conversation_id] = {
-
-            "scenario": conversation["scenario"],
-
-            "customer_speaker": customer_speaker,
-
-            "agent_speaker": agent_speaker
-
-        }
-
-
-        # Save immediately so progress is preserved
-        with open(
-            SPEAKER_INFO_FILE,
-            "w",
-            encoding="utf-8"
-        ) as f:
-
-            json.dump(
-                speaker_assignments,
-                f,
-                indent=4,
-                ensure_ascii=False
-            )
-
+    agent_gender = conversation.get(
+        "agent_gender",
+        "unknown"
+    )
 
     # ========================================================
     # DISPLAY CONVERSATION INFORMATION
@@ -341,25 +263,31 @@ for conversation_index, conversation in enumerate(
 
     print(
         f"Conversation "
-        f"{conversation_index}/{len(conversations)}"
+        f"{conversation_index}/"
+        f"{len(conversations_to_generate)}"
     )
 
     print(f"ID: {conversation_id}")
 
-    print(
-        f"Scenario: {conversation['scenario']}"
-    )
+    print(f"Scenario: {scenario}")
 
     print(
         f"Customer Speaker: {customer_speaker}"
     )
 
     print(
+        f"Customer Gender: {customer_gender}"
+    )
+
+    print(
         f"Agent Speaker: {agent_speaker}"
     )
 
-    print("#" * 80)
+    print(
+        f"Agent Gender: {agent_gender}"
+    )
 
+    print("#" * 80)
 
     # ========================================================
     # CREATE CONVERSATION DIRECTORY
@@ -374,7 +302,6 @@ for conversation_index, conversation in enumerate(
         exist_ok=True
     )
 
-
     # ========================================================
     # GENERATE EACH TURN
     # ========================================================
@@ -385,29 +312,35 @@ for conversation_index, conversation in enumerate(
 
         role = turn["role"]
 
+        text = turn["text"]
+
+        voice_attributes = turn["voice_attributes"]
 
         # ----------------------------------------------------
-        # SELECT CONSISTENT SPEAKER
+        # SELECT THE CORRECT SPEAKER
         # ----------------------------------------------------
 
         if role.lower() == "customer":
-
             selected_speaker = customer_speaker
 
-        else:
-
+        elif role.lower() == "agent":
             selected_speaker = agent_speaker
 
+        else:
+            raise ValueError(
+                f"Unknown role '{role}' "
+                f"in {conversation_id}, "
+                f"turn {turn_id}"
+            )
 
         # ----------------------------------------------------
         # CREATE OUTPUT FILE NAME
         # ----------------------------------------------------
 
         output_file = (
-            conversation_dir /
-            f"turn_{turn_id}_{role}_{selected_speaker}.wav"
+            conversation_dir
+            / f"turn_{turn_id}_{role}_{selected_speaker}.wav"
         )
-
 
         # ----------------------------------------------------
         # SKIP EXISTING FILES
@@ -422,7 +355,6 @@ for conversation_index, conversation in enumerate(
 
             continue
 
-
         # ----------------------------------------------------
         # GENERATE AUDIO
         # ----------------------------------------------------
@@ -430,10 +362,10 @@ for conversation_index, conversation in enumerate(
         try:
 
             generate_turn_audio(
-                text=turn["text"],
+                text=text,
                 role=role,
                 speaker=selected_speaker,
-                voice_attributes=turn["voice_attributes"],
+                voice_attributes=voice_attributes,
                 output_path=output_file
             )
 
@@ -445,32 +377,23 @@ for conversation_index, conversation in enumerate(
                 f"turn {turn_id}"
             )
 
-            print(e)
+            print(f"Role: {role}")
+
+            print(
+                f"Speaker: {selected_speaker}"
+            )
+
+            print(f"Error: {e}")
 
 
 # ============================================================
-# FINAL SAVE OF SPEAKER ASSIGNMENTS
+# COMPLETION MESSAGE
 # ============================================================
 
-with open(
-    SPEAKER_INFO_FILE,
-    "w",
-    encoding="utf-8"
-) as f:
+print("\n" + "=" * 80)
 
-    json.dump(
-        speaker_assignments,
-        f,
-        indent=4,
-        ensure_ascii=False
-    )
+print("All audio generation completed.")
 
+print(f"Output directory: {OUTPUT_DIR}")
 
-print(
-    "\nAll audio generation completed."
-)
-
-print(
-    f"Speaker information saved to: "
-    f"{SPEAKER_INFO_FILE}"
-)
+print("=" * 80)

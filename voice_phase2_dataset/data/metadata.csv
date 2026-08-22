@@ -1,481 +1,501 @@
-conversation_id,scenario,scenario_family,num_turns
-conv_0001,CARD_REPLACEMENT,Card Management,4
-conv_0002,CARD_REPLACEMENT,Card Management,4
-conv_0003,CARD_REPLACEMENT,Card Management,4
-conv_0004,CARD_REPLACEMENT,Card Management,4
-conv_0005,CARD_REPLACEMENT,Card Management,4
-conv_0006,CARD_REPLACEMENT,Card Management,4
-conv_0007,CARD_REPLACEMENT,Card Management,4
-conv_0008,CARD_REPLACEMENT,Card Management,4
-conv_0009,CARD_REPLACEMENT,Card Management,4
-conv_0010,CARD_REPLACEMENT,Card Management,4
-conv_0011,CARD_ACTIVATION,Card Management,4
-conv_0012,CARD_ACTIVATION,Card Management,4
-conv_0013,CARD_ACTIVATION,Card Management,4
-conv_0014,CARD_ACTIVATION,Card Management,4
-conv_0015,CARD_ACTIVATION,Card Management,4
-conv_0016,CARD_ACTIVATION,Card Management,4
-conv_0017,CARD_ACTIVATION,Card Management,4
-conv_0018,CARD_ACTIVATION,Card Management,4
-conv_0019,CARD_ACTIVATION,Card Management,4
-conv_0020,CARD_ACTIVATION,Card Management,4
-conv_0021,CARD_BLOCK,Card Security,4
-conv_0022,CARD_BLOCK,Card Security,4
-conv_0023,CARD_BLOCK,Card Security,4
-conv_0024,CARD_BLOCK,Card Security,4
-conv_0025,CARD_BLOCK,Card Security,4
-conv_0026,CARD_BLOCK,Card Security,4
-conv_0027,CARD_BLOCK,Card Security,4
-conv_0028,CARD_BLOCK,Card Security,4
-conv_0029,CARD_BLOCK,Card Security,4
-conv_0030,CARD_BLOCK,Card Security,4
-conv_0031,CARD_UNBLOCK,Card Security,4
-conv_0032,CARD_UNBLOCK,Card Security,4
-conv_0033,CARD_UNBLOCK,Card Security,4
-conv_0034,CARD_UNBLOCK,Card Security,4
-conv_0035,CARD_UNBLOCK,Card Security,4
-conv_0036,CARD_UNBLOCK,Card Security,4
-conv_0037,CARD_UNBLOCK,Card Security,4
-conv_0038,CARD_UNBLOCK,Card Security,4
-conv_0039,CARD_UNBLOCK,Card Security,4
-conv_0040,CARD_UNBLOCK,Card Security,4
-conv_0041,CARD_PIN_RESET,Card Management,4
-conv_0042,CARD_PIN_RESET,Card Management,4
-conv_0043,CARD_PIN_RESET,Card Management,4
-conv_0044,CARD_PIN_RESET,Card Management,4
-conv_0045,CARD_PIN_RESET,Card Management,4
-conv_0046,CARD_PIN_RESET,Card Management,4
-conv_0047,CARD_PIN_RESET,Card Management,4
-conv_0048,CARD_PIN_RESET,Card Management,4
-conv_0049,CARD_PIN_RESET,Card Management,4
-conv_0050,CARD_PIN_RESET,Card Management,4
-conv_0051,CARD_DELIVERY_STATUS,Card Delivery,4
-conv_0052,CARD_DELIVERY_STATUS,Card Delivery,4
-conv_0053,CARD_DELIVERY_STATUS,Card Delivery,4
-conv_0054,CARD_DELIVERY_STATUS,Card Delivery,4
-conv_0055,CARD_DELIVERY_STATUS,Card Delivery,4
-conv_0056,CARD_DELIVERY_STATUS,Card Delivery,4
-conv_0057,CARD_DELIVERY_STATUS,Card Delivery,4
-conv_0058,CARD_DELIVERY_STATUS,Card Delivery,4
-conv_0059,CARD_DELIVERY_STATUS,Card Delivery,4
-conv_0060,CARD_DELIVERY_STATUS,Card Delivery,4
-conv_0061,CARD_NOT_RECEIVED,Card Delivery,4
-conv_0062,CARD_NOT_RECEIVED,Card Delivery,4
-conv_0063,CARD_NOT_RECEIVED,Card Delivery,4
-conv_0064,CARD_NOT_RECEIVED,Card Delivery,4
-conv_0065,CARD_NOT_RECEIVED,Card Delivery,4
-conv_0066,CARD_NOT_RECEIVED,Card Delivery,4
-conv_0067,CARD_NOT_RECEIVED,Card Delivery,4
-conv_0068,CARD_NOT_RECEIVED,Card Delivery,4
-conv_0069,CARD_NOT_RECEIVED,Card Delivery,4
-conv_0070,CARD_NOT_RECEIVED,Card Delivery,4
-conv_0071,CARD_LIMIT_INCREASE,Card Management,4
-conv_0072,CARD_LIMIT_INCREASE,Card Management,4
-conv_0073,CARD_LIMIT_INCREASE,Card Management,4
-conv_0074,CARD_LIMIT_INCREASE,Card Management,4
-conv_0075,CARD_LIMIT_INCREASE,Card Management,4
-conv_0076,CARD_LIMIT_INCREASE,Card Management,4
-conv_0077,CARD_LIMIT_INCREASE,Card Management,4
-conv_0078,CARD_LIMIT_INCREASE,Card Management,4
-conv_0079,CARD_LIMIT_INCREASE,Card Management,4
-conv_0080,CARD_LIMIT_INCREASE,Card Management,4
-conv_0081,CARD_LIMIT_DECREASE,Card Management,4
-conv_0082,CARD_LIMIT_DECREASE,Card Management,4
-conv_0083,CARD_LIMIT_DECREASE,Card Management,4
-conv_0084,CARD_LIMIT_DECREASE,Card Management,4
-conv_0085,CARD_LIMIT_DECREASE,Card Management,4
-conv_0086,CARD_LIMIT_DECREASE,Card Management,4
-conv_0087,CARD_LIMIT_DECREASE,Card Management,4
-conv_0088,CARD_LIMIT_DECREASE,Card Management,4
-conv_0089,CARD_LIMIT_DECREASE,Card Management,4
-conv_0090,CARD_LIMIT_DECREASE,Card Management,4
-conv_0091,CASH_WITHDRAWAL_ISSUE,Cash Withdrawal,4
-conv_0092,CASH_WITHDRAWAL_ISSUE,Cash Withdrawal,4
-conv_0093,CASH_WITHDRAWAL_ISSUE,Cash Withdrawal,4
-conv_0094,CASH_WITHDRAWAL_ISSUE,Cash Withdrawal,4
-conv_0095,CASH_WITHDRAWAL_ISSUE,Cash Withdrawal,4
-conv_0096,CASH_WITHDRAWAL_ISSUE,Cash Withdrawal,4
-conv_0097,CASH_WITHDRAWAL_ISSUE,Cash Withdrawal,4
-conv_0098,CASH_WITHDRAWAL_ISSUE,Cash Withdrawal,4
-conv_0099,CASH_WITHDRAWAL_ISSUE,Cash Withdrawal,4
-conv_0100,CASH_WITHDRAWAL_ISSUE,Cash Withdrawal,4
-conv_0101,PAYMENT_FAILED,Payments,4
-conv_0102,PAYMENT_FAILED,Payments,4
-conv_0103,PAYMENT_FAILED,Payments,4
-conv_0104,PAYMENT_FAILED,Payments,4
-conv_0105,PAYMENT_FAILED,Payments,4
-conv_0106,PAYMENT_FAILED,Payments,4
-conv_0107,PAYMENT_FAILED,Payments,4
-conv_0108,PAYMENT_FAILED,Payments,4
-conv_0109,PAYMENT_FAILED,Payments,4
-conv_0110,PAYMENT_FAILED,Payments,4
-conv_0111,PAYMENT_PENDING,Payments,4
-conv_0112,PAYMENT_PENDING,Payments,4
-conv_0113,PAYMENT_PENDING,Payments,4
-conv_0114,PAYMENT_PENDING,Payments,4
-conv_0115,PAYMENT_PENDING,Payments,4
-conv_0116,PAYMENT_PENDING,Payments,4
-conv_0117,PAYMENT_PENDING,Payments,4
-conv_0118,PAYMENT_PENDING,Payments,4
-conv_0119,PAYMENT_PENDING,Payments,4
-conv_0120,PAYMENT_PENDING,Payments,4
-conv_0121,PAYMENT_REVERSED,Payments,4
-conv_0122,PAYMENT_REVERSED,Payments,4
-conv_0123,PAYMENT_REVERSED,Payments,4
-conv_0124,PAYMENT_REVERSED,Payments,4
-conv_0125,PAYMENT_REVERSED,Payments,4
-conv_0126,PAYMENT_REVERSED,Payments,4
-conv_0127,PAYMENT_REVERSED,Payments,4
-conv_0128,PAYMENT_REVERSED,Payments,4
-conv_0129,PAYMENT_REVERSED,Payments,4
-conv_0130,PAYMENT_REVERSED,Payments,4
-conv_0131,DUPLICATE_CHARGE,Payments,4
-conv_0132,DUPLICATE_CHARGE,Payments,4
-conv_0133,DUPLICATE_CHARGE,Payments,4
-conv_0134,DUPLICATE_CHARGE,Payments,4
-conv_0135,DUPLICATE_CHARGE,Payments,4
-conv_0136,DUPLICATE_CHARGE,Payments,4
-conv_0137,DUPLICATE_CHARGE,Payments,4
-conv_0138,DUPLICATE_CHARGE,Payments,4
-conv_0139,DUPLICATE_CHARGE,Payments,4
-conv_0140,DUPLICATE_CHARGE,Payments,4
-conv_0141,UNRECOGNIZED_TRANSACTION,Fraud,4
-conv_0142,UNRECOGNIZED_TRANSACTION,Fraud,4
-conv_0143,UNRECOGNIZED_TRANSACTION,Fraud,4
-conv_0144,UNRECOGNIZED_TRANSACTION,Fraud,4
-conv_0145,UNRECOGNIZED_TRANSACTION,Fraud,4
-conv_0146,UNRECOGNIZED_TRANSACTION,Fraud,4
-conv_0147,UNRECOGNIZED_TRANSACTION,Fraud,4
-conv_0148,UNRECOGNIZED_TRANSACTION,Fraud,4
-conv_0149,UNRECOGNIZED_TRANSACTION,Fraud,4
-conv_0150,UNRECOGNIZED_TRANSACTION,Fraud,4
-conv_0151,PAYMENT_CONFIRMATION,Payments,4
-conv_0152,PAYMENT_CONFIRMATION,Payments,4
-conv_0153,PAYMENT_CONFIRMATION,Payments,4
-conv_0154,PAYMENT_CONFIRMATION,Payments,4
-conv_0155,PAYMENT_CONFIRMATION,Payments,4
-conv_0156,PAYMENT_CONFIRMATION,Payments,4
-conv_0157,PAYMENT_CONFIRMATION,Payments,4
-conv_0158,PAYMENT_CONFIRMATION,Payments,4
-conv_0159,PAYMENT_CONFIRMATION,Payments,4
-conv_0160,PAYMENT_CONFIRMATION,Payments,4
-conv_0161,REFUND_REQUEST,Refunds,4
-conv_0162,REFUND_REQUEST,Refunds,4
-conv_0163,REFUND_REQUEST,Refunds,4
-conv_0164,REFUND_REQUEST,Refunds,4
-conv_0165,REFUND_REQUEST,Refunds,4
-conv_0166,REFUND_REQUEST,Refunds,4
-conv_0167,REFUND_REQUEST,Refunds,4
-conv_0168,REFUND_REQUEST,Refunds,4
-conv_0169,REFUND_REQUEST,Refunds,4
-conv_0170,REFUND_REQUEST,Refunds,4
-conv_0171,REFUND_PENDING,Refunds,4
-conv_0172,REFUND_PENDING,Refunds,4
-conv_0173,REFUND_PENDING,Refunds,4
-conv_0174,REFUND_PENDING,Refunds,4
-conv_0175,REFUND_PENDING,Refunds,4
-conv_0176,REFUND_PENDING,Refunds,4
-conv_0177,REFUND_PENDING,Refunds,4
-conv_0178,REFUND_PENDING,Refunds,4
-conv_0179,REFUND_PENDING,Refunds,4
-conv_0180,REFUND_PENDING,Refunds,4
-conv_0181,REFUND_NOT_RECEIVED,Refunds,4
-conv_0182,REFUND_NOT_RECEIVED,Refunds,4
-conv_0183,REFUND_NOT_RECEIVED,Refunds,4
-conv_0184,REFUND_NOT_RECEIVED,Refunds,4
-conv_0185,REFUND_NOT_RECEIVED,Refunds,4
-conv_0186,REFUND_NOT_RECEIVED,Refunds,4
-conv_0187,REFUND_NOT_RECEIVED,Refunds,4
-conv_0188,REFUND_NOT_RECEIVED,Refunds,4
-conv_0189,REFUND_NOT_RECEIVED,Refunds,4
-conv_0190,REFUND_NOT_RECEIVED,Refunds,4
-conv_0191,FRAUD_DISPUTE,Fraud,4
-conv_0192,FRAUD_DISPUTE,Fraud,4
-conv_0193,FRAUD_DISPUTE,Fraud,4
-conv_0194,FRAUD_DISPUTE,Fraud,4
-conv_0195,FRAUD_DISPUTE,Fraud,4
-conv_0196,FRAUD_DISPUTE,Fraud,4
-conv_0197,FRAUD_DISPUTE,Fraud,4
-conv_0198,FRAUD_DISPUTE,Fraud,4
-conv_0199,FRAUD_DISPUTE,Fraud,4
-conv_0200,FRAUD_DISPUTE,Fraud,4
-conv_0201,MERCHANT_DISPUTE,Disputes,4
-conv_0202,MERCHANT_DISPUTE,Disputes,4
-conv_0203,MERCHANT_DISPUTE,Disputes,4
-conv_0204,MERCHANT_DISPUTE,Disputes,4
-conv_0205,MERCHANT_DISPUTE,Disputes,4
-conv_0206,MERCHANT_DISPUTE,Disputes,4
-conv_0207,MERCHANT_DISPUTE,Disputes,4
-conv_0208,MERCHANT_DISPUTE,Disputes,4
-conv_0209,MERCHANT_DISPUTE,Disputes,4
-conv_0210,MERCHANT_DISPUTE,Disputes,4
-conv_0211,CHARGEBACK_REQUEST,Disputes,4
-conv_0212,CHARGEBACK_REQUEST,Disputes,4
-conv_0213,CHARGEBACK_REQUEST,Disputes,4
-conv_0214,CHARGEBACK_REQUEST,Disputes,4
-conv_0215,CHARGEBACK_REQUEST,Disputes,4
-conv_0216,CHARGEBACK_REQUEST,Disputes,4
-conv_0217,CHARGEBACK_REQUEST,Disputes,4
-conv_0218,CHARGEBACK_REQUEST,Disputes,4
-conv_0219,CHARGEBACK_REQUEST,Disputes,4
-conv_0220,CHARGEBACK_REQUEST,Disputes,4
-conv_0221,LOGIN_ISSUE,Authentication,4
-conv_0222,LOGIN_ISSUE,Authentication,4
-conv_0223,LOGIN_ISSUE,Authentication,4
-conv_0224,LOGIN_ISSUE,Authentication,4
-conv_0225,LOGIN_ISSUE,Authentication,4
-conv_0226,LOGIN_ISSUE,Authentication,4
-conv_0227,LOGIN_ISSUE,Authentication,4
-conv_0228,LOGIN_ISSUE,Authentication,4
-conv_0229,LOGIN_ISSUE,Authentication,4
-conv_0230,LOGIN_ISSUE,Authentication,4
-conv_0231,PASSWORD_RESET,Authentication,4
-conv_0232,PASSWORD_RESET,Authentication,4
-conv_0233,PASSWORD_RESET,Authentication,4
-conv_0234,PASSWORD_RESET,Authentication,4
-conv_0235,PASSWORD_RESET,Authentication,4
-conv_0236,PASSWORD_RESET,Authentication,4
-conv_0237,PASSWORD_RESET,Authentication,4
-conv_0238,PASSWORD_RESET,Authentication,4
-conv_0239,PASSWORD_RESET,Authentication,4
-conv_0240,PASSWORD_RESET,Authentication,4
-conv_0241,ACCOUNT_LOCKED,Authentication,4
-conv_0242,ACCOUNT_LOCKED,Authentication,4
-conv_0243,ACCOUNT_LOCKED,Authentication,4
-conv_0244,ACCOUNT_LOCKED,Authentication,4
-conv_0245,ACCOUNT_LOCKED,Authentication,4
-conv_0246,ACCOUNT_LOCKED,Authentication,4
-conv_0247,ACCOUNT_LOCKED,Authentication,4
-conv_0248,ACCOUNT_LOCKED,Authentication,4
-conv_0249,ACCOUNT_LOCKED,Authentication,4
-conv_0250,ACCOUNT_LOCKED,Authentication,4
-conv_0251,OTP_NOT_RECEIVED,Authentication,4
-conv_0252,OTP_NOT_RECEIVED,Authentication,4
-conv_0253,OTP_NOT_RECEIVED,Authentication,4
-conv_0254,OTP_NOT_RECEIVED,Authentication,4
-conv_0255,OTP_NOT_RECEIVED,Authentication,4
-conv_0256,OTP_NOT_RECEIVED,Authentication,4
-conv_0257,OTP_NOT_RECEIVED,Authentication,4
-conv_0258,OTP_NOT_RECEIVED,Authentication,4
-conv_0259,OTP_NOT_RECEIVED,Authentication,4
-conv_0260,OTP_NOT_RECEIVED,Authentication,4
-conv_0261,BIOMETRIC_LOGIN_ISSUE,Authentication,4
-conv_0262,BIOMETRIC_LOGIN_ISSUE,Authentication,4
-conv_0263,BIOMETRIC_LOGIN_ISSUE,Authentication,4
-conv_0264,BIOMETRIC_LOGIN_ISSUE,Authentication,4
-conv_0265,BIOMETRIC_LOGIN_ISSUE,Authentication,4
-conv_0266,BIOMETRIC_LOGIN_ISSUE,Authentication,4
-conv_0267,BIOMETRIC_LOGIN_ISSUE,Authentication,4
-conv_0268,BIOMETRIC_LOGIN_ISSUE,Authentication,4
-conv_0269,BIOMETRIC_LOGIN_ISSUE,Authentication,4
-conv_0270,BIOMETRIC_LOGIN_ISSUE,Authentication,4
-conv_0271,ACCOUNT_BALANCE_QUERY,Account Information,4
-conv_0272,ACCOUNT_BALANCE_QUERY,Account Information,4
-conv_0273,ACCOUNT_BALANCE_QUERY,Account Information,4
-conv_0274,ACCOUNT_BALANCE_QUERY,Account Information,4
-conv_0275,ACCOUNT_BALANCE_QUERY,Account Information,4
-conv_0276,ACCOUNT_BALANCE_QUERY,Account Information,4
-conv_0277,ACCOUNT_BALANCE_QUERY,Account Information,4
-conv_0278,ACCOUNT_BALANCE_QUERY,Account Information,4
-conv_0279,ACCOUNT_BALANCE_QUERY,Account Information,4
-conv_0280,ACCOUNT_BALANCE_QUERY,Account Information,4
-conv_0281,ACCOUNT_STATEMENT,Account Information,4
-conv_0282,ACCOUNT_STATEMENT,Account Information,4
-conv_0283,ACCOUNT_STATEMENT,Account Information,4
-conv_0284,ACCOUNT_STATEMENT,Account Information,4
-conv_0285,ACCOUNT_STATEMENT,Account Information,4
-conv_0286,ACCOUNT_STATEMENT,Account Information,4
-conv_0287,ACCOUNT_STATEMENT,Account Information,4
-conv_0288,ACCOUNT_STATEMENT,Account Information,4
-conv_0289,ACCOUNT_STATEMENT,Account Information,4
-conv_0290,ACCOUNT_STATEMENT,Account Information,4
-conv_0291,ACCOUNT_CLOSURE,Account Management,4
-conv_0292,ACCOUNT_CLOSURE,Account Management,4
-conv_0293,ACCOUNT_CLOSURE,Account Management,4
-conv_0294,ACCOUNT_CLOSURE,Account Management,4
-conv_0295,ACCOUNT_CLOSURE,Account Management,4
-conv_0296,ACCOUNT_CLOSURE,Account Management,4
-conv_0297,ACCOUNT_CLOSURE,Account Management,4
-conv_0298,ACCOUNT_CLOSURE,Account Management,4
-conv_0299,ACCOUNT_CLOSURE,Account Management,4
-conv_0300,ACCOUNT_CLOSURE,Account Management,4
-conv_0301,ACCOUNT_REOPENING,Account Management,4
-conv_0302,ACCOUNT_REOPENING,Account Management,4
-conv_0303,ACCOUNT_REOPENING,Account Management,4
-conv_0304,ACCOUNT_REOPENING,Account Management,4
-conv_0305,ACCOUNT_REOPENING,Account Management,4
-conv_0306,ACCOUNT_REOPENING,Account Management,4
-conv_0307,ACCOUNT_REOPENING,Account Management,4
-conv_0308,ACCOUNT_REOPENING,Account Management,4
-conv_0309,ACCOUNT_REOPENING,Account Management,4
-conv_0310,ACCOUNT_REOPENING,Account Management,4
-conv_0311,ADDRESS_CHANGE,Profile Management,4
-conv_0312,ADDRESS_CHANGE,Profile Management,4
-conv_0313,ADDRESS_CHANGE,Profile Management,4
-conv_0314,ADDRESS_CHANGE,Profile Management,4
-conv_0315,ADDRESS_CHANGE,Profile Management,4
-conv_0316,ADDRESS_CHANGE,Profile Management,4
-conv_0317,ADDRESS_CHANGE,Profile Management,4
-conv_0318,ADDRESS_CHANGE,Profile Management,4
-conv_0319,ADDRESS_CHANGE,Profile Management,4
-conv_0320,ADDRESS_CHANGE,Profile Management,4
-conv_0321,PHONE_NUMBER_CHANGE,Profile Management,4
-conv_0322,PHONE_NUMBER_CHANGE,Profile Management,4
-conv_0323,PHONE_NUMBER_CHANGE,Profile Management,4
-conv_0324,PHONE_NUMBER_CHANGE,Profile Management,4
-conv_0325,PHONE_NUMBER_CHANGE,Profile Management,4
-conv_0326,PHONE_NUMBER_CHANGE,Profile Management,4
-conv_0327,PHONE_NUMBER_CHANGE,Profile Management,4
-conv_0328,PHONE_NUMBER_CHANGE,Profile Management,4
-conv_0329,PHONE_NUMBER_CHANGE,Profile Management,4
-conv_0330,PHONE_NUMBER_CHANGE,Profile Management,4
-conv_0331,EMAIL_CHANGE,Profile Management,4
-conv_0332,EMAIL_CHANGE,Profile Management,4
-conv_0333,EMAIL_CHANGE,Profile Management,4
-conv_0334,EMAIL_CHANGE,Profile Management,4
-conv_0335,EMAIL_CHANGE,Profile Management,4
-conv_0336,EMAIL_CHANGE,Profile Management,4
-conv_0337,EMAIL_CHANGE,Profile Management,4
-conv_0338,EMAIL_CHANGE,Profile Management,4
-conv_0339,EMAIL_CHANGE,Profile Management,4
-conv_0340,EMAIL_CHANGE,Profile Management,4
-conv_0341,BANK_TRANSFER_PENDING,Transfers,4
-conv_0342,BANK_TRANSFER_PENDING,Transfers,4
-conv_0343,BANK_TRANSFER_PENDING,Transfers,4
-conv_0344,BANK_TRANSFER_PENDING,Transfers,4
-conv_0345,BANK_TRANSFER_PENDING,Transfers,4
-conv_0346,BANK_TRANSFER_PENDING,Transfers,4
-conv_0347,BANK_TRANSFER_PENDING,Transfers,4
-conv_0348,BANK_TRANSFER_PENDING,Transfers,4
-conv_0349,BANK_TRANSFER_PENDING,Transfers,4
-conv_0350,BANK_TRANSFER_PENDING,Transfers,4
-conv_0351,BANK_TRANSFER_FAILED,Transfers,4
-conv_0352,BANK_TRANSFER_FAILED,Transfers,4
-conv_0353,BANK_TRANSFER_FAILED,Transfers,4
-conv_0354,BANK_TRANSFER_FAILED,Transfers,4
-conv_0355,BANK_TRANSFER_FAILED,Transfers,4
-conv_0356,BANK_TRANSFER_FAILED,Transfers,4
-conv_0357,BANK_TRANSFER_FAILED,Transfers,4
-conv_0358,BANK_TRANSFER_FAILED,Transfers,4
-conv_0359,BANK_TRANSFER_FAILED,Transfers,4
-conv_0360,BANK_TRANSFER_FAILED,Transfers,4
-conv_0361,TRANSFER_CANCELLATION,Transfers,4
-conv_0362,TRANSFER_CANCELLATION,Transfers,4
-conv_0363,TRANSFER_CANCELLATION,Transfers,4
-conv_0364,TRANSFER_CANCELLATION,Transfers,4
-conv_0365,TRANSFER_CANCELLATION,Transfers,4
-conv_0366,TRANSFER_CANCELLATION,Transfers,4
-conv_0367,TRANSFER_CANCELLATION,Transfers,4
-conv_0368,TRANSFER_CANCELLATION,Transfers,4
-conv_0369,TRANSFER_CANCELLATION,Transfers,4
-conv_0370,TRANSFER_CANCELLATION,Transfers,4
-conv_0371,BENEFICIARY_ADD,Transfers,4
-conv_0372,BENEFICIARY_ADD,Transfers,4
-conv_0373,BENEFICIARY_ADD,Transfers,4
-conv_0374,BENEFICIARY_ADD,Transfers,4
-conv_0375,BENEFICIARY_ADD,Transfers,4
-conv_0376,BENEFICIARY_ADD,Transfers,4
-conv_0377,BENEFICIARY_ADD,Transfers,4
-conv_0378,BENEFICIARY_ADD,Transfers,4
-conv_0379,BENEFICIARY_ADD,Transfers,4
-conv_0380,BENEFICIARY_ADD,Transfers,4
-conv_0381,BENEFICIARY_REMOVE,Transfers,4
-conv_0382,BENEFICIARY_REMOVE,Transfers,4
-conv_0383,BENEFICIARY_REMOVE,Transfers,4
-conv_0384,BENEFICIARY_REMOVE,Transfers,4
-conv_0385,BENEFICIARY_REMOVE,Transfers,4
-conv_0386,BENEFICIARY_REMOVE,Transfers,4
-conv_0387,BENEFICIARY_REMOVE,Transfers,4
-conv_0388,BENEFICIARY_REMOVE,Transfers,4
-conv_0389,BENEFICIARY_REMOVE,Transfers,4
-conv_0390,BENEFICIARY_REMOVE,Transfers,4
-conv_0391,CASHBACK_MISSING,Rewards,4
-conv_0392,CASHBACK_MISSING,Rewards,4
-conv_0393,CASHBACK_MISSING,Rewards,4
-conv_0394,CASHBACK_MISSING,Rewards,4
-conv_0395,CASHBACK_MISSING,Rewards,4
-conv_0396,CASHBACK_MISSING,Rewards,4
-conv_0397,CASHBACK_MISSING,Rewards,4
-conv_0398,CASHBACK_MISSING,Rewards,4
-conv_0399,CASHBACK_MISSING,Rewards,4
-conv_0400,CASHBACK_MISSING,Rewards,4
-conv_0401,REWARD_POINTS_QUERY,Rewards,4
-conv_0402,REWARD_POINTS_QUERY,Rewards,4
-conv_0403,REWARD_POINTS_QUERY,Rewards,4
-conv_0404,REWARD_POINTS_QUERY,Rewards,4
-conv_0405,REWARD_POINTS_QUERY,Rewards,4
-conv_0406,REWARD_POINTS_QUERY,Rewards,4
-conv_0407,REWARD_POINTS_QUERY,Rewards,4
-conv_0408,REWARD_POINTS_QUERY,Rewards,4
-conv_0409,REWARD_POINTS_QUERY,Rewards,4
-conv_0410,REWARD_POINTS_QUERY,Rewards,4
-conv_0411,REWARD_REDEMPTION,Rewards,4
-conv_0412,REWARD_REDEMPTION,Rewards,4
-conv_0413,REWARD_REDEMPTION,Rewards,4
-conv_0414,REWARD_REDEMPTION,Rewards,4
-conv_0415,REWARD_REDEMPTION,Rewards,4
-conv_0416,REWARD_REDEMPTION,Rewards,4
-conv_0417,REWARD_REDEMPTION,Rewards,4
-conv_0418,REWARD_REDEMPTION,Rewards,4
-conv_0419,REWARD_REDEMPTION,Rewards,4
-conv_0420,REWARD_REDEMPTION,Rewards,4
-conv_0421,FOREIGN_TRANSACTION_QUERY,International Services,4
-conv_0422,FOREIGN_TRANSACTION_QUERY,International Services,4
-conv_0423,FOREIGN_TRANSACTION_QUERY,International Services,4
-conv_0424,FOREIGN_TRANSACTION_QUERY,International Services,4
-conv_0425,FOREIGN_TRANSACTION_QUERY,International Services,4
-conv_0426,FOREIGN_TRANSACTION_QUERY,International Services,4
-conv_0427,FOREIGN_TRANSACTION_QUERY,International Services,4
-conv_0428,FOREIGN_TRANSACTION_QUERY,International Services,4
-conv_0429,FOREIGN_TRANSACTION_QUERY,International Services,4
-conv_0430,FOREIGN_TRANSACTION_QUERY,International Services,4
-conv_0431,CURRENCY_CONVERSION_QUERY,International Services,4
-conv_0432,CURRENCY_CONVERSION_QUERY,International Services,4
-conv_0433,CURRENCY_CONVERSION_QUERY,International Services,4
-conv_0434,CURRENCY_CONVERSION_QUERY,International Services,4
-conv_0435,CURRENCY_CONVERSION_QUERY,International Services,4
-conv_0436,CURRENCY_CONVERSION_QUERY,International Services,4
-conv_0437,CURRENCY_CONVERSION_QUERY,International Services,4
-conv_0438,CURRENCY_CONVERSION_QUERY,International Services,4
-conv_0439,CURRENCY_CONVERSION_QUERY,International Services,4
-conv_0440,CURRENCY_CONVERSION_QUERY,International Services,4
-conv_0441,SUBSCRIPTION_CANCELLATION,Subscriptions,4
-conv_0442,SUBSCRIPTION_CANCELLATION,Subscriptions,4
-conv_0443,SUBSCRIPTION_CANCELLATION,Subscriptions,4
-conv_0444,SUBSCRIPTION_CANCELLATION,Subscriptions,4
-conv_0445,SUBSCRIPTION_CANCELLATION,Subscriptions,4
-conv_0446,SUBSCRIPTION_CANCELLATION,Subscriptions,4
-conv_0447,SUBSCRIPTION_CANCELLATION,Subscriptions,4
-conv_0448,SUBSCRIPTION_CANCELLATION,Subscriptions,4
-conv_0449,SUBSCRIPTION_CANCELLATION,Subscriptions,4
-conv_0450,SUBSCRIPTION_CANCELLATION,Subscriptions,4
-conv_0451,FEE_CHARGED_QUERY,Fees,4
-conv_0452,FEE_CHARGED_QUERY,Fees,4
-conv_0453,FEE_CHARGED_QUERY,Fees,4
-conv_0454,FEE_CHARGED_QUERY,Fees,4
-conv_0455,FEE_CHARGED_QUERY,Fees,4
-conv_0456,FEE_CHARGED_QUERY,Fees,4
-conv_0457,FEE_CHARGED_QUERY,Fees,4
-conv_0458,FEE_CHARGED_QUERY,Fees,4
-conv_0459,FEE_CHARGED_QUERY,Fees,4
-conv_0460,FEE_CHARGED_QUERY,Fees,4
-conv_0461,INTEREST_RATE_QUERY,Account Information,4
-conv_0462,INTEREST_RATE_QUERY,Account Information,4
-conv_0463,INTEREST_RATE_QUERY,Account Information,4
-conv_0464,INTEREST_RATE_QUERY,Account Information,4
-conv_0465,INTEREST_RATE_QUERY,Account Information,4
-conv_0466,INTEREST_RATE_QUERY,Account Information,4
-conv_0467,INTEREST_RATE_QUERY,Account Information,4
-conv_0468,INTEREST_RATE_QUERY,Account Information,4
-conv_0469,INTEREST_RATE_QUERY,Account Information,4
-conv_0470,INTEREST_RATE_QUERY,Account Information,4
-conv_0471,PAYMENT_DUE_DATE_QUERY,Payments,4
-conv_0472,PAYMENT_DUE_DATE_QUERY,Payments,4
-conv_0473,PAYMENT_DUE_DATE_QUERY,Payments,4
-conv_0474,PAYMENT_DUE_DATE_QUERY,Payments,4
-conv_0475,PAYMENT_DUE_DATE_QUERY,Payments,4
-conv_0476,PAYMENT_DUE_DATE_QUERY,Payments,4
-conv_0477,PAYMENT_DUE_DATE_QUERY,Payments,4
-conv_0478,PAYMENT_DUE_DATE_QUERY,Payments,4
-conv_0479,PAYMENT_DUE_DATE_QUERY,Payments,4
-conv_0480,PAYMENT_DUE_DATE_QUERY,Payments,4
+conversation_id,scenario,scenario_family,intent,customer_speaker,customer_gender,agent_speaker,agent_gender,customer_persona,agent_persona,num_turns,resolution_status,escalated,split
+conv_0001,REWARD_POINTS_QUERY,Rewards,REWARD_POINTS_QUERY,dylan,male,serena,female,Aarav,Anita,7,resolved,False,train
+conv_0002,BENEFICIARY_REMOVE,Transfers,BENEFICIARY_REMOVE,ryan,male,ono_anna,female,Ishaan,Aisha,9,resolved,False,train
+conv_0003,TRANSFER_CANCELLATION,Transfers,TRANSFER_CANCELLATION,ryan,male,uncle_fu,male,Vikram,Karan,8,resolved,False,train
+conv_0004,PAYMENT_FAILED,Payments,PAYMENT_FAILED,uncle_fu,male,serena,female,Aarav,Anita,8,resolved,False,train
+conv_0005,FEE_CHARGED_QUERY,Fees,FEE_CHARGED_QUERY,vivian,female,uncle_fu,male,Neha,Rahul,8,resolved,False,train
+conv_0006,BIOMETRIC_LOGIN_ISSUE,Authentication,BIOMETRIC_LOGIN_ISSUE,ono_anna,female,serena,female,Aditi,Aisha,8,resolved,False,train
+conv_0007,CASH_WITHDRAWAL_ISSUE,Cash Withdrawal,CASH_WITHDRAWAL_ISSUE,ono_anna,female,vivian,female,Priya,Aisha,10,resolved,False,train
+conv_0008,PAYMENT_CONFIRMATION,Payments,PAYMENT_CONFIRMATION,vivian,female,sohee,female,Ananya,Riya,7,resolved,False,train
+conv_0009,REWARD_POINTS_QUERY,Rewards,REWARD_POINTS_QUERY,uncle_fu,male,ryan,male,Rahul,Vivek,7,resolved,False,train
+conv_0010,PAYMENT_FAILED,Payments,PAYMENT_FAILED,ono_anna,female,sohee,female,Fatima,Sneha,8,resolved,False,train
+conv_0011,CARD_REPLACEMENT,Card Management,CARD_REPLACEMENT,sohee,female,vivian,female,Neha,Meera,10,resolved,False,train
+conv_0012,BIOMETRIC_LOGIN_ISSUE,Authentication,BIOMETRIC_LOGIN_ISSUE,vivian,female,ryan,male,Sana,Karan,8,resolved,False,train
+conv_0013,FEE_CHARGED_QUERY,Fees,FEE_CHARGED_QUERY,sohee,female,serena,female,Priya,Anita,8,resolved,False,train
+conv_0014,INTEREST_RATE_QUERY,Account Information,INTEREST_RATE_QUERY,serena,female,uncle_fu,male,Aditi,Vivek,7,resolved,False,train
+conv_0015,CASH_WITHDRAWAL_ISSUE,Cash Withdrawal,CASH_WITHDRAWAL_ISSUE,uncle_fu,male,serena,female,Arjun,Meera,10,resolved,False,train
+conv_0016,CASHBACK_MISSING,Rewards,CASHBACK_MISSING,ryan,male,uncle_fu,male,Ishaan,Vivek,8,resolved,False,train
+conv_0017,UNRECOGNIZED_TRANSACTION,Fraud,UNRECOGNIZED_TRANSACTION,sohee,female,uncle_fu,male,Kavya,Karan,8,resolved,False,train
+conv_0018,REFUND_NOT_RECEIVED,Refunds,REFUND_NOT_RECEIVED,aiden,male,dylan,male,Rahul,Vivek,8,resolved,False,train
+conv_0019,PAYMENT_FAILED,Payments,PAYMENT_FAILED,aiden,male,serena,female,Rahul,Pooja,8,resolved,False,train
+conv_0020,BENEFICIARY_REMOVE,Transfers,BENEFICIARY_REMOVE,dylan,male,ono_anna,female,Aarav,Meera,9,resolved,False,train
+conv_0021,REWARD_POINTS_QUERY,Rewards,REWARD_POINTS_QUERY,dylan,male,sohee,female,Ishaan,Aisha,7,resolved,False,train
+conv_0022,PHONE_NUMBER_CHANGE,Profile Management,PHONE_NUMBER_CHANGE,aiden,male,sohee,female,Nikhil,Riya,9,resolved,False,train
+conv_0023,EMAIL_CHANGE,Profile Management,EMAIL_CHANGE,ryan,male,serena,female,Aarav,Riya,9,resolved,False,train
+conv_0024,CURRENCY_CONVERSION_QUERY,International Services,CURRENCY_CONVERSION_QUERY,dylan,male,eric,male,Arjun,Arjun,7,resolved,False,train
+conv_0025,BENEFICIARY_REMOVE,Transfers,BENEFICIARY_REMOVE,dylan,male,sohee,female,Arjun,Anita,9,resolved,False,train
+conv_0026,BANK_TRANSFER_PENDING,Transfers,BANK_TRANSFER_PENDING,eric,male,uncle_fu,male,Arjun,Rahul,8,resolved,False,train
+conv_0027,SUBSCRIPTION_CANCELLATION,Subscriptions,SUBSCRIPTION_CANCELLATION,vivian,female,dylan,male,Priya,Vivek,8,resolved,False,train
+conv_0028,CARD_REPLACEMENT,Card Management,CARD_REPLACEMENT,aiden,male,serena,female,Rahul,Anita,10,resolved,False,train
+conv_0029,CHARGEBACK_REQUEST,Disputes,CHARGEBACK_REQUEST,ono_anna,female,sohee,female,Neha,Sneha,8,resolved,False,train
+conv_0030,UNRECOGNIZED_TRANSACTION,Fraud,UNRECOGNIZED_TRANSACTION,ono_anna,female,vivian,female,Aditi,Pooja,8,resolved,False,train
+conv_0031,BENEFICIARY_REMOVE,Transfers,BENEFICIARY_REMOVE,serena,female,vivian,female,Neha,Anita,9,resolved,False,train
+conv_0032,REFUND_NOT_RECEIVED,Refunds,REFUND_NOT_RECEIVED,sohee,female,ono_anna,female,Neha,Aisha,8,resolved,False,train
+conv_0033,ACCOUNT_STATEMENT,Account Information,ACCOUNT_STATEMENT,eric,male,ryan,male,Rohan,Arjun,8,resolved,False,train
+conv_0034,REWARD_REDEMPTION,Rewards,REWARD_REDEMPTION,ryan,male,uncle_fu,male,Aarav,Karan,8,resolved,False,train
+conv_0035,CARD_DELIVERY_STATUS,Card Delivery,CARD_DELIVERY_STATUS,sohee,female,ono_anna,female,Neha,Pooja,8,resolved,False,train
+conv_0036,PASSWORD_RESET,Authentication,PASSWORD_RESET,ryan,male,vivian,female,Arjun,Anita,8,resolved,False,train
+conv_0037,CASH_WITHDRAWAL_ISSUE,Cash Withdrawal,CASH_WITHDRAWAL_ISSUE,serena,female,ryan,male,Ananya,Vivek,10,resolved,False,train
+conv_0038,PASSWORD_RESET,Authentication,PASSWORD_RESET,sohee,female,ono_anna,female,Kavya,Aisha,8,resolved,False,train
+conv_0039,CARD_LIMIT_INCREASE,Card Management,CARD_LIMIT_INCREASE,vivian,female,serena,female,Neha,Sneha,8,resolved,False,train
+conv_0040,CARD_ACTIVATION,Card Management,CARD_ACTIVATION,vivian,female,aiden,male,Aditi,Arjun,8,resolved,False,train
+conv_0041,CARD_LIMIT_INCREASE,Card Management,CARD_LIMIT_INCREASE,vivian,female,ono_anna,female,Aditi,Meera,8,resolved,False,train
+conv_0042,MERCHANT_DISPUTE,Disputes,MERCHANT_DISPUTE,vivian,female,uncle_fu,male,Fatima,Vivek,8,resolved,False,train
+conv_0043,CARD_BLOCK,Card Security,CARD_BLOCK,eric,male,dylan,male,Ishaan,Arjun,8,resolved,False,train
+conv_0044,ACCOUNT_LOCKED,Authentication,ACCOUNT_LOCKED,serena,female,eric,male,Neha,Karan,8,resolved,False,train
+conv_0045,ACCOUNT_STATEMENT,Account Information,ACCOUNT_STATEMENT,ono_anna,female,dylan,male,Aditi,Arjun,8,resolved,False,train
+conv_0046,CURRENCY_CONVERSION_QUERY,International Services,CURRENCY_CONVERSION_QUERY,sohee,female,aiden,male,Neha,Arjun,7,resolved,False,train
+conv_0047,EMAIL_CHANGE,Profile Management,EMAIL_CHANGE,ryan,male,sohee,female,Vikram,Riya,9,resolved,False,train
+conv_0048,PAYMENT_REVERSED,Payments,PAYMENT_REVERSED,sohee,female,ono_anna,female,Ananya,Pooja,8,resolved,False,train
+conv_0049,OTP_NOT_RECEIVED,Authentication,OTP_NOT_RECEIVED,aiden,male,ono_anna,female,Rahul,Anita,8,resolved,False,train
+conv_0050,REFUND_REQUEST,Refunds,REFUND_REQUEST,eric,male,sohee,female,Arjun,Anita,8,resolved,False,train
+conv_0051,ACCOUNT_STATEMENT,Account Information,ACCOUNT_STATEMENT,uncle_fu,male,ono_anna,female,Vikram,Meera,8,resolved,False,train
+conv_0052,BANK_TRANSFER_PENDING,Transfers,BANK_TRANSFER_PENDING,ryan,male,ono_anna,female,Nikhil,Meera,8,resolved,False,train
+conv_0053,CARD_BLOCK,Card Security,CARD_BLOCK,ono_anna,female,dylan,male,Neha,Arjun,8,resolved,False,train
+conv_0054,CARD_UNBLOCK,Card Security,CARD_UNBLOCK,uncle_fu,male,sohee,female,Rohan,Sneha,8,resolved,False,train
+conv_0055,DUPLICATE_CHARGE,Payments,DUPLICATE_CHARGE,sohee,female,aiden,male,Priya,Rahul,8,resolved,False,train
+conv_0056,INTEREST_RATE_QUERY,Account Information,INTEREST_RATE_QUERY,serena,female,sohee,female,Ananya,Riya,7,resolved,False,train
+conv_0057,ACCOUNT_CLOSURE,Account Management,ACCOUNT_CLOSURE,uncle_fu,male,ryan,male,Aarav,Arjun,8,resolved,False,train
+conv_0058,ACCOUNT_REOPENING,Account Management,ACCOUNT_REOPENING,dylan,male,ono_anna,female,Rohan,Aisha,8,resolved,False,train
+conv_0059,CARD_UNBLOCK,Card Security,CARD_UNBLOCK,ono_anna,female,eric,male,Neha,Karan,8,resolved,False,train
+conv_0060,CARD_LIMIT_DECREASE,Card Management,CARD_LIMIT_DECREASE,ryan,male,vivian,female,Rahul,Sneha,7,resolved,False,train
+conv_0061,BENEFICIARY_REMOVE,Transfers,BENEFICIARY_REMOVE,ono_anna,female,dylan,male,Priya,Vivek,9,resolved,False,train
+conv_0062,CURRENCY_CONVERSION_QUERY,International Services,CURRENCY_CONVERSION_QUERY,dylan,male,sohee,female,Rahul,Anita,7,resolved,False,train
+conv_0063,BENEFICIARY_ADD,Transfers,BENEFICIARY_ADD,vivian,female,eric,male,Sana,Karan,9,resolved,False,train
+conv_0064,PAYMENT_PENDING,Payments,PAYMENT_PENDING,ryan,male,ono_anna,female,Rohan,Sneha,8,resolved,False,train
+conv_0065,BENEFICIARY_ADD,Transfers,BENEFICIARY_ADD,eric,male,ono_anna,female,Rohan,Riya,9,resolved,False,train
+conv_0066,PAYMENT_FAILED,Payments,PAYMENT_FAILED,ono_anna,female,uncle_fu,male,Sana,Vivek,8,resolved,False,train
+conv_0067,MERCHANT_DISPUTE,Disputes,MERCHANT_DISPUTE,sohee,female,vivian,female,Ananya,Anita,8,resolved,False,train
+conv_0068,BANK_TRANSFER_PENDING,Transfers,BANK_TRANSFER_PENDING,serena,female,sohee,female,Priya,Sneha,8,resolved,False,train
+conv_0069,ACCOUNT_BALANCE_QUERY,Account Information,ACCOUNT_BALANCE_QUERY,ono_anna,female,serena,female,Fatima,Meera,7,resolved,False,train
+conv_0070,INTEREST_RATE_QUERY,Account Information,INTEREST_RATE_QUERY,ryan,male,vivian,female,Rohan,Riya,7,resolved,False,train
+conv_0071,CARD_PIN_RESET,Card Management,CARD_PIN_RESET,eric,male,sohee,female,Nikhil,Aisha,8,resolved,False,train
+conv_0072,REWARD_POINTS_QUERY,Rewards,REWARD_POINTS_QUERY,eric,male,vivian,female,Rohan,Meera,7,resolved,False,train
+conv_0073,EMAIL_CHANGE,Profile Management,EMAIL_CHANGE,ono_anna,female,ryan,male,Ananya,Arjun,9,resolved,False,train
+conv_0074,MERCHANT_DISPUTE,Disputes,MERCHANT_DISPUTE,ono_anna,female,eric,male,Meera,Vivek,8,resolved,False,train
+conv_0075,SUBSCRIPTION_CANCELLATION,Subscriptions,SUBSCRIPTION_CANCELLATION,uncle_fu,male,ono_anna,female,Arjun,Meera,8,resolved,False,train
+conv_0076,FEE_CHARGED_QUERY,Fees,FEE_CHARGED_QUERY,serena,female,aiden,male,Priya,Rahul,8,resolved,False,train
+conv_0077,CARD_BLOCK,Card Security,CARD_BLOCK,uncle_fu,male,vivian,female,Aarav,Riya,8,resolved,False,train
+conv_0078,ACCOUNT_LOCKED,Authentication,ACCOUNT_LOCKED,eric,male,serena,female,Rahul,Aisha,8,resolved,False,train
+conv_0079,UNRECOGNIZED_TRANSACTION,Fraud,UNRECOGNIZED_TRANSACTION,vivian,female,ono_anna,female,Priya,Aisha,8,resolved,False,train
+conv_0080,FRAUD_DISPUTE,Fraud,FRAUD_DISPUTE,serena,female,ono_anna,female,Kavya,Anita,9,resolved,False,train
+conv_0081,PAYMENT_FAILED,Payments,PAYMENT_FAILED,sohee,female,ono_anna,female,Fatima,Aisha,8,resolved,False,train
+conv_0082,CARD_UNBLOCK,Card Security,CARD_UNBLOCK,aiden,male,sohee,female,Aarav,Sneha,8,resolved,False,train
+conv_0083,BANK_TRANSFER_PENDING,Transfers,BANK_TRANSFER_PENDING,dylan,male,aiden,male,Ishaan,Arjun,8,resolved,False,train
+conv_0084,BENEFICIARY_ADD,Transfers,BENEFICIARY_ADD,aiden,male,vivian,female,Ishaan,Sneha,9,resolved,False,train
+conv_0085,ACCOUNT_TRANSACTION_HISTORY,Account Information,ACCOUNT_TRANSACTION_HISTORY,ono_anna,female,serena,female,Ananya,Sneha,7,resolved,False,train
+conv_0086,BENEFICIARY_REMOVE,Transfers,BENEFICIARY_REMOVE,uncle_fu,male,eric,male,Rahul,Vivek,9,resolved,False,train
+conv_0087,BANK_TRANSFER_FAILED,Transfers,BANK_TRANSFER_FAILED,sohee,female,eric,male,Sana,Arjun,8,resolved,False,train
+conv_0088,FOREIGN_TRANSACTION_QUERY,International Services,FOREIGN_TRANSACTION_QUERY,vivian,female,ono_anna,female,Ananya,Meera,7,resolved,False,train
+conv_0089,PAYMENT_REVERSED,Payments,PAYMENT_REVERSED,vivian,female,dylan,male,Neha,Arjun,8,resolved,False,train
+conv_0090,UNRECOGNIZED_TRANSACTION,Fraud,UNRECOGNIZED_TRANSACTION,eric,male,dylan,male,Nikhil,Rahul,8,resolved,False,train
+conv_0091,REWARD_REDEMPTION,Rewards,REWARD_REDEMPTION,ryan,male,vivian,female,Aarav,Meera,8,resolved,False,train
+conv_0092,CHARGEBACK_REQUEST,Disputes,CHARGEBACK_REQUEST,aiden,male,ono_anna,female,Aarav,Aisha,8,resolved,False,train
+conv_0093,ACCOUNT_CLOSURE,Account Management,ACCOUNT_CLOSURE,vivian,female,serena,female,Aditi,Sneha,8,resolved,False,train
+conv_0094,LOGIN_ISSUE,Authentication,LOGIN_ISSUE,uncle_fu,male,ono_anna,female,Rahul,Pooja,8,resolved,False,train
+conv_0095,PHONE_NUMBER_CHANGE,Profile Management,PHONE_NUMBER_CHANGE,sohee,female,eric,male,Priya,Vivek,9,resolved,False,train
+conv_0096,CARD_LIMIT_INCREASE,Card Management,CARD_LIMIT_INCREASE,uncle_fu,male,dylan,male,Arjun,Arjun,8,resolved,False,train
+conv_0097,CURRENCY_CONVERSION_QUERY,International Services,CURRENCY_CONVERSION_QUERY,dylan,male,sohee,female,Nikhil,Riya,7,resolved,False,train
+conv_0098,UNRECOGNIZED_TRANSACTION,Fraud,UNRECOGNIZED_TRANSACTION,ryan,male,serena,female,Rohan,Pooja,8,resolved,False,train
+conv_0099,CHARGEBACK_REQUEST,Disputes,CHARGEBACK_REQUEST,ono_anna,female,serena,female,Kavya,Riya,8,resolved,False,train
+conv_0100,CASHBACK_MISSING,Rewards,CASHBACK_MISSING,ryan,male,aiden,male,Aarav,Rahul,8,resolved,False,train
+conv_0101,REFUND_REQUEST,Refunds,REFUND_REQUEST,sohee,female,ryan,male,Sana,Karan,8,resolved,False,train
+conv_0102,CARD_REPLACEMENT,Card Management,CARD_REPLACEMENT,uncle_fu,male,vivian,female,Aarav,Aisha,10,resolved,False,train
+conv_0103,PAYMENT_FAILED,Payments,PAYMENT_FAILED,dylan,male,uncle_fu,male,Vikram,Karan,8,resolved,False,train
+conv_0104,CARD_LIMIT_DECREASE,Card Management,CARD_LIMIT_DECREASE,ono_anna,female,sohee,female,Meera,Pooja,7,resolved,False,train
+conv_0105,REWARD_POINTS_QUERY,Rewards,REWARD_POINTS_QUERY,serena,female,sohee,female,Aditi,Anita,7,resolved,False,train
+conv_0106,ACCOUNT_REOPENING,Account Management,ACCOUNT_REOPENING,dylan,male,eric,male,Arjun,Vivek,8,resolved,False,train
+conv_0107,INTEREST_RATE_QUERY,Account Information,INTEREST_RATE_QUERY,uncle_fu,male,aiden,male,Vikram,Vivek,7,resolved,False,train
+conv_0108,ACCOUNT_BALANCE_QUERY,Account Information,ACCOUNT_BALANCE_QUERY,ryan,male,eric,male,Ishaan,Vivek,7,resolved,False,train
+conv_0109,PASSWORD_RESET,Authentication,PASSWORD_RESET,dylan,male,vivian,female,Rohan,Sneha,8,resolved,False,train
+conv_0110,BENEFICIARY_REMOVE,Transfers,BENEFICIARY_REMOVE,vivian,female,sohee,female,Kavya,Sneha,9,resolved,False,train
+conv_0111,BENEFICIARY_REMOVE,Transfers,BENEFICIARY_REMOVE,uncle_fu,male,ono_anna,female,Arjun,Sneha,9,resolved,False,train
+conv_0112,BANK_TRANSFER_FAILED,Transfers,BANK_TRANSFER_FAILED,eric,male,dylan,male,Arjun,Rahul,8,resolved,False,train
+conv_0113,EMAIL_CHANGE,Profile Management,EMAIL_CHANGE,aiden,male,sohee,female,Arjun,Pooja,9,resolved,False,train
+conv_0114,ACCOUNT_BALANCE_QUERY,Account Information,ACCOUNT_BALANCE_QUERY,serena,female,sohee,female,Priya,Riya,7,resolved,False,train
+conv_0115,PAYMENT_PENDING,Payments,PAYMENT_PENDING,uncle_fu,male,ryan,male,Vikram,Rahul,8,resolved,False,train
+conv_0116,DUPLICATE_CHARGE,Payments,DUPLICATE_CHARGE,ono_anna,female,serena,female,Neha,Meera,8,resolved,False,train
+conv_0117,EMAIL_CHANGE,Profile Management,EMAIL_CHANGE,eric,male,sohee,female,Rohan,Pooja,9,resolved,False,train
+conv_0118,REFUND_NOT_RECEIVED,Refunds,REFUND_NOT_RECEIVED,sohee,female,serena,female,Kavya,Pooja,8,resolved,False,train
+conv_0119,CARD_SECURITY_ALERT,Card Security,CARD_SECURITY_ALERT,ryan,male,ono_anna,female,Aarav,Anita,8,resolved,False,train
+conv_0120,PAYMENT_CONFIRMATION,Payments,PAYMENT_CONFIRMATION,ono_anna,female,dylan,male,Neha,Rahul,7,resolved,False,train
+conv_0121,LOGIN_ISSUE,Authentication,LOGIN_ISSUE,vivian,female,sohee,female,Ananya,Aisha,8,resolved,False,train
+conv_0122,CASH_WITHDRAWAL_ISSUE,Cash Withdrawal,CASH_WITHDRAWAL_ISSUE,eric,male,ono_anna,female,Vikram,Sneha,10,resolved,False,train
+conv_0123,BANK_TRANSFER_FAILED,Transfers,BANK_TRANSFER_FAILED,ono_anna,female,vivian,female,Meera,Sneha,8,resolved,False,train
+conv_0124,CARD_ACTIVATION,Card Management,CARD_ACTIVATION,aiden,male,sohee,female,Rahul,Anita,8,resolved,False,train
+conv_0125,ACCOUNT_BALANCE_QUERY,Account Information,ACCOUNT_BALANCE_QUERY,dylan,male,ono_anna,female,Nikhil,Meera,7,resolved,False,train
+conv_0126,ACCOUNT_TRANSACTION_HISTORY,Account Information,ACCOUNT_TRANSACTION_HISTORY,ryan,male,serena,female,Rahul,Riya,7,resolved,False,train
+conv_0127,PAYMENT_DUE_DATE_QUERY,Payments,PAYMENT_DUE_DATE_QUERY,serena,female,eric,male,Priya,Arjun,7,resolved,False,train
+conv_0128,ACCOUNT_LOCKED,Authentication,ACCOUNT_LOCKED,ono_anna,female,aiden,male,Ananya,Rahul,8,resolved,False,train
+conv_0129,BANK_TRANSFER_FAILED,Transfers,BANK_TRANSFER_FAILED,sohee,female,serena,female,Priya,Riya,8,resolved,False,train
+conv_0130,CARD_SECURITY_ALERT,Card Security,CARD_SECURITY_ALERT,ryan,male,sohee,female,Nikhil,Sneha,8,resolved,False,train
+conv_0131,CARD_SECURITY_ALERT,Card Security,CARD_SECURITY_ALERT,vivian,female,sohee,female,Fatima,Riya,8,resolved,False,train
+conv_0132,SUBSCRIPTION_CANCELLATION,Subscriptions,SUBSCRIPTION_CANCELLATION,ryan,male,vivian,female,Nikhil,Riya,8,resolved,False,train
+conv_0133,CASH_WITHDRAWAL_ISSUE,Cash Withdrawal,CASH_WITHDRAWAL_ISSUE,eric,male,sohee,female,Aarav,Sneha,10,resolved,False,train
+conv_0134,FOREIGN_TRANSACTION_QUERY,International Services,FOREIGN_TRANSACTION_QUERY,eric,male,aiden,male,Arjun,Arjun,7,resolved,False,train
+conv_0135,TRANSFER_CANCELLATION,Transfers,TRANSFER_CANCELLATION,uncle_fu,male,vivian,female,Vikram,Riya,8,resolved,False,train
+conv_0136,PAYMENT_REVERSED,Payments,PAYMENT_REVERSED,vivian,female,ryan,male,Aditi,Rahul,8,resolved,False,train
+conv_0137,PASSWORD_RESET,Authentication,PASSWORD_RESET,serena,female,vivian,female,Aditi,Anita,8,resolved,False,train
+conv_0138,MERCHANT_DISPUTE,Disputes,MERCHANT_DISPUTE,sohee,female,vivian,female,Priya,Anita,8,resolved,False,train
+conv_0139,CASHBACK_MISSING,Rewards,CASHBACK_MISSING,serena,female,uncle_fu,male,Ananya,Rahul,8,resolved,False,train
+conv_0140,REWARD_REDEMPTION,Rewards,REWARD_REDEMPTION,uncle_fu,male,vivian,female,Ishaan,Anita,8,resolved,False,train
+conv_0141,CARD_LIMIT_DECREASE,Card Management,CARD_LIMIT_DECREASE,dylan,male,serena,female,Nikhil,Aisha,7,resolved,False,train
+conv_0142,OTP_NOT_RECEIVED,Authentication,OTP_NOT_RECEIVED,ryan,male,vivian,female,Vikram,Sneha,8,resolved,False,train
+conv_0143,BENEFICIARY_REMOVE,Transfers,BENEFICIARY_REMOVE,serena,female,uncle_fu,male,Sana,Vivek,9,resolved,False,train
+conv_0144,PAYMENT_FAILED,Payments,PAYMENT_FAILED,sohee,female,uncle_fu,male,Kavya,Arjun,8,resolved,False,train
+conv_0145,CARD_DELIVERY_STATUS,Card Delivery,CARD_DELIVERY_STATUS,ryan,male,vivian,female,Nikhil,Riya,8,resolved,False,train
+conv_0146,REWARD_REDEMPTION,Rewards,REWARD_REDEMPTION,eric,male,ono_anna,female,Vikram,Anita,8,resolved,False,train
+conv_0147,PAYMENT_PENDING,Payments,PAYMENT_PENDING,sohee,female,serena,female,Kavya,Riya,8,resolved,False,train
+conv_0148,INTEREST_RATE_QUERY,Account Information,INTEREST_RATE_QUERY,aiden,male,uncle_fu,male,Ishaan,Vivek,7,resolved,False,train
+conv_0149,PASSWORD_RESET,Authentication,PASSWORD_RESET,sohee,female,dylan,male,Fatima,Vivek,8,resolved,False,train
+conv_0150,ACCOUNT_CLOSURE,Account Management,ACCOUNT_CLOSURE,serena,female,vivian,female,Aditi,Pooja,8,resolved,False,train
+conv_0151,CARD_LIMIT_DECREASE,Card Management,CARD_LIMIT_DECREASE,ono_anna,female,uncle_fu,male,Aditi,Karan,7,resolved,False,train
+conv_0152,DUPLICATE_CHARGE,Payments,DUPLICATE_CHARGE,uncle_fu,male,vivian,female,Rohan,Anita,8,resolved,False,train
+conv_0153,CASHBACK_MISSING,Rewards,CASHBACK_MISSING,aiden,male,serena,female,Aarav,Meera,8,resolved,False,train
+conv_0154,REWARD_POINTS_QUERY,Rewards,REWARD_POINTS_QUERY,sohee,female,dylan,male,Ananya,Karan,7,resolved,False,train
+conv_0155,BENEFICIARY_ADD,Transfers,BENEFICIARY_ADD,aiden,male,uncle_fu,male,Nikhil,Arjun,9,resolved,False,train
+conv_0156,EMAIL_CHANGE,Profile Management,EMAIL_CHANGE,sohee,female,vivian,female,Ananya,Sneha,9,resolved,False,train
+conv_0157,EMAIL_CHANGE,Profile Management,EMAIL_CHANGE,uncle_fu,male,sohee,female,Arjun,Pooja,9,resolved,False,train
+conv_0158,ACCOUNT_STATEMENT,Account Information,ACCOUNT_STATEMENT,sohee,female,ono_anna,female,Sana,Riya,8,resolved,False,train
+conv_0159,ACCOUNT_TRANSACTION_HISTORY,Account Information,ACCOUNT_TRANSACTION_HISTORY,dylan,male,aiden,male,Arjun,Rahul,7,resolved,False,train
+conv_0160,ACCOUNT_STATEMENT,Account Information,ACCOUNT_STATEMENT,vivian,female,ono_anna,female,Fatima,Pooja,8,resolved,False,train
+conv_0161,CARD_PIN_RESET,Card Management,CARD_PIN_RESET,aiden,male,ono_anna,female,Ishaan,Sneha,8,resolved,False,train
+conv_0162,CARD_ACTIVATION,Card Management,CARD_ACTIVATION,ryan,male,ono_anna,female,Ishaan,Anita,8,resolved,False,train
+conv_0163,CARD_SECURITY_ALERT,Card Security,CARD_SECURITY_ALERT,sohee,female,eric,male,Meera,Rahul,8,resolved,False,train
+conv_0164,UNRECOGNIZED_TRANSACTION,Fraud,UNRECOGNIZED_TRANSACTION,serena,female,sohee,female,Aditi,Riya,8,resolved,False,train
+conv_0165,PAYMENT_CONFIRMATION,Payments,PAYMENT_CONFIRMATION,ono_anna,female,vivian,female,Sana,Meera,7,resolved,False,train
+conv_0166,FEE_CHARGED_QUERY,Fees,FEE_CHARGED_QUERY,ono_anna,female,sohee,female,Meera,Aisha,8,resolved,False,train
+conv_0167,PASSWORD_RESET,Authentication,PASSWORD_RESET,uncle_fu,male,ryan,male,Vikram,Karan,8,resolved,False,train
+conv_0168,FOREIGN_TRANSACTION_QUERY,International Services,FOREIGN_TRANSACTION_QUERY,dylan,male,ryan,male,Ishaan,Vivek,7,resolved,False,train
+conv_0169,CARD_UNBLOCK,Card Security,CARD_UNBLOCK,vivian,female,uncle_fu,male,Ananya,Vivek,8,resolved,False,train
+conv_0170,PHONE_NUMBER_CHANGE,Profile Management,PHONE_NUMBER_CHANGE,vivian,female,sohee,female,Ananya,Aisha,9,resolved,False,train
+conv_0171,PHONE_NUMBER_CHANGE,Profile Management,PHONE_NUMBER_CHANGE,sohee,female,ono_anna,female,Neha,Pooja,9,resolved,False,train
+conv_0172,CARD_LIMIT_INCREASE,Card Management,CARD_LIMIT_INCREASE,serena,female,sohee,female,Priya,Aisha,8,resolved,False,train
+conv_0173,CARD_LIMIT_INCREASE,Card Management,CARD_LIMIT_INCREASE,ryan,male,dylan,male,Vikram,Arjun,8,resolved,False,train
+conv_0174,CARD_REPLACEMENT,Card Management,CARD_REPLACEMENT,eric,male,dylan,male,Nikhil,Karan,10,resolved,False,train
+conv_0175,REFUND_NOT_RECEIVED,Refunds,REFUND_NOT_RECEIVED,sohee,female,ono_anna,female,Fatima,Sneha,8,resolved,False,train
+conv_0176,ACCOUNT_BALANCE_QUERY,Account Information,ACCOUNT_BALANCE_QUERY,sohee,female,dylan,male,Sana,Karan,7,resolved,False,train
+conv_0177,FOREIGN_TRANSACTION_QUERY,International Services,FOREIGN_TRANSACTION_QUERY,uncle_fu,male,vivian,female,Aarav,Anita,7,resolved,False,train
+conv_0178,MERCHANT_DISPUTE,Disputes,MERCHANT_DISPUTE,eric,male,vivian,female,Nikhil,Riya,8,resolved,False,train
+conv_0179,FOREIGN_TRANSACTION_QUERY,International Services,FOREIGN_TRANSACTION_QUERY,serena,female,sohee,female,Sana,Aisha,7,resolved,False,train
+conv_0180,MERCHANT_DISPUTE,Disputes,MERCHANT_DISPUTE,vivian,female,ono_anna,female,Kavya,Meera,8,resolved,False,train
+conv_0181,REWARD_REDEMPTION,Rewards,REWARD_REDEMPTION,vivian,female,sohee,female,Kavya,Riya,8,resolved,False,train
+conv_0182,OTP_NOT_RECEIVED,Authentication,OTP_NOT_RECEIVED,sohee,female,serena,female,Fatima,Sneha,8,resolved,False,train
+conv_0183,PAYMENT_REVERSED,Payments,PAYMENT_REVERSED,serena,female,ono_anna,female,Aditi,Aisha,8,resolved,False,train
+conv_0184,REFUND_NOT_RECEIVED,Refunds,REFUND_NOT_RECEIVED,ryan,male,vivian,female,Arjun,Sneha,8,resolved,False,train
+conv_0185,PAYMENT_FAILED,Payments,PAYMENT_FAILED,ono_anna,female,vivian,female,Priya,Anita,8,resolved,False,train
+conv_0186,FOREIGN_TRANSACTION_QUERY,International Services,FOREIGN_TRANSACTION_QUERY,vivian,female,serena,female,Kavya,Aisha,7,resolved,False,train
+conv_0187,PASSWORD_RESET,Authentication,PASSWORD_RESET,dylan,male,uncle_fu,male,Vikram,Karan,8,resolved,False,train
+conv_0188,REFUND_PENDING,Refunds,REFUND_PENDING,vivian,female,serena,female,Sana,Riya,8,resolved,False,train
+conv_0189,REWARD_POINTS_QUERY,Rewards,REWARD_POINTS_QUERY,aiden,male,ono_anna,female,Vikram,Meera,7,resolved,False,train
+conv_0190,DUPLICATE_CHARGE,Payments,DUPLICATE_CHARGE,vivian,female,uncle_fu,male,Fatima,Rahul,8,resolved,False,train
+conv_0191,PASSWORD_RESET,Authentication,PASSWORD_RESET,ono_anna,female,dylan,male,Ananya,Vivek,8,resolved,False,train
+conv_0192,BANK_TRANSFER_PENDING,Transfers,BANK_TRANSFER_PENDING,eric,male,aiden,male,Rohan,Vivek,8,resolved,False,train
+conv_0193,ACCOUNT_LOCKED,Authentication,ACCOUNT_LOCKED,ono_anna,female,vivian,female,Fatima,Meera,8,resolved,False,train
+conv_0194,CARD_PIN_RESET,Card Management,CARD_PIN_RESET,dylan,male,ono_anna,female,Aarav,Sneha,8,resolved,False,train
+conv_0195,LOGIN_ISSUE,Authentication,LOGIN_ISSUE,sohee,female,ono_anna,female,Sana,Pooja,8,resolved,False,train
+conv_0196,SUBSCRIPTION_CANCELLATION,Subscriptions,SUBSCRIPTION_CANCELLATION,uncle_fu,male,ono_anna,female,Arjun,Sneha,8,resolved,False,train
+conv_0197,DUPLICATE_CHARGE,Payments,DUPLICATE_CHARGE,ono_anna,female,sohee,female,Priya,Sneha,8,resolved,False,train
+conv_0198,EMAIL_CHANGE,Profile Management,EMAIL_CHANGE,aiden,male,ryan,male,Nikhil,Karan,9,resolved,False,train
+conv_0199,CARD_UNBLOCK,Card Security,CARD_UNBLOCK,ono_anna,female,dylan,male,Neha,Rahul,8,resolved,False,train
+conv_0200,PAYMENT_REVERSED,Payments,PAYMENT_REVERSED,eric,male,sohee,female,Rahul,Pooja,8,resolved,False,train
+conv_0201,CARD_PIN_RESET,Card Management,CARD_PIN_RESET,vivian,female,uncle_fu,male,Priya,Vivek,8,resolved,False,train
+conv_0202,REFUND_NOT_RECEIVED,Refunds,REFUND_NOT_RECEIVED,serena,female,sohee,female,Priya,Anita,8,resolved,False,train
+conv_0203,BENEFICIARY_ADD,Transfers,BENEFICIARY_ADD,sohee,female,ono_anna,female,Aditi,Pooja,9,resolved,False,train
+conv_0204,CARD_SECURITY_ALERT,Card Security,CARD_SECURITY_ALERT,sohee,female,dylan,male,Ananya,Vivek,8,resolved,False,train
+conv_0205,PAYMENT_REVERSED,Payments,PAYMENT_REVERSED,sohee,female,ono_anna,female,Sana,Riya,8,resolved,False,train
+conv_0206,UNRECOGNIZED_TRANSACTION,Fraud,UNRECOGNIZED_TRANSACTION,sohee,female,serena,female,Neha,Sneha,8,resolved,False,train
+conv_0207,CARD_PIN_RESET,Card Management,CARD_PIN_RESET,uncle_fu,male,aiden,male,Aarav,Rahul,8,resolved,False,train
+conv_0208,TRANSFER_CANCELLATION,Transfers,TRANSFER_CANCELLATION,uncle_fu,male,aiden,male,Arjun,Vivek,8,resolved,False,train
+conv_0209,CARD_SECURITY_ALERT,Card Security,CARD_SECURITY_ALERT,vivian,female,ryan,male,Meera,Rahul,8,resolved,False,train
+conv_0210,BANK_TRANSFER_PENDING,Transfers,BANK_TRANSFER_PENDING,ono_anna,female,vivian,female,Neha,Riya,8,resolved,False,train
+conv_0211,INTEREST_RATE_QUERY,Account Information,INTEREST_RATE_QUERY,uncle_fu,male,ono_anna,female,Aarav,Sneha,7,resolved,False,train
+conv_0212,TRANSFER_CANCELLATION,Transfers,TRANSFER_CANCELLATION,sohee,female,vivian,female,Ananya,Meera,8,resolved,False,train
+conv_0213,PAYMENT_CONFIRMATION,Payments,PAYMENT_CONFIRMATION,sohee,female,dylan,male,Sana,Vivek,7,resolved,False,train
+conv_0214,BANK_TRANSFER_FAILED,Transfers,BANK_TRANSFER_FAILED,ono_anna,female,sohee,female,Priya,Pooja,8,resolved,False,train
+conv_0215,ACCOUNT_CLOSURE,Account Management,ACCOUNT_CLOSURE,ryan,male,vivian,female,Arjun,Anita,8,resolved,False,train
+conv_0216,CARD_BLOCK,Card Security,CARD_BLOCK,dylan,male,sohee,female,Rohan,Aisha,8,resolved,False,train
+conv_0217,REFUND_PENDING,Refunds,REFUND_PENDING,sohee,female,ono_anna,female,Priya,Sneha,8,resolved,False,train
+conv_0218,CARD_ACTIVATION,Card Management,CARD_ACTIVATION,vivian,female,aiden,male,Priya,Vivek,8,resolved,False,train
+conv_0219,SUBSCRIPTION_CANCELLATION,Subscriptions,SUBSCRIPTION_CANCELLATION,uncle_fu,male,ryan,male,Vikram,Vivek,8,resolved,False,train
+conv_0220,CARD_NOT_RECEIVED,Card Delivery,CARD_NOT_RECEIVED,serena,female,sohee,female,Kavya,Aisha,8,resolved,False,train
+conv_0221,FRAUD_DISPUTE,Fraud,FRAUD_DISPUTE,serena,female,sohee,female,Sana,Pooja,9,resolved,False,train
+conv_0222,SUBSCRIPTION_CANCELLATION,Subscriptions,SUBSCRIPTION_CANCELLATION,ryan,male,vivian,female,Aarav,Riya,8,resolved,False,train
+conv_0223,PASSWORD_RESET,Authentication,PASSWORD_RESET,ryan,male,vivian,female,Rohan,Riya,8,resolved,False,train
+conv_0224,UNRECOGNIZED_TRANSACTION,Fraud,UNRECOGNIZED_TRANSACTION,vivian,female,eric,male,Sana,Arjun,8,resolved,False,train
+conv_0225,CARD_DELIVERY_STATUS,Card Delivery,CARD_DELIVERY_STATUS,ono_anna,female,serena,female,Aditi,Aisha,8,resolved,False,train
+conv_0226,REWARD_REDEMPTION,Rewards,REWARD_REDEMPTION,ono_anna,female,eric,male,Neha,Vivek,8,resolved,False,train
+conv_0227,CARD_REPLACEMENT,Card Management,CARD_REPLACEMENT,serena,female,vivian,female,Fatima,Meera,10,resolved,False,train
+conv_0228,FRAUD_DISPUTE,Fraud,FRAUD_DISPUTE,sohee,female,serena,female,Aditi,Meera,9,resolved,False,train
+conv_0229,PASSWORD_RESET,Authentication,PASSWORD_RESET,uncle_fu,male,aiden,male,Vikram,Karan,8,resolved,False,train
+conv_0230,ACCOUNT_TRANSACTION_HISTORY,Account Information,ACCOUNT_TRANSACTION_HISTORY,vivian,female,ryan,male,Ananya,Karan,7,resolved,False,train
+conv_0231,MERCHANT_DISPUTE,Disputes,MERCHANT_DISPUTE,serena,female,ono_anna,female,Meera,Sneha,8,resolved,False,train
+conv_0232,UNRECOGNIZED_TRANSACTION,Fraud,UNRECOGNIZED_TRANSACTION,aiden,male,sohee,female,Rahul,Sneha,8,resolved,False,train
+conv_0233,ACCOUNT_BALANCE_QUERY,Account Information,ACCOUNT_BALANCE_QUERY,sohee,female,eric,male,Ananya,Vivek,7,resolved,False,train
+conv_0234,INTEREST_RATE_QUERY,Account Information,INTEREST_RATE_QUERY,dylan,male,vivian,female,Aarav,Riya,7,resolved,False,train
+conv_0235,ACCOUNT_TRANSACTION_HISTORY,Account Information,ACCOUNT_TRANSACTION_HISTORY,sohee,female,dylan,male,Neha,Arjun,7,resolved,False,train
+conv_0236,REWARD_POINTS_QUERY,Rewards,REWARD_POINTS_QUERY,aiden,male,ryan,male,Vikram,Rahul,7,resolved,False,train
+conv_0237,ACCOUNT_STATEMENT,Account Information,ACCOUNT_STATEMENT,sohee,female,ono_anna,female,Kavya,Sneha,8,resolved,False,train
+conv_0238,CASH_WITHDRAWAL_ISSUE,Cash Withdrawal,CASH_WITHDRAWAL_ISSUE,aiden,male,sohee,female,Aarav,Aisha,10,resolved,False,train
+conv_0239,BENEFICIARY_REMOVE,Transfers,BENEFICIARY_REMOVE,uncle_fu,male,sohee,female,Rahul,Sneha,9,resolved,False,train
+conv_0240,REWARD_REDEMPTION,Rewards,REWARD_REDEMPTION,vivian,female,sohee,female,Neha,Sneha,8,resolved,False,train
+conv_0241,SUBSCRIPTION_CANCELLATION,Subscriptions,SUBSCRIPTION_CANCELLATION,aiden,male,ono_anna,female,Vikram,Aisha,8,resolved,False,train
+conv_0242,PHONE_NUMBER_CHANGE,Profile Management,PHONE_NUMBER_CHANGE,vivian,female,dylan,male,Kavya,Karan,9,resolved,False,train
+conv_0243,TRANSFER_CANCELLATION,Transfers,TRANSFER_CANCELLATION,eric,male,ono_anna,female,Aarav,Aisha,8,resolved,False,train
+conv_0244,REWARD_REDEMPTION,Rewards,REWARD_REDEMPTION,ryan,male,dylan,male,Nikhil,Rahul,8,resolved,False,train
+conv_0245,CARD_LIMIT_INCREASE,Card Management,CARD_LIMIT_INCREASE,eric,male,sohee,female,Arjun,Aisha,8,resolved,False,train
+conv_0246,CARD_NOT_RECEIVED,Card Delivery,CARD_NOT_RECEIVED,ryan,male,vivian,female,Rahul,Meera,8,resolved,False,train
+conv_0247,BIOMETRIC_LOGIN_ISSUE,Authentication,BIOMETRIC_LOGIN_ISSUE,serena,female,ono_anna,female,Priya,Anita,8,resolved,False,train
+conv_0248,REFUND_REQUEST,Refunds,REFUND_REQUEST,dylan,male,uncle_fu,male,Aarav,Vivek,8,resolved,False,train
+conv_0249,BENEFICIARY_REMOVE,Transfers,BENEFICIARY_REMOVE,vivian,female,serena,female,Meera,Sneha,9,resolved,False,train
+conv_0250,CARD_REPLACEMENT,Card Management,CARD_REPLACEMENT,uncle_fu,male,eric,male,Rahul,Rahul,10,resolved,False,train
+conv_0251,REWARD_POINTS_QUERY,Rewards,REWARD_POINTS_QUERY,dylan,male,eric,male,Ishaan,Rahul,7,resolved,False,train
+conv_0252,ADDRESS_CHANGE,Profile Management,ADDRESS_CHANGE,vivian,female,ryan,male,Fatima,Karan,9,resolved,False,train
+conv_0253,PHONE_NUMBER_CHANGE,Profile Management,PHONE_NUMBER_CHANGE,eric,male,dylan,male,Nikhil,Karan,9,resolved,False,train
+conv_0254,ACCOUNT_BALANCE_QUERY,Account Information,ACCOUNT_BALANCE_QUERY,aiden,male,eric,male,Vikram,Karan,7,resolved,False,train
+conv_0255,ADDRESS_CHANGE,Profile Management,ADDRESS_CHANGE,ono_anna,female,serena,female,Ananya,Sneha,9,resolved,False,train
+conv_0256,CARD_NOT_RECEIVED,Card Delivery,CARD_NOT_RECEIVED,serena,female,ono_anna,female,Aditi,Sneha,8,resolved,False,train
+conv_0257,UNRECOGNIZED_TRANSACTION,Fraud,UNRECOGNIZED_TRANSACTION,ono_anna,female,sohee,female,Ananya,Anita,8,resolved,False,train
+conv_0258,TRANSFER_CANCELLATION,Transfers,TRANSFER_CANCELLATION,vivian,female,ono_anna,female,Fatima,Riya,8,resolved,False,train
+conv_0259,CARD_NOT_RECEIVED,Card Delivery,CARD_NOT_RECEIVED,aiden,male,eric,male,Aarav,Karan,8,resolved,False,train
+conv_0260,CHARGEBACK_REQUEST,Disputes,CHARGEBACK_REQUEST,ryan,male,vivian,female,Rahul,Aisha,8,resolved,False,train
+conv_0261,FRAUD_DISPUTE,Fraud,FRAUD_DISPUTE,uncle_fu,male,vivian,female,Vikram,Pooja,9,resolved,False,train
+conv_0262,REFUND_NOT_RECEIVED,Refunds,REFUND_NOT_RECEIVED,dylan,male,uncle_fu,male,Aarav,Vivek,8,resolved,False,train
+conv_0263,CARD_BLOCK,Card Security,CARD_BLOCK,dylan,male,uncle_fu,male,Nikhil,Rahul,8,resolved,False,train
+conv_0264,BIOMETRIC_LOGIN_ISSUE,Authentication,BIOMETRIC_LOGIN_ISSUE,aiden,male,vivian,female,Aarav,Pooja,8,resolved,False,train
+conv_0265,PAYMENT_DUE_DATE_QUERY,Payments,PAYMENT_DUE_DATE_QUERY,dylan,male,ryan,male,Rahul,Karan,7,resolved,False,train
+conv_0266,REWARD_POINTS_QUERY,Rewards,REWARD_POINTS_QUERY,dylan,male,serena,female,Rahul,Riya,7,resolved,False,train
+conv_0267,ACCOUNT_CLOSURE,Account Management,ACCOUNT_CLOSURE,aiden,male,serena,female,Arjun,Anita,8,resolved,False,train
+conv_0268,CARD_BLOCK,Card Security,CARD_BLOCK,serena,female,ono_anna,female,Aditi,Riya,8,resolved,False,train
+conv_0269,PAYMENT_REVERSED,Payments,PAYMENT_REVERSED,uncle_fu,male,serena,female,Rahul,Sneha,8,resolved,False,train
+conv_0270,CARD_LIMIT_INCREASE,Card Management,CARD_LIMIT_INCREASE,sohee,female,ono_anna,female,Priya,Aisha,8,resolved,False,train
+conv_0271,SUBSCRIPTION_CANCELLATION,Subscriptions,SUBSCRIPTION_CANCELLATION,ryan,male,ono_anna,female,Vikram,Meera,8,resolved,False,train
+conv_0272,PAYMENT_REVERSED,Payments,PAYMENT_REVERSED,serena,female,ono_anna,female,Neha,Aisha,8,resolved,False,train
+conv_0273,REFUND_NOT_RECEIVED,Refunds,REFUND_NOT_RECEIVED,sohee,female,serena,female,Priya,Pooja,8,resolved,False,train
+conv_0274,ACCOUNT_LOCKED,Authentication,ACCOUNT_LOCKED,dylan,male,uncle_fu,male,Aarav,Karan,8,resolved,False,train
+conv_0275,CARD_LIMIT_DECREASE,Card Management,CARD_LIMIT_DECREASE,ono_anna,female,serena,female,Ananya,Anita,7,resolved,False,train
+conv_0276,REFUND_REQUEST,Refunds,REFUND_REQUEST,serena,female,vivian,female,Priya,Riya,8,resolved,False,train
+conv_0277,CARD_ACTIVATION,Card Management,CARD_ACTIVATION,sohee,female,ryan,male,Sana,Rahul,8,resolved,False,train
+conv_0278,REFUND_PENDING,Refunds,REFUND_PENDING,sohee,female,dylan,male,Aditi,Arjun,8,resolved,False,train
+conv_0279,CASH_WITHDRAWAL_ISSUE,Cash Withdrawal,CASH_WITHDRAWAL_ISSUE,dylan,male,uncle_fu,male,Rohan,Karan,10,resolved,False,train
+conv_0280,ACCOUNT_STATEMENT,Account Information,ACCOUNT_STATEMENT,sohee,female,aiden,male,Kavya,Arjun,8,resolved,False,train
+conv_0281,CARD_ACTIVATION,Card Management,CARD_ACTIVATION,uncle_fu,male,serena,female,Nikhil,Aisha,8,resolved,False,train
+conv_0282,FEE_CHARGED_QUERY,Fees,FEE_CHARGED_QUERY,ryan,male,ono_anna,female,Nikhil,Aisha,8,resolved,False,train
+conv_0283,ACCOUNT_REOPENING,Account Management,ACCOUNT_REOPENING,eric,male,serena,female,Rohan,Riya,8,resolved,False,train
+conv_0284,CURRENCY_CONVERSION_QUERY,International Services,CURRENCY_CONVERSION_QUERY,vivian,female,serena,female,Neha,Sneha,7,resolved,False,train
+conv_0285,BANK_TRANSFER_PENDING,Transfers,BANK_TRANSFER_PENDING,ryan,male,serena,female,Rahul,Pooja,8,resolved,False,train
+conv_0286,CARD_ACTIVATION,Card Management,CARD_ACTIVATION,serena,female,ono_anna,female,Kavya,Pooja,8,resolved,False,train
+conv_0287,ACCOUNT_STATEMENT,Account Information,ACCOUNT_STATEMENT,sohee,female,serena,female,Sana,Meera,8,resolved,False,train
+conv_0288,ACCOUNT_CLOSURE,Account Management,ACCOUNT_CLOSURE,uncle_fu,male,ono_anna,female,Arjun,Pooja,8,resolved,False,train
+conv_0289,FEE_CHARGED_QUERY,Fees,FEE_CHARGED_QUERY,sohee,female,ryan,male,Meera,Arjun,8,resolved,False,train
+conv_0290,CASHBACK_MISSING,Rewards,CASHBACK_MISSING,uncle_fu,male,serena,female,Nikhil,Anita,8,resolved,False,train
+conv_0291,PHONE_NUMBER_CHANGE,Profile Management,PHONE_NUMBER_CHANGE,vivian,female,serena,female,Priya,Pooja,9,resolved,False,train
+conv_0292,FRAUD_DISPUTE,Fraud,FRAUD_DISPUTE,sohee,female,uncle_fu,male,Fatima,Rahul,9,resolved,False,train
+conv_0293,CHARGEBACK_REQUEST,Disputes,CHARGEBACK_REQUEST,serena,female,uncle_fu,male,Aditi,Rahul,8,resolved,False,train
+conv_0294,BENEFICIARY_ADD,Transfers,BENEFICIARY_ADD,aiden,male,serena,female,Aarav,Riya,9,resolved,False,train
+conv_0295,LOGIN_ISSUE,Authentication,LOGIN_ISSUE,sohee,female,aiden,male,Priya,Rahul,8,resolved,False,train
+conv_0296,BENEFICIARY_ADD,Transfers,BENEFICIARY_ADD,vivian,female,serena,female,Kavya,Sneha,9,resolved,False,train
+conv_0297,DUPLICATE_CHARGE,Payments,DUPLICATE_CHARGE,serena,female,uncle_fu,male,Fatima,Karan,8,resolved,False,train
+conv_0298,BENEFICIARY_REMOVE,Transfers,BENEFICIARY_REMOVE,dylan,male,serena,female,Nikhil,Meera,9,resolved,False,train
+conv_0299,BENEFICIARY_REMOVE,Transfers,BENEFICIARY_REMOVE,vivian,female,eric,male,Meera,Rahul,9,resolved,False,train
+conv_0300,PAYMENT_CONFIRMATION,Payments,PAYMENT_CONFIRMATION,ono_anna,female,serena,female,Fatima,Pooja,7,resolved,False,train
+conv_0301,REFUND_REQUEST,Refunds,REFUND_REQUEST,serena,female,vivian,female,Meera,Pooja,8,resolved,False,train
+conv_0302,BANK_TRANSFER_PENDING,Transfers,BANK_TRANSFER_PENDING,aiden,male,sohee,female,Arjun,Pooja,8,resolved,False,train
+conv_0303,BANK_TRANSFER_FAILED,Transfers,BANK_TRANSFER_FAILED,ryan,male,dylan,male,Arjun,Karan,8,resolved,False,train
+conv_0304,CHARGEBACK_REQUEST,Disputes,CHARGEBACK_REQUEST,aiden,male,vivian,female,Rohan,Riya,8,resolved,False,train
+conv_0305,TRANSFER_CANCELLATION,Transfers,TRANSFER_CANCELLATION,uncle_fu,male,ryan,male,Arjun,Karan,8,resolved,False,train
+conv_0306,PASSWORD_RESET,Authentication,PASSWORD_RESET,vivian,female,serena,female,Kavya,Pooja,8,resolved,False,train
+conv_0307,PASSWORD_RESET,Authentication,PASSWORD_RESET,sohee,female,serena,female,Ananya,Riya,8,resolved,False,train
+conv_0308,FOREIGN_TRANSACTION_QUERY,International Services,FOREIGN_TRANSACTION_QUERY,eric,male,dylan,male,Vikram,Karan,7,resolved,False,train
+conv_0309,SUBSCRIPTION_CANCELLATION,Subscriptions,SUBSCRIPTION_CANCELLATION,serena,female,ryan,male,Aditi,Karan,8,resolved,False,train
+conv_0310,CARD_LIMIT_INCREASE,Card Management,CARD_LIMIT_INCREASE,dylan,male,uncle_fu,male,Nikhil,Vivek,8,resolved,False,train
+conv_0311,PAYMENT_PENDING,Payments,PAYMENT_PENDING,dylan,male,serena,female,Ishaan,Meera,8,resolved,False,train
+conv_0312,CARD_REPLACEMENT,Card Management,CARD_REPLACEMENT,ryan,male,sohee,female,Rohan,Riya,10,resolved,False,train
+conv_0313,CASH_WITHDRAWAL_ISSUE,Cash Withdrawal,CASH_WITHDRAWAL_ISSUE,serena,female,uncle_fu,male,Ananya,Arjun,10,resolved,False,train
+conv_0314,REWARD_POINTS_QUERY,Rewards,REWARD_POINTS_QUERY,ono_anna,female,vivian,female,Kavya,Meera,7,resolved,False,train
+conv_0315,CASH_WITHDRAWAL_ISSUE,Cash Withdrawal,CASH_WITHDRAWAL_ISSUE,vivian,female,dylan,male,Sana,Rahul,10,resolved,False,train
+conv_0316,PAYMENT_PENDING,Payments,PAYMENT_PENDING,uncle_fu,male,aiden,male,Nikhil,Arjun,8,resolved,False,train
+conv_0317,CARD_BLOCK,Card Security,CARD_BLOCK,serena,female,uncle_fu,male,Aditi,Karan,8,resolved,False,train
+conv_0318,CARD_BLOCK,Card Security,CARD_BLOCK,serena,female,dylan,male,Neha,Arjun,8,resolved,False,train
+conv_0319,CASHBACK_MISSING,Rewards,CASHBACK_MISSING,sohee,female,dylan,male,Priya,Karan,8,resolved,False,train
+conv_0320,REWARD_REDEMPTION,Rewards,REWARD_REDEMPTION,eric,male,dylan,male,Nikhil,Rahul,8,resolved,False,train
+conv_0321,INTEREST_RATE_QUERY,Account Information,INTEREST_RATE_QUERY,uncle_fu,male,serena,female,Vikram,Pooja,7,resolved,False,train
+conv_0322,CARD_PIN_RESET,Card Management,CARD_PIN_RESET,sohee,female,ono_anna,female,Kavya,Pooja,8,resolved,False,train
+conv_0323,FRAUD_DISPUTE,Fraud,FRAUD_DISPUTE,vivian,female,dylan,male,Meera,Arjun,9,resolved,False,train
+conv_0324,FOREIGN_TRANSACTION_QUERY,International Services,FOREIGN_TRANSACTION_QUERY,vivian,female,uncle_fu,male,Fatima,Vivek,7,resolved,False,train
+conv_0325,CARD_NOT_RECEIVED,Card Delivery,CARD_NOT_RECEIVED,aiden,male,vivian,female,Nikhil,Sneha,8,resolved,False,train
+conv_0326,CARD_SECURITY_ALERT,Card Security,CARD_SECURITY_ALERT,vivian,female,serena,female,Priya,Anita,8,resolved,False,train
+conv_0327,PAYMENT_CONFIRMATION,Payments,PAYMENT_CONFIRMATION,aiden,male,vivian,female,Rahul,Anita,7,resolved,False,train
+conv_0328,MERCHANT_DISPUTE,Disputes,MERCHANT_DISPUTE,dylan,male,sohee,female,Vikram,Meera,8,resolved,False,train
+conv_0329,REFUND_REQUEST,Refunds,REFUND_REQUEST,vivian,female,ryan,male,Kavya,Arjun,8,resolved,False,train
+conv_0330,CHARGEBACK_REQUEST,Disputes,CHARGEBACK_REQUEST,vivian,female,serena,female,Fatima,Sneha,8,resolved,False,train
+conv_0331,TRANSFER_CANCELLATION,Transfers,TRANSFER_CANCELLATION,serena,female,ono_anna,female,Aditi,Meera,8,resolved,False,train
+conv_0332,ACCOUNT_STATEMENT,Account Information,ACCOUNT_STATEMENT,sohee,female,ono_anna,female,Meera,Meera,8,resolved,False,train
+conv_0333,EMAIL_CHANGE,Profile Management,EMAIL_CHANGE,sohee,female,vivian,female,Priya,Meera,9,resolved,False,train
+conv_0334,CARD_BLOCK,Card Security,CARD_BLOCK,dylan,male,ryan,male,Rahul,Arjun,8,resolved,False,train
+conv_0335,CURRENCY_CONVERSION_QUERY,International Services,CURRENCY_CONVERSION_QUERY,eric,male,sohee,female,Nikhil,Sneha,7,resolved,False,train
+conv_0336,ACCOUNT_TRANSACTION_HISTORY,Account Information,ACCOUNT_TRANSACTION_HISTORY,eric,male,aiden,male,Ishaan,Karan,7,resolved,False,train
+conv_0337,BANK_TRANSFER_PENDING,Transfers,BANK_TRANSFER_PENDING,sohee,female,serena,female,Sana,Riya,8,resolved,False,train
+conv_0338,ACCOUNT_LOCKED,Authentication,ACCOUNT_LOCKED,eric,male,ono_anna,female,Nikhil,Riya,8,resolved,False,train
+conv_0339,REWARD_REDEMPTION,Rewards,REWARD_REDEMPTION,serena,female,sohee,female,Priya,Sneha,8,resolved,False,train
+conv_0340,PAYMENT_DUE_DATE_QUERY,Payments,PAYMENT_DUE_DATE_QUERY,aiden,male,ono_anna,female,Nikhil,Aisha,7,resolved,False,train
+conv_0341,SUBSCRIPTION_CANCELLATION,Subscriptions,SUBSCRIPTION_CANCELLATION,ono_anna,female,dylan,male,Kavya,Karan,8,resolved,False,train
+conv_0342,BENEFICIARY_REMOVE,Transfers,BENEFICIARY_REMOVE,uncle_fu,male,ryan,male,Aarav,Arjun,9,resolved,False,train
+conv_0343,BIOMETRIC_LOGIN_ISSUE,Authentication,BIOMETRIC_LOGIN_ISSUE,eric,male,sohee,female,Vikram,Riya,8,resolved,False,train
+conv_0344,PAYMENT_PENDING,Payments,PAYMENT_PENDING,ono_anna,female,sohee,female,Kavya,Meera,8,resolved,False,train
+conv_0345,OTP_NOT_RECEIVED,Authentication,OTP_NOT_RECEIVED,sohee,female,uncle_fu,male,Aditi,Arjun,8,resolved,False,train
+conv_0346,PAYMENT_DUE_DATE_QUERY,Payments,PAYMENT_DUE_DATE_QUERY,eric,male,uncle_fu,male,Vikram,Vivek,7,resolved,False,train
+conv_0347,CARD_ACTIVATION,Card Management,CARD_ACTIVATION,eric,male,sohee,female,Arjun,Riya,8,resolved,False,train
+conv_0348,REFUND_NOT_RECEIVED,Refunds,REFUND_NOT_RECEIVED,serena,female,eric,male,Kavya,Rahul,8,resolved,False,train
+conv_0349,INTEREST_RATE_QUERY,Account Information,INTEREST_RATE_QUERY,vivian,female,dylan,male,Fatima,Vivek,7,resolved,False,train
+conv_0350,REFUND_REQUEST,Refunds,REFUND_REQUEST,ono_anna,female,vivian,female,Ananya,Aisha,8,resolved,False,train
+conv_0351,CASHBACK_MISSING,Rewards,CASHBACK_MISSING,eric,male,ono_anna,female,Rohan,Anita,8,resolved,False,validation
+conv_0352,PAYMENT_CONFIRMATION,Payments,PAYMENT_CONFIRMATION,aiden,male,ono_anna,female,Rohan,Pooja,7,resolved,False,validation
+conv_0353,PAYMENT_FAILED,Payments,PAYMENT_FAILED,ono_anna,female,vivian,female,Priya,Riya,8,resolved,False,validation
+conv_0354,TRANSFER_CANCELLATION,Transfers,TRANSFER_CANCELLATION,ono_anna,female,sohee,female,Priya,Pooja,8,resolved,False,validation
+conv_0355,PAYMENT_DUE_DATE_QUERY,Payments,PAYMENT_DUE_DATE_QUERY,vivian,female,sohee,female,Fatima,Anita,7,resolved,False,validation
+conv_0356,ACCOUNT_BALANCE_QUERY,Account Information,ACCOUNT_BALANCE_QUERY,ono_anna,female,vivian,female,Neha,Riya,7,resolved,False,validation
+conv_0357,PAYMENT_DUE_DATE_QUERY,Payments,PAYMENT_DUE_DATE_QUERY,dylan,male,vivian,female,Vikram,Sneha,7,resolved,False,validation
+conv_0358,BIOMETRIC_LOGIN_ISSUE,Authentication,BIOMETRIC_LOGIN_ISSUE,ono_anna,female,vivian,female,Meera,Pooja,8,resolved,False,validation
+conv_0359,REWARD_POINTS_QUERY,Rewards,REWARD_POINTS_QUERY,ono_anna,female,aiden,male,Aditi,Karan,7,resolved,False,validation
+conv_0360,ACCOUNT_LOCKED,Authentication,ACCOUNT_LOCKED,ryan,male,sohee,female,Ishaan,Meera,8,resolved,False,validation
+conv_0361,REWARD_REDEMPTION,Rewards,REWARD_REDEMPTION,uncle_fu,male,ono_anna,female,Aarav,Anita,8,resolved,False,validation
+conv_0362,CARD_ACTIVATION,Card Management,CARD_ACTIVATION,ono_anna,female,ryan,male,Meera,Rahul,8,resolved,False,validation
+conv_0363,CARD_REPLACEMENT,Card Management,CARD_REPLACEMENT,ono_anna,female,sohee,female,Meera,Anita,10,resolved,False,validation
+conv_0364,REWARD_REDEMPTION,Rewards,REWARD_REDEMPTION,uncle_fu,male,eric,male,Rahul,Karan,8,resolved,False,validation
+conv_0365,BENEFICIARY_REMOVE,Transfers,BENEFICIARY_REMOVE,sohee,female,dylan,male,Priya,Rahul,9,resolved,False,validation
+conv_0366,CARD_PIN_RESET,Card Management,CARD_PIN_RESET,vivian,female,ono_anna,female,Fatima,Sneha,8,resolved,False,validation
+conv_0367,CARD_REPLACEMENT,Card Management,CARD_REPLACEMENT,serena,female,dylan,male,Neha,Karan,10,resolved,False,validation
+conv_0368,CARD_SECURITY_ALERT,Card Security,CARD_SECURITY_ALERT,eric,male,serena,female,Aarav,Pooja,8,resolved,False,validation
+conv_0369,ADDRESS_CHANGE,Profile Management,ADDRESS_CHANGE,vivian,female,aiden,male,Kavya,Vivek,9,resolved,False,validation
+conv_0370,PAYMENT_CONFIRMATION,Payments,PAYMENT_CONFIRMATION,uncle_fu,male,aiden,male,Ishaan,Karan,7,resolved,False,validation
+conv_0371,ACCOUNT_CLOSURE,Account Management,ACCOUNT_CLOSURE,aiden,male,serena,female,Arjun,Riya,8,resolved,False,validation
+conv_0372,ACCOUNT_LOCKED,Authentication,ACCOUNT_LOCKED,eric,male,vivian,female,Vikram,Aisha,8,resolved,False,validation
+conv_0373,ACCOUNT_REOPENING,Account Management,ACCOUNT_REOPENING,aiden,male,ryan,male,Nikhil,Vivek,8,resolved,False,validation
+conv_0374,FOREIGN_TRANSACTION_QUERY,International Services,FOREIGN_TRANSACTION_QUERY,serena,female,ono_anna,female,Kavya,Anita,7,resolved,False,validation
+conv_0375,INTEREST_RATE_QUERY,Account Information,INTEREST_RATE_QUERY,sohee,female,uncle_fu,male,Aditi,Vivek,7,resolved,False,validation
+conv_0376,CASH_WITHDRAWAL_ISSUE,Cash Withdrawal,CASH_WITHDRAWAL_ISSUE,sohee,female,serena,female,Meera,Pooja,10,resolved,False,validation
+conv_0377,CARD_UNBLOCK,Card Security,CARD_UNBLOCK,aiden,male,serena,female,Arjun,Riya,8,resolved,False,validation
+conv_0378,CARD_BLOCK,Card Security,CARD_BLOCK,serena,female,ryan,male,Aditi,Rahul,8,resolved,False,validation
+conv_0379,PASSWORD_RESET,Authentication,PASSWORD_RESET,sohee,female,aiden,male,Neha,Karan,8,resolved,False,validation
+conv_0380,FEE_CHARGED_QUERY,Fees,FEE_CHARGED_QUERY,eric,male,ryan,male,Ishaan,Arjun,8,resolved,False,validation
+conv_0381,REFUND_REQUEST,Refunds,REFUND_REQUEST,serena,female,vivian,female,Aditi,Aisha,8,resolved,False,validation
+conv_0382,CARD_ACTIVATION,Card Management,CARD_ACTIVATION,dylan,male,sohee,female,Rahul,Anita,8,resolved,False,validation
+conv_0383,INTEREST_RATE_QUERY,Account Information,INTEREST_RATE_QUERY,aiden,male,dylan,male,Nikhil,Arjun,7,resolved,False,validation
+conv_0384,LOGIN_ISSUE,Authentication,LOGIN_ISSUE,eric,male,uncle_fu,male,Rohan,Rahul,8,resolved,False,validation
+conv_0385,CARD_PIN_RESET,Card Management,CARD_PIN_RESET,vivian,female,ono_anna,female,Ananya,Anita,8,resolved,False,validation
+conv_0386,FOREIGN_TRANSACTION_QUERY,International Services,FOREIGN_TRANSACTION_QUERY,serena,female,ono_anna,female,Ananya,Aisha,7,resolved,False,validation
+conv_0387,TRANSFER_CANCELLATION,Transfers,TRANSFER_CANCELLATION,ryan,male,dylan,male,Ishaan,Karan,8,resolved,False,validation
+conv_0388,INTEREST_RATE_QUERY,Account Information,INTEREST_RATE_QUERY,dylan,male,serena,female,Rohan,Sneha,7,resolved,False,validation
+conv_0389,REFUND_REQUEST,Refunds,REFUND_REQUEST,aiden,male,ono_anna,female,Arjun,Riya,8,resolved,False,validation
+conv_0390,REFUND_PENDING,Refunds,REFUND_PENDING,eric,male,ono_anna,female,Vikram,Pooja,8,resolved,False,validation
+conv_0391,REWARD_POINTS_QUERY,Rewards,REWARD_POINTS_QUERY,uncle_fu,male,eric,male,Rohan,Arjun,7,resolved,False,validation
+conv_0392,DUPLICATE_CHARGE,Payments,DUPLICATE_CHARGE,sohee,female,ono_anna,female,Fatima,Aisha,8,resolved,False,validation
+conv_0393,BANK_TRANSFER_FAILED,Transfers,BANK_TRANSFER_FAILED,aiden,male,ono_anna,female,Rahul,Aisha,8,resolved,False,validation
+conv_0394,CARD_DELIVERY_STATUS,Card Delivery,CARD_DELIVERY_STATUS,vivian,female,ono_anna,female,Fatima,Riya,8,resolved,False,validation
+conv_0395,CARD_UNBLOCK,Card Security,CARD_UNBLOCK,dylan,male,serena,female,Rahul,Pooja,8,resolved,False,validation
+conv_0396,ACCOUNT_TRANSACTION_HISTORY,Account Information,ACCOUNT_TRANSACTION_HISTORY,ono_anna,female,serena,female,Kavya,Aisha,7,resolved,False,validation
+conv_0397,PAYMENT_PENDING,Payments,PAYMENT_PENDING,ono_anna,female,eric,male,Meera,Arjun,8,resolved,False,validation
+conv_0398,REWARD_POINTS_QUERY,Rewards,REWARD_POINTS_QUERY,dylan,male,serena,female,Aarav,Sneha,7,resolved,False,validation
+conv_0399,REWARD_REDEMPTION,Rewards,REWARD_REDEMPTION,serena,female,ono_anna,female,Neha,Anita,8,resolved,False,validation
+conv_0400,CHARGEBACK_REQUEST,Disputes,CHARGEBACK_REQUEST,eric,male,serena,female,Rohan,Riya,8,resolved,False,validation
+conv_0401,OTP_NOT_RECEIVED,Authentication,OTP_NOT_RECEIVED,ono_anna,female,serena,female,Priya,Riya,8,resolved,False,validation
+conv_0402,BENEFICIARY_ADD,Transfers,BENEFICIARY_ADD,aiden,male,serena,female,Vikram,Sneha,9,resolved,False,validation
+conv_0403,DUPLICATE_CHARGE,Payments,DUPLICATE_CHARGE,serena,female,ono_anna,female,Sana,Pooja,8,resolved,False,validation
+conv_0404,CARD_SECURITY_ALERT,Card Security,CARD_SECURITY_ALERT,vivian,female,ono_anna,female,Neha,Riya,8,resolved,False,validation
+conv_0405,CARD_LIMIT_DECREASE,Card Management,CARD_LIMIT_DECREASE,dylan,male,ryan,male,Aarav,Karan,7,resolved,False,validation
+conv_0406,BANK_TRANSFER_PENDING,Transfers,BANK_TRANSFER_PENDING,serena,female,ono_anna,female,Sana,Sneha,8,resolved,False,validation
+conv_0407,EMAIL_CHANGE,Profile Management,EMAIL_CHANGE,sohee,female,dylan,male,Priya,Rahul,9,resolved,False,validation
+conv_0408,REFUND_REQUEST,Refunds,REFUND_REQUEST,serena,female,ono_anna,female,Neha,Pooja,8,resolved,False,validation
+conv_0409,ACCOUNT_TRANSACTION_HISTORY,Account Information,ACCOUNT_TRANSACTION_HISTORY,serena,female,vivian,female,Aditi,Pooja,7,resolved,False,validation
+conv_0410,SUBSCRIPTION_CANCELLATION,Subscriptions,SUBSCRIPTION_CANCELLATION,ono_anna,female,sohee,female,Fatima,Anita,8,resolved,False,validation
+conv_0411,ACCOUNT_LOCKED,Authentication,ACCOUNT_LOCKED,vivian,female,aiden,male,Priya,Karan,8,resolved,False,validation
+conv_0412,ADDRESS_CHANGE,Profile Management,ADDRESS_CHANGE,ono_anna,female,vivian,female,Meera,Riya,9,resolved,False,validation
+conv_0413,PASSWORD_RESET,Authentication,PASSWORD_RESET,serena,female,ono_anna,female,Neha,Pooja,8,resolved,False,validation
+conv_0414,CARD_BLOCK,Card Security,CARD_BLOCK,uncle_fu,male,serena,female,Ishaan,Aisha,8,resolved,False,validation
+conv_0415,CASHBACK_MISSING,Rewards,CASHBACK_MISSING,vivian,female,uncle_fu,male,Kavya,Vivek,8,resolved,False,validation
+conv_0416,PASSWORD_RESET,Authentication,PASSWORD_RESET,vivian,female,serena,female,Ananya,Riya,8,resolved,False,validation
+conv_0417,CARD_NOT_RECEIVED,Card Delivery,CARD_NOT_RECEIVED,ono_anna,female,vivian,female,Aditi,Pooja,8,resolved,False,validation
+conv_0418,DUPLICATE_CHARGE,Payments,DUPLICATE_CHARGE,sohee,female,serena,female,Ananya,Meera,8,resolved,False,validation
+conv_0419,CARD_SECURITY_ALERT,Card Security,CARD_SECURITY_ALERT,eric,male,serena,female,Aarav,Anita,8,resolved,False,validation
+conv_0420,CARD_LIMIT_INCREASE,Card Management,CARD_LIMIT_INCREASE,eric,male,ono_anna,female,Ishaan,Sneha,8,resolved,False,validation
+conv_0421,CASH_WITHDRAWAL_ISSUE,Cash Withdrawal,CASH_WITHDRAWAL_ISSUE,ryan,male,uncle_fu,male,Nikhil,Karan,10,resolved,False,validation
+conv_0422,EMAIL_CHANGE,Profile Management,EMAIL_CHANGE,serena,female,dylan,male,Fatima,Vivek,9,resolved,False,validation
+conv_0423,DUPLICATE_CHARGE,Payments,DUPLICATE_CHARGE,ono_anna,female,vivian,female,Neha,Riya,8,resolved,False,validation
+conv_0424,ACCOUNT_STATEMENT,Account Information,ACCOUNT_STATEMENT,dylan,male,serena,female,Arjun,Aisha,8,resolved,False,validation
+conv_0425,FOREIGN_TRANSACTION_QUERY,International Services,FOREIGN_TRANSACTION_QUERY,uncle_fu,male,ryan,male,Rahul,Karan,7,resolved,False,validation
+conv_0426,REWARD_REDEMPTION,Rewards,REWARD_REDEMPTION,ono_anna,female,uncle_fu,male,Meera,Karan,8,resolved,False,test
+conv_0427,ACCOUNT_STATEMENT,Account Information,ACCOUNT_STATEMENT,ryan,male,serena,female,Vikram,Pooja,8,resolved,False,test
+conv_0428,SUBSCRIPTION_CANCELLATION,Subscriptions,SUBSCRIPTION_CANCELLATION,aiden,male,ono_anna,female,Vikram,Sneha,8,resolved,False,test
+conv_0429,BANK_TRANSFER_FAILED,Transfers,BANK_TRANSFER_FAILED,serena,female,vivian,female,Ananya,Aisha,8,resolved,False,test
+conv_0430,CARD_PIN_RESET,Card Management,CARD_PIN_RESET,eric,male,ryan,male,Arjun,Arjun,8,resolved,False,test
+conv_0431,ACCOUNT_STATEMENT,Account Information,ACCOUNT_STATEMENT,ono_anna,female,sohee,female,Sana,Aisha,8,resolved,False,test
+conv_0432,ADDRESS_CHANGE,Profile Management,ADDRESS_CHANGE,ono_anna,female,sohee,female,Priya,Meera,9,resolved,False,test
+conv_0433,BANK_TRANSFER_PENDING,Transfers,BANK_TRANSFER_PENDING,sohee,female,uncle_fu,male,Fatima,Arjun,8,resolved,False,test
+conv_0434,ACCOUNT_REOPENING,Account Management,ACCOUNT_REOPENING,serena,female,dylan,male,Ananya,Karan,8,resolved,False,test
+conv_0435,PASSWORD_RESET,Authentication,PASSWORD_RESET,aiden,male,ono_anna,female,Nikhil,Riya,8,resolved,False,test
+conv_0436,ACCOUNT_LOCKED,Authentication,ACCOUNT_LOCKED,vivian,female,ono_anna,female,Fatima,Anita,8,resolved,False,test
+conv_0437,BANK_TRANSFER_FAILED,Transfers,BANK_TRANSFER_FAILED,eric,male,ono_anna,female,Vikram,Sneha,8,resolved,False,test
+conv_0438,REFUND_PENDING,Refunds,REFUND_PENDING,serena,female,vivian,female,Neha,Pooja,8,resolved,False,test
+conv_0439,BANK_TRANSFER_FAILED,Transfers,BANK_TRANSFER_FAILED,sohee,female,vivian,female,Fatima,Sneha,8,resolved,False,test
+conv_0440,REFUND_PENDING,Refunds,REFUND_PENDING,ryan,male,ono_anna,female,Arjun,Anita,8,resolved,False,test
+conv_0441,PAYMENT_CONFIRMATION,Payments,PAYMENT_CONFIRMATION,aiden,male,sohee,female,Nikhil,Sneha,7,resolved,False,test
+conv_0442,CURRENCY_CONVERSION_QUERY,International Services,CURRENCY_CONVERSION_QUERY,uncle_fu,male,vivian,female,Ishaan,Pooja,7,resolved,False,test
+conv_0443,ACCOUNT_TRANSACTION_HISTORY,Account Information,ACCOUNT_TRANSACTION_HISTORY,aiden,male,ono_anna,female,Vikram,Anita,7,resolved,False,test
+conv_0444,PHONE_NUMBER_CHANGE,Profile Management,PHONE_NUMBER_CHANGE,vivian,female,ono_anna,female,Meera,Pooja,9,resolved,False,test
+conv_0445,CARD_SECURITY_ALERT,Card Security,CARD_SECURITY_ALERT,uncle_fu,male,eric,male,Aarav,Vivek,8,resolved,False,test
+conv_0446,CURRENCY_CONVERSION_QUERY,International Services,CURRENCY_CONVERSION_QUERY,vivian,female,serena,female,Kavya,Meera,7,resolved,False,test
+conv_0447,INTEREST_RATE_QUERY,Account Information,INTEREST_RATE_QUERY,sohee,female,vivian,female,Meera,Riya,7,resolved,False,test
+conv_0448,DUPLICATE_CHARGE,Payments,DUPLICATE_CHARGE,ono_anna,female,serena,female,Kavya,Pooja,8,resolved,False,test
+conv_0449,BANK_TRANSFER_PENDING,Transfers,BANK_TRANSFER_PENDING,serena,female,sohee,female,Neha,Anita,8,resolved,False,test
+conv_0450,ACCOUNT_LOCKED,Authentication,ACCOUNT_LOCKED,uncle_fu,male,vivian,female,Aarav,Aisha,8,resolved,False,test
+conv_0451,REFUND_PENDING,Refunds,REFUND_PENDING,vivian,female,ryan,male,Kavya,Arjun,8,resolved,False,test
+conv_0452,BANK_TRANSFER_FAILED,Transfers,BANK_TRANSFER_FAILED,vivian,female,ono_anna,female,Neha,Pooja,8,resolved,False,test
+conv_0453,TRANSFER_CANCELLATION,Transfers,TRANSFER_CANCELLATION,vivian,female,ono_anna,female,Aditi,Riya,8,resolved,False,test
+conv_0454,CASH_WITHDRAWAL_ISSUE,Cash Withdrawal,CASH_WITHDRAWAL_ISSUE,uncle_fu,male,ono_anna,female,Vikram,Pooja,10,resolved,False,test
+conv_0455,CARD_REPLACEMENT,Card Management,CARD_REPLACEMENT,dylan,male,serena,female,Rohan,Pooja,10,resolved,False,test
+conv_0456,PHONE_NUMBER_CHANGE,Profile Management,PHONE_NUMBER_CHANGE,uncle_fu,male,sohee,female,Ishaan,Anita,9,resolved,False,test
+conv_0457,ACCOUNT_STATEMENT,Account Information,ACCOUNT_STATEMENT,eric,male,dylan,male,Ishaan,Karan,8,resolved,False,test
+conv_0458,CARD_DELIVERY_STATUS,Card Delivery,CARD_DELIVERY_STATUS,uncle_fu,male,dylan,male,Rahul,Karan,8,resolved,False,test
+conv_0459,MERCHANT_DISPUTE,Disputes,MERCHANT_DISPUTE,serena,female,ono_anna,female,Kavya,Meera,8,resolved,False,test
+conv_0460,REWARD_REDEMPTION,Rewards,REWARD_REDEMPTION,aiden,male,dylan,male,Nikhil,Karan,8,resolved,False,test
+conv_0461,CARD_BLOCK,Card Security,CARD_BLOCK,ono_anna,female,aiden,male,Neha,Vivek,8,resolved,False,test
+conv_0462,CARD_REPLACEMENT,Card Management,CARD_REPLACEMENT,dylan,male,vivian,female,Vikram,Anita,10,resolved,False,test
+conv_0463,BANK_TRANSFER_PENDING,Transfers,BANK_TRANSFER_PENDING,dylan,male,aiden,male,Vikram,Arjun,8,resolved,False,test
+conv_0464,CARD_NOT_RECEIVED,Card Delivery,CARD_NOT_RECEIVED,dylan,male,aiden,male,Ishaan,Arjun,8,resolved,False,test
+conv_0465,DUPLICATE_CHARGE,Payments,DUPLICATE_CHARGE,serena,female,vivian,female,Meera,Sneha,8,resolved,False,test
+conv_0466,BENEFICIARY_REMOVE,Transfers,BENEFICIARY_REMOVE,serena,female,vivian,female,Priya,Aisha,9,resolved,False,test
+conv_0467,CASHBACK_MISSING,Rewards,CASHBACK_MISSING,ono_anna,female,vivian,female,Priya,Riya,8,resolved,False,test
+conv_0468,OTP_NOT_RECEIVED,Authentication,OTP_NOT_RECEIVED,ryan,male,uncle_fu,male,Nikhil,Rahul,8,resolved,False,test
+conv_0469,ACCOUNT_LOCKED,Authentication,ACCOUNT_LOCKED,ono_anna,female,sohee,female,Neha,Meera,8,resolved,False,test
+conv_0470,PAYMENT_PENDING,Payments,PAYMENT_PENDING,eric,male,serena,female,Rohan,Aisha,8,resolved,False,test
+conv_0471,ACCOUNT_TRANSACTION_HISTORY,Account Information,ACCOUNT_TRANSACTION_HISTORY,vivian,female,ono_anna,female,Neha,Meera,7,resolved,False,test
+conv_0472,PAYMENT_CONFIRMATION,Payments,PAYMENT_CONFIRMATION,aiden,male,ryan,male,Ishaan,Arjun,7,resolved,False,test
+conv_0473,CASH_WITHDRAWAL_ISSUE,Cash Withdrawal,CASH_WITHDRAWAL_ISSUE,ryan,male,ono_anna,female,Vikram,Pooja,10,resolved,False,test
+conv_0474,REWARD_REDEMPTION,Rewards,REWARD_REDEMPTION,aiden,male,ono_anna,female,Rohan,Aisha,8,resolved,False,test
+conv_0475,LOGIN_ISSUE,Authentication,LOGIN_ISSUE,sohee,female,dylan,male,Kavya,Rahul,8,resolved,False,test
+conv_0476,CARD_BLOCK,Card Security,CARD_BLOCK,aiden,male,eric,male,Aarav,Vivek,8,resolved,False,test
+conv_0477,CASH_WITHDRAWAL_ISSUE,Cash Withdrawal,CASH_WITHDRAWAL_ISSUE,dylan,male,sohee,female,Rohan,Riya,10,resolved,False,test
+conv_0478,ACCOUNT_REOPENING,Account Management,ACCOUNT_REOPENING,eric,male,aiden,male,Vikram,Rahul,8,resolved,False,test
+conv_0479,CARD_LIMIT_DECREASE,Card Management,CARD_LIMIT_DECREASE,dylan,male,sohee,female,Rohan,Meera,7,resolved,False,test
+conv_0480,CASHBACK_MISSING,Rewards,CASHBACK_MISSING,ryan,male,sohee,female,Rohan,Pooja,8,resolved,False,test
+conv_0481,OTP_NOT_RECEIVED,Authentication,OTP_NOT_RECEIVED,vivian,female,serena,female,Ananya,Pooja,8,resolved,False,test
+conv_0482,MERCHANT_DISPUTE,Disputes,MERCHANT_DISPUTE,uncle_fu,male,ryan,male,Aarav,Rahul,8,resolved,False,test
+conv_0483,BENEFICIARY_REMOVE,Transfers,BENEFICIARY_REMOVE,serena,female,eric,male,Priya,Arjun,9,resolved,False,test
+conv_0484,ACCOUNT_TRANSACTION_HISTORY,Account Information,ACCOUNT_TRANSACTION_HISTORY,aiden,male,dylan,male,Aarav,Karan,7,resolved,False,test
+conv_0485,CASHBACK_MISSING,Rewards,CASHBACK_MISSING,sohee,female,vivian,female,Fatima,Anita,8,resolved,False,test
+conv_0486,BANK_TRANSFER_PENDING,Transfers,BANK_TRANSFER_PENDING,eric,male,serena,female,Aarav,Pooja,8,resolved,False,test
+conv_0487,CASHBACK_MISSING,Rewards,CASHBACK_MISSING,aiden,male,serena,female,Aarav,Riya,8,resolved,False,test
+conv_0488,BANK_TRANSFER_FAILED,Transfers,BANK_TRANSFER_FAILED,serena,female,dylan,male,Aditi,Vivek,8,resolved,False,test
+conv_0489,UNRECOGNIZED_TRANSACTION,Fraud,UNRECOGNIZED_TRANSACTION,serena,female,ryan,male,Aditi,Vivek,8,resolved,False,test
+conv_0490,ACCOUNT_CLOSURE,Account Management,ACCOUNT_CLOSURE,sohee,female,aiden,male,Aditi,Vivek,8,resolved,False,test
+conv_0491,PAYMENT_REVERSED,Payments,PAYMENT_REVERSED,sohee,female,serena,female,Ananya,Anita,8,resolved,False,test
+conv_0492,LOGIN_ISSUE,Authentication,LOGIN_ISSUE,aiden,male,vivian,female,Aarav,Sneha,8,resolved,False,test
+conv_0493,FOREIGN_TRANSACTION_QUERY,International Services,FOREIGN_TRANSACTION_QUERY,ono_anna,female,vivian,female,Sana,Pooja,7,resolved,False,test
+conv_0494,CARD_REPLACEMENT,Card Management,CARD_REPLACEMENT,uncle_fu,male,ono_anna,female,Vikram,Anita,10,resolved,False,test
+conv_0495,TRANSFER_CANCELLATION,Transfers,TRANSFER_CANCELLATION,ono_anna,female,sohee,female,Aditi,Meera,8,resolved,False,test
+conv_0496,FEE_CHARGED_QUERY,Fees,FEE_CHARGED_QUERY,uncle_fu,male,dylan,male,Nikhil,Rahul,8,resolved,False,test
+conv_0497,ACCOUNT_BALANCE_QUERY,Account Information,ACCOUNT_BALANCE_QUERY,ono_anna,female,serena,female,Ananya,Meera,7,resolved,False,test
+conv_0498,CARD_NOT_RECEIVED,Card Delivery,CARD_NOT_RECEIVED,serena,female,ono_anna,female,Aditi,Anita,8,resolved,False,test
+conv_0499,FOREIGN_TRANSACTION_QUERY,International Services,FOREIGN_TRANSACTION_QUERY,ryan,male,sohee,female,Rohan,Aisha,7,resolved,False,test
+conv_0500,BENEFICIARY_REMOVE,Transfers,BENEFICIARY_REMOVE,ono_anna,female,sohee,female,Aditi,Anita,9,resolved,False,test

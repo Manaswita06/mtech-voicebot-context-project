@@ -1,29 +1,33 @@
 # Voice Phase 2 Dataset (Qwen3-TTS)
 
-Synthetic **spoken customer-support conversations** for Phase 2 experiments
-(ASR, diarization, intent detection, emotion and context tracking).
+Synthetic spoken enterprise customer-support conversations for Phase 2 experiments involving:
+- Automatic Speech Recognition (ASR)
+- Speaker diarization
+- Intent detection
+- Emotion recognition
+- Context and state tracking
+- Multi-turn conversational analysis
 
-The dataset is built by a four-stage pipeline: text conversations are generated
-from a scenario catalogue, annotated with emotion/prosody attributes, rendered
-turn by turn with the **Qwen3-TTS** custom-voice model, and finally merged into a
-single two-speaker WAV per conversation.
+The dataset is generated through a three-stage pipeline:
+1. Generate coherent scenario-based conversations with speaker, gender, and emotional metadata.
+2. Render each conversation turn using Qwen3-TTS CustomVoice.
+3. Merge individual turn-level WAV files into complete two-speaker conversations.
 
 ---
 
 ## Pipeline overview
 
 ```
-data/scenarios.py
+data/lexicon.py
         │  01_generate_dataset.py
         ▼
-data/conversations.json (+ .jsonl, metadata.csv)
-        │  02_add_voice_attributes.py
-        ▼
 data/emotional_conversations.json
-        │  03_generate_emotional_audio.py   (Qwen3-TTS)
+data/emotional_conversations.jsonl
+data/metadata.csv
+        │  02_generate_emotional_audio.py   (Qwen3-TTS)
         ▼
-generated_turns/<conversation_id>/turn_<n>_<role>_<speaker>.wav
-        │  04_merge_conversations.py        (pydub)
+new_generated_turns/<conversation_id>/turn_<n>_<role>_<speaker>.wav
+        │  03_merge_conversations.py        (pydub)
         ▼
 conversations_audio/<conversation_id>.wav
 ```
@@ -34,18 +38,15 @@ conversations_audio/<conversation_id>.wav
 
 ```
 voice_phase2_dataset/
-├── 01_generate_dataset.py         # text conversations from scenarios
-├── 02_add_voice_attributes.py     # emotion / prosody / pause annotation
-├── 03_generate_emotional_audio.py # per-turn TTS with Qwen3-TTS
-├── 04_merge_conversations.py      # merge turns into one WAV per conversation
+├── 01_generate_dataset.py         # text conversations from different templates
+├── 02_generate_emotional_audio.py # per-turn TTS with Qwen3-TTS
+├── 03_merge_conversations.py      # merge turns into one WAV per conversation
 ├── data/
-│   ├── scenarios.py                    # scenario catalogue (scenario -> family)
-│   ├── conversations.json              # generated text conversations (480)
-│   ├── conversations.jsonl             # same data, one conversation per line
+│   ├── emotional_conversations.json              # generated text conversations + voice_attributes (500)
 │   ├── metadata.csv                    # flat per-conversation metadata
-│   ├── emotional_conversations.json    # conversations + voice_attributes
-│   └── speaker_assignments.json        # speaker chosen per conversation
-├── generated_turns/               # per-turn WAV files
+│   ├── emotional_conversations.jsonl    # conversations + voice_attributes
+│   └── lexicon.py       # speaker chosen per conversation
+├── new_generated_turns/               # per-turn WAV files
 └── conversations_audio/           # final merged conversation WAVs
 ```
 
@@ -75,28 +76,23 @@ Run the stages in order **from inside this folder** (all paths are relative):
 cd voice_phase2_dataset
 
 python 01_generate_dataset.py
-python 02_add_voice_attributes.py
-python 03_generate_emotional_audio.py
-python 04_merge_conversations.py
+python 02_generate_emotional_audio.py
+python 03_merge_conversations.py
 ```
 
 ### 01 — `01_generate_dataset.py`
 Generates 10 conversations for each scenario in `data/scenarios.py`
-(48 scenarios → **480 conversations**, ids `conv_0001` … `conv_0480`).
-Each conversation has 4 alternating turns (customer → agent → customer → agent)
-built from scenario-specific templates, agent openings and closings, and a
-`customer_name` drawn from `["aiden", "serena", "eric", "sohee"]`.
-Writes `data/conversations.json`, `data/conversations.jsonl` and
-`data/metadata.csv` (`conversation_id, scenario, scenario_family, num_turns`).
-
-### 02 — `02_add_voice_attributes.py`
-Adds a `voice_attributes` block to every turn.
+(50 scenarios → **500 conversations**, ids `conv_0001` … `conv_0500`).
+Each conversation has multiple alternating turns built from scenario-specific templates, agent openings and closings, and a
+`customer_name` drawn from `["aiden", "serena", "eric", "sohee"]`. Adds a `voice_attributes` block to every turn.
 Customer emotions are restricted to those plausible for the scenario
 (`SCENARIO_EMOTIONS`, e.g. `FRAUD_DISPUTE → anxious / angry / worried`), agents
 get a professional style (`calm`, `empathetic`, `reassuring`, `apologetic`,
-`professional`). Writes `data/emotional_conversations.json`.
+`professional`). Writes `data/emotional_conversations.json`, `data/emotional_conversations.jsonl` and
+`data/metadata.csv` (`conversation_id, scenario, scenario_family, num_turns`).
 
-### 03 — `03_generate_emotional_audio.py`
+
+### 02 — `02_generate_emotional_audio.py`
 Renders each turn with Qwen3-TTS.
 * **Speakers.** The customer voice is the conversation's `customer_name`; the
   agent voice is picked at random from

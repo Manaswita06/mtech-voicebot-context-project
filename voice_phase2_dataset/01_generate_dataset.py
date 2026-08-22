@@ -1,244 +1,1101 @@
+#!/usr/bin/env python3
+
+# ============================================================
+# generate_dataset.py
+#
+# Generate coherent synthetic enterprise-support conversations.
+#
+# The generator:
+#
+# 1. Selects one scenario.
+# 2. Uses only that scenario's entities.
+# 3. Follows only that scenario's dialogue flow.
+# 4. Uses only that scenario's templates.
+# 5. Ensures customer/agent role consistency.
+# 6. Maps persona gender to the correct Qwen TTS voice gender.
+#
+# Output:
+#
+# data/emotional_conversations.json
+# data/emotional_conversations.jsonl
+# data/metadata.csv
+# ============================================================
+
+import csv
 import json
 import random
-import csv
 from pathlib import Path
 
-from data.scenarios import SCENARIOS
+from data.lexicon import SCENARIOS
 
+
+# ============================================================
+# CONFIGURATION
+# ============================================================
+
+NUM_CONVERSATIONS = 500
 
 OUTPUT_DIR = Path("data")
-OUTPUT_DIR.mkdir(exist_ok=True)
+
+JSON_FILE = OUTPUT_DIR / "emotional_conversations.json"
+
+JSONL_FILE = OUTPUT_DIR / "emotional_conversations.jsonl"
+
+METADATA_FILE = OUTPUT_DIR / "metadata.csv"
 
 
-CUSTOMER_NAMES = ["aiden", "serena", "eric", "sohee"]
+# Set a seed for reproducibility.
+random.seed(42)
 
 
-TEMPLATES = {
+# ============================================================
+# PERSONAS WITH GENDER
+# ============================================================
 
-    "CARD_REPLACEMENT": [
-        "My card is damaged and I need a replacement.",
-        "I need to replace my card as soon as possible."
-    ],
+CUSTOMER_PERSONAS = {
 
-    "PAYMENT_FAILED": [
-        "My payment keeps getting declined.",
-        "I have tried several times but my payment is failing."
-    ],
+    "Aarav": "male",
 
-    "PAYMENT_PENDING": [
-        "My payment has been pending for a long time.",
-        "Can you tell me why my transaction is still pending?"
-    ],
+    "Fatima": "female",
 
-    "DUPLICATE_CHARGE": [
-        "I think I was charged twice for the same transaction.",
-        "There are two identical charges on my account."
-    ],
+    "Rahul": "male",
 
-    "UNRECOGNIZED_TRANSACTION": [
-        "There is a transaction that I do not recognize.",
-        "I see a charge on my account that I didn't make."
-    ],
+    "Priya": "female",
 
-    "REFUND_REQUEST": [
-        "I would like to request a refund.",
-        "Can you help me get a refund for this purchase?"
-    ],
+    "Ananya": "female",
 
-    "REFUND_PENDING": [
-        "My refund has not arrived yet.",
-        "I was told my refund was processed, but I haven't received it."
-    ],
+    "Vikram": "male",
 
-    "FRAUD_DISPUTE": [
-        "I believe someone has used my account without permission.",
-        "There are fraudulent transactions on my account."
-    ],
+    "Neha": "female",
 
-    "LOGIN_ISSUE": [
-        "I cannot log in to my account.",
-        "The application won't let me sign in."
-    ],
+    "Arjun": "male",
 
-    "ACCOUNT_LOCKED": [
-        "My account has been locked.",
-        "I entered my password incorrectly and now I can't access my account."
-    ]
+    "Meera": "female",
+
+    "Sana": "female",
+
+    "Rohan": "male",
+
+    "Kavya": "female",
+
+    "Ishaan": "male",
+
+    "Aditi": "female",
+
+    "Nikhil": "male"
 }
 
 
-DEFAULT_TEMPLATES = [
-    "I need some help with {scenario}.",
-    "I'm contacting support regarding {scenario}.",
-    "Can you help me resolve an issue related to {scenario}?"
+AGENT_PERSONAS = {
+
+    "Aisha": "female",
+
+    "Meera": "female",
+
+    "Riya": "female",
+
+    "Karan": "male",
+
+    "Anita": "female",
+
+    "Rahul": "male",
+
+    "Sneha": "female",
+
+    "Vivek": "male",
+
+    "Pooja": "female",
+
+    "Arjun": "male"
+}
+
+
+# ============================================================
+# VOICE / SPEAKER METADATA
+# ============================================================
+
+SPEAKER_INFO = {
+
+    "aiden": {
+        "gender": "male"
+    },
+
+    "dylan": {
+        "gender": "male"
+    },
+
+    "eric": {
+        "gender": "male"
+    },
+
+    "ryan": {
+        "gender": "male"
+    },
+
+    "uncle_fu": {
+        "gender": "male"
+    },
+
+    "ono_anna": {
+        "gender": "female"
+    },
+
+    "serena": {
+        "gender": "female"
+    },
+
+    "sohee": {
+        "gender": "female"
+    },
+
+    "vivian": {
+        "gender": "female"
+    }
+}
+
+
+MALE_SPEAKERS = [
+
+    speaker
+
+    for speaker, info in SPEAKER_INFO.items()
+
+    if info["gender"] == "male"
 ]
 
 
-AGENT_OPENINGS = [
-    "I understand. Let me help you with that.",
-    "I'm sorry you're experiencing this issue. I'll look into it.",
-    "Certainly. Let me check the details for you."
+FEMALE_SPEAKERS = [
+
+    speaker
+
+    for speaker, info in SPEAKER_INFO.items()
+
+    if info["gender"] == "female"
 ]
 
 
-AGENT_CLOSINGS = [
-    "The issue has now been resolved.",
-    "I have completed the requested action.",
-    "Is there anything else I can help you with today?"
+ALL_SPEAKERS = list(
+    SPEAKER_INFO.keys()
+)
+
+
+# ============================================================
+# EMOTION AND VOICE ATTRIBUTES
+# ============================================================
+
+CUSTOMER_EMOTIONS = [
+
+    "neutral",
+
+    "concerned",
+
+    "frustrated",
+
+    "worried",
+
+    "relieved",
+
+    "confused",
+
+    "polite"
 ]
 
 
-def create_conversation(
-    conversation_id,
-    scenario,
-    family
+AGENT_EMOTIONS = [
+
+    "neutral",
+
+    "calm",
+
+    "empathetic",
+
+    "reassuring",
+
+    "professional",
+
+    "helpful"
+]
+
+
+SPEAKING_RATES = [
+
+    "slow",
+
+    "normal",
+
+    "fast"
+]
+
+
+PROSODY_OPTIONS = [
+
+    "calm",
+
+    "natural",
+
+    "expressive",
+
+    "slightly emphatic",
+
+    "steady"
+]
+
+
+# ============================================================
+# HELPER FUNCTIONS
+# ============================================================
+
+def choose_split(index, total):
+
+    train_end = int(
+        total * 0.70
+    )
+
+    validation_end = int(
+        total * 0.85
+    )
+
+    if index < train_end:
+
+        return "train"
+
+    if index < validation_end:
+
+        return "validation"
+
+    return "test"
+
+
+# ============================================================
+# SELECT SPEAKER BASED ON GENDER
+# ============================================================
+
+def select_speaker_by_gender(gender):
+
+    if gender == "male":
+
+        speaker = random.choice(
+            MALE_SPEAKERS
+        )
+
+    elif gender == "female":
+
+        speaker = random.choice(
+            FEMALE_SPEAKERS
+        )
+
+    else:
+
+        raise ValueError(
+            f"Unknown gender: {gender}"
+        )
+
+    return speaker
+
+
+# ============================================================
+# SELECT AGENT SPEAKER
+#
+# Ensures:
+#
+# 1. Agent voice matches agent persona gender.
+# 2. Agent does not use the same voice as customer.
+# ============================================================
+
+def select_agent_speaker(
+    agent_gender,
+    customer_speaker
 ):
 
-    templates = TEMPLATES.get(
-        scenario,
-        DEFAULT_TEMPLATES
+    if agent_gender == "male":
+
+        available_speakers = [
+
+            speaker
+
+            for speaker in MALE_SPEAKERS
+
+            if speaker != customer_speaker
+        ]
+
+    elif agent_gender == "female":
+
+        available_speakers = [
+
+            speaker
+
+            for speaker in FEMALE_SPEAKERS
+
+            if speaker != customer_speaker
+        ]
+
+    else:
+
+        raise ValueError(
+            f"Unknown gender: {agent_gender}"
+        )
+
+    if not available_speakers:
+
+        raise ValueError(
+            "No available speaker found "
+            "for the agent."
+        )
+
+    speaker = random.choice(
+        available_speakers
     )
 
-    customer_message = random.choice(
-        templates
+    return speaker
+
+
+# ============================================================
+# GENERATE VOICE ATTRIBUTES
+# ============================================================
+
+def generate_voice_attributes(role):
+
+    if role.lower() == "customer":
+
+        emotion = random.choice(
+            CUSTOMER_EMOTIONS
+        )
+
+    else:
+
+        emotion = random.choice(
+            AGENT_EMOTIONS
+        )
+
+    emotion_intensity = round(
+        random.uniform(
+            0.30,
+            0.90
+        ),
+        2
     )
 
-    customer_message = customer_message.replace(
-        "{scenario}",
-        scenario.replace("_", " ").lower()
+    speaking_rate = random.choice(
+        SPEAKING_RATES
     )
 
-    turns = [
-
-        {
-            "turn_id": 1,
-            "role": "customer",
-            "text": customer_message
-        },
-
-        {
-            "turn_id": 2,
-            "role": "agent",
-            "text": random.choice(AGENT_OPENINGS)
-        },
-
-        {
-            "turn_id": 3,
-            "role": "customer",
-            "text": (
-                "Yes, please check it for me. "
-                "I would appreciate your help."
-            )
-        },
-
-        {
-            "turn_id": 4,
-            "role": "agent",
-            "text": (
-                "I have reviewed the information. "
-                + random.choice(AGENT_CLOSINGS)
-            )
-        }
-
-    ]
+    prosody = random.choice(
+        PROSODY_OPTIONS
+    )
 
     return {
 
-        "conversation_id": conversation_id,
+        "emotion": emotion,
+
+        "emotion_intensity": emotion_intensity,
+
+        "speaking_rate": speaking_rate,
+
+        "prosody": prosody
+    }
+
+
+# ============================================================
+# SAMPLE SCENARIO ENTITIES
+# ============================================================
+
+def sample_entities(
+    entity_pools
+):
+
+    entities = {}
+
+    for entity_name, values in entity_pools.items():
+
+        entities[
+            entity_name
+        ] = random.choice(
+            values
+        )
+
+    return entities
+
+
+# ============================================================
+# SELECT TEMPLATE
+# ============================================================
+
+def select_template(
+    scenario_data,
+    dialogue_act,
+    role
+):
+
+    templates = scenario_data[
+        "templates"
+    ]
+
+    act_templates = templates.get(
+        dialogue_act,
+        {}
+    )
+
+    role_templates = act_templates.get(
+        role.lower(),
+        []
+    )
+
+    if not role_templates:
+
+        raise ValueError(
+            f"No template found for "
+            f"dialogue_act='{dialogue_act}', "
+            f"role='{role}'"
+        )
+
+    return random.choice(
+        role_templates
+    )
+
+
+# ============================================================
+# RENDER TEMPLATE
+# ============================================================
+
+def render_template(
+    template,
+    entities
+):
+
+    try:
+
+        return template.format(
+            **entities
+        )
+
+    except KeyError as error:
+
+        missing_entity = str(
+            error
+        )
+
+        raise ValueError(
+            f"Template requires missing entity "
+            f"{missing_entity}: {template}"
+        )
+
+
+# ============================================================
+# DETERMINE ROLE
+# ============================================================
+
+def determine_role(
+    scenario_data,
+    dialogue_act
+):
+
+    act_templates = scenario_data[
+        "templates"
+    ].get(
+        dialogue_act,
+        {}
+    )
+
+    available_roles = list(
+        act_templates.keys()
+    )
+
+    if not available_roles:
+
+        raise ValueError(
+            f"No role mapping for "
+            f"{dialogue_act}"
+        )
+
+    if len(available_roles) == 1:
+
+        return available_roles[0]
+
+    return random.choice(
+        available_roles
+    )
+
+
+# ============================================================
+# GENERATE ONE CONVERSATION
+# ============================================================
+
+def generate_conversation(
+    conversation_index,
+    total_conversations
+):
+
+    # --------------------------------------------------------
+    # SELECT SCENARIO
+    # --------------------------------------------------------
+
+    scenario = random.choice(
+        list(
+            SCENARIOS.keys()
+        )
+    )
+
+    scenario_data = SCENARIOS[
+        scenario
+    ]
+
+    scenario_family = scenario_data[
+        "family"
+    ]
+
+
+    # --------------------------------------------------------
+    # SCENARIO-SPECIFIC ENTITIES
+    # --------------------------------------------------------
+
+    entities = sample_entities(
+        scenario_data[
+            "entities"
+        ]
+    )
+
+
+    # --------------------------------------------------------
+    # SELECT CUSTOMER PERSONA
+    # --------------------------------------------------------
+
+    customer_persona = random.choice(
+        list(
+            CUSTOMER_PERSONAS.keys()
+        )
+    )
+
+    customer_gender = CUSTOMER_PERSONAS[
+        customer_persona
+    ]
+
+
+    # --------------------------------------------------------
+    # SELECT AGENT PERSONA
+    # --------------------------------------------------------
+
+    agent_persona = random.choice(
+        list(
+            AGENT_PERSONAS.keys()
+        )
+    )
+
+    agent_gender = AGENT_PERSONAS[
+        agent_persona
+    ]
+
+
+    # --------------------------------------------------------
+    # SPEAKER ASSIGNMENT
+    #
+    # Customer voice matches customer persona gender.
+    #
+    # Agent voice matches agent persona gender.
+    #
+    # Customer and agent cannot have the same voice.
+    # --------------------------------------------------------
+
+    customer_speaker = (
+        select_speaker_by_gender(
+            customer_gender
+        )
+    )
+
+    agent_speaker = (
+        select_agent_speaker(
+            agent_gender=agent_gender,
+            customer_speaker=customer_speaker
+        )
+    )
+
+
+    # --------------------------------------------------------
+    # CONVERSATION FLOW
+    # --------------------------------------------------------
+
+    flow = scenario_data[
+        "flow"
+    ]
+
+    turns = []
+
+
+    for turn_index, dialogue_act in enumerate(
+        flow,
+        start=1
+    ):
+
+        role = determine_role(
+            scenario_data,
+            dialogue_act
+        )
+
+        template = select_template(
+            scenario_data=scenario_data,
+            dialogue_act=dialogue_act,
+            role=role
+        )
+
+        text = render_template(
+            template=template,
+            entities=entities
+        )
+
+        voice_attributes = (
+            generate_voice_attributes(
+                role
+            )
+        )
+
+        turn = {
+
+            "turn_id": turn_index,
+
+            "role": role,
+
+            "dialogue_act": dialogue_act,
+
+            "text": text,
+
+            "voice_attributes": voice_attributes
+        }
+
+        turns.append(
+            turn
+        )
+
+
+    # --------------------------------------------------------
+    # RESOLUTION STATUS
+    # --------------------------------------------------------
+
+    resolution_status = "resolved"
+
+
+    # --------------------------------------------------------
+    # BUILD CONVERSATION
+    # --------------------------------------------------------
+
+    conversation = {
+
+        "conversation_id": (
+            f"conv_{conversation_index:04d}"
+        ),
 
         "scenario": scenario,
 
-        "scenario_family": family,
+        "scenario_family": scenario_family,
 
-        "customer_name": random.choice(
-            CUSTOMER_NAMES
+        "intent": scenario,
+
+        "customer_speaker": customer_speaker,
+
+        "customer_gender": customer_gender,
+
+        "agent_speaker": agent_speaker,
+
+        "agent_gender": agent_gender,
+
+        "customer_persona": customer_persona,
+
+        "agent_persona": agent_persona,
+
+        "num_turns": len(
+            turns
         ),
+
+        "resolution_status": resolution_status,
+
+        "escalated": False,
+
+        "split": choose_split(
+            conversation_index - 1,
+            total_conversations
+        ),
+
+        "entities": entities,
 
         "turns": turns
     }
 
-
-conversations = []
-
-conversation_number = 1
+    return conversation
 
 
-for scenario, details in SCENARIOS.items():
+# ============================================================
+# DATASET VALIDATION
+# ============================================================
 
-    for _ in range(10):
+def validate_conversation(
+    conversation
+):
 
-        conversation_id = (
-            f"conv_{conversation_number:04d}"
+    scenario = conversation[
+        "scenario"
+    ]
+
+    if scenario not in SCENARIOS:
+
+        raise ValueError(
+            f"Unknown scenario: {scenario}"
         )
 
-        conversation = create_conversation(
-            conversation_id,
-            scenario,
-            details["family"]
+    scenario_data = SCENARIOS[
+        scenario
+    ]
+
+    valid_flow = scenario_data[
+        "flow"
+    ]
+
+    turns = conversation[
+        "turns"
+    ]
+
+
+    # --------------------------------------------------------
+    # CHECK TURN COUNT
+    # --------------------------------------------------------
+
+    if len(
+        turns
+    ) != len(
+        valid_flow
+    ):
+
+        raise ValueError(
+            f"Incorrect number of turns for "
+            f"{conversation['conversation_id']}"
         )
 
-        conversations.append(conversation)
 
-        conversation_number += 1
+    # --------------------------------------------------------
+    # CHECK DIALOGUE FLOW
+    # --------------------------------------------------------
+
+    for expected_act, turn in zip(
+        valid_flow,
+        turns
+    ):
+
+        actual_act = turn[
+            "dialogue_act"
+        ]
+
+        if actual_act != expected_act:
+
+            raise ValueError(
+                f"Invalid dialogue act in "
+                f"{conversation['conversation_id']}: "
+                f"expected {expected_act}, "
+                f"got {actual_act}"
+            )
 
 
-with open(
-    OUTPUT_DIR / "conversations.json",
-    "w",
-    encoding="utf-8"
-) as f:
+    # --------------------------------------------------------
+    # CHECK ROLE IS VALID FOR ACT
+    # --------------------------------------------------------
 
-    json.dump(
-        conversations,
-        f,
-        indent=2,
-        ensure_ascii=False
+    for turn in turns:
+
+        dialogue_act = turn[
+            "dialogue_act"
+        ]
+
+        role = turn[
+            "role"
+        ]
+
+        allowed_roles = scenario_data[
+            "templates"
+        ][
+            dialogue_act
+        ].keys()
+
+        if role not in allowed_roles:
+
+            raise ValueError(
+                f"Invalid role '{role}' "
+                f"for dialogue act "
+                f"'{dialogue_act}'"
+            )
+
+
+    # --------------------------------------------------------
+    # CHECK CUSTOMER VOICE GENDER
+    # --------------------------------------------------------
+
+    customer_speaker = conversation[
+        "customer_speaker"
+    ]
+
+    customer_gender = conversation[
+        "customer_gender"
+    ]
+
+    if SPEAKER_INFO[
+        customer_speaker
+    ]["gender"] != customer_gender:
+
+        raise ValueError(
+            f"Customer voice gender mismatch in "
+            f"{conversation['conversation_id']}"
+        )
+
+
+    # --------------------------------------------------------
+    # CHECK AGENT VOICE GENDER
+    # --------------------------------------------------------
+
+    agent_speaker = conversation[
+        "agent_speaker"
+    ]
+
+    agent_gender = conversation[
+        "agent_gender"
+    ]
+
+    if SPEAKER_INFO[
+        agent_speaker
+    ]["gender"] != agent_gender:
+
+        raise ValueError(
+            f"Agent voice gender mismatch in "
+            f"{conversation['conversation_id']}"
+        )
+
+
+    # --------------------------------------------------------
+    # CHECK CUSTOMER AND AGENT VOICES ARE DIFFERENT
+    # --------------------------------------------------------
+
+    if customer_speaker == agent_speaker:
+
+        raise ValueError(
+            f"Customer and agent have the same "
+            f"speaker in "
+            f"{conversation['conversation_id']}"
+        )
+
+
+    return True
+
+
+# ============================================================
+# GENERATE DATASET
+# ============================================================
+
+def generate_dataset():
+
+    OUTPUT_DIR.mkdir(
+        parents=True,
+        exist_ok=True
+    )
+
+    conversations = []
+
+    print(
+        f"Generating "
+        f"{NUM_CONVERSATIONS} conversations..."
+    )
+
+    for index in range(
+        1,
+        NUM_CONVERSATIONS + 1
+    ):
+
+        conversation = (
+            generate_conversation(
+                conversation_index=index,
+                total_conversations=NUM_CONVERSATIONS
+            )
+        )
+
+        validate_conversation(
+            conversation
+        )
+
+        conversations.append(
+            conversation
+        )
+
+        if index % 50 == 0:
+
+            print(
+                f"Generated "
+                f"{index}/"
+                f"{NUM_CONVERSATIONS} "
+                f"conversations."
+            )
+
+    return conversations
+
+
+# ============================================================
+# SAVE JSON
+# ============================================================
+
+def save_json(
+    conversations
+):
+
+    with open(
+        JSON_FILE,
+        "w",
+        encoding="utf-8"
+    ) as file:
+
+        json.dump(
+            conversations,
+            file,
+            indent=2,
+            ensure_ascii=False
+        )
+
+
+# ============================================================
+# SAVE JSONL
+# ============================================================
+
+def save_jsonl(
+    conversations
+):
+
+    with open(
+        JSONL_FILE,
+        "w",
+        encoding="utf-8"
+    ) as file:
+
+        for conversation in conversations:
+
+            file.write(
+                json.dumps(
+                    conversation,
+                    ensure_ascii=False
+                )
+            )
+
+            file.write(
+                "\n"
+            )
+
+
+# ============================================================
+# SAVE METADATA CSV
+# ============================================================
+
+def save_metadata(
+    conversations
+):
+
+    fieldnames = [
+
+        "conversation_id",
+
+        "scenario",
+
+        "scenario_family",
+
+        "intent",
+
+        "customer_speaker",
+
+        "customer_gender",
+
+        "agent_speaker",
+
+        "agent_gender",
+
+        "customer_persona",
+
+        "agent_persona",
+
+        "num_turns",
+
+        "resolution_status",
+
+        "escalated",
+
+        "split"
+    ]
+
+    with open(
+        METADATA_FILE,
+        "w",
+        newline="",
+        encoding="utf-8"
+    ) as file:
+
+        writer = csv.DictWriter(
+            file,
+            fieldnames=fieldnames
+        )
+
+        writer.writeheader()
+
+        for conversation in conversations:
+
+            row = {
+
+                field: conversation[
+                    field
+                ]
+
+                for field in fieldnames
+            }
+
+            writer.writerow(
+                row
+            )
+
+
+# ============================================================
+# MAIN
+# ============================================================
+
+def main():
+
+    conversations = (
+        generate_dataset()
+    )
+
+    save_json(
+        conversations
+    )
+
+    save_jsonl(
+        conversations
+    )
+
+    save_metadata(
+        conversations
+    )
+
+    print(
+        "\nDataset generation completed."
+    )
+
+    print(
+        f"\nJSON file:"
+        f"\n{JSON_FILE}"
+    )
+
+    print(
+        f"\nJSONL file:"
+        f"\n{JSONL_FILE}"
+    )
+
+    print(
+        f"\nMetadata file:"
+        f"\n{METADATA_FILE}"
+    )
+
+    print(
+        f"\nTotal conversations: "
+        f"{len(conversations)}"
     )
 
 
-with open(
-    OUTPUT_DIR / "conversations.jsonl",
-    "w",
-    encoding="utf-8"
-) as f:
+if __name__ == "__main__":
 
-    for conversation in conversations:
-
-        f.write(
-            json.dumps(
-                conversation,
-                ensure_ascii=False
-            )
-            + "\n"
-        )
-
-
-with open(
-    OUTPUT_DIR / "metadata.csv",
-    "w",
-    newline="",
-    encoding="utf-8"
-) as f:
-
-    writer = csv.writer(f)
-
-    writer.writerow([
-        "conversation_id",
-        "scenario",
-        "scenario_family",
-        "num_turns"
-    ])
-
-    for conversation in conversations:
-
-        writer.writerow([
-            conversation["conversation_id"],
-            conversation["scenario"],
-            conversation["scenario_family"],
-            len(conversation["turns"])
-        ])
-
-
-print(
-    f"Created {len(conversations)} conversations"
-)
+    main()

@@ -1,0 +1,13 @@
+{
+  "total_conversations": 500,
+  "passed": 500,
+  "warnings": 0,
+  "failed": 0,
+  "total_expected_turns": 4018,
+  "total_found_turns": 4018,
+  "total_missing_turns": 0,
+  "total_invalid_turns": 0,
+  "conversation_audio_directory": "conversations_audio",
+  "turn_audio_directory": "new_generated_turns",
+  "metadata_file": "data/emotional_conversations.json"
+}

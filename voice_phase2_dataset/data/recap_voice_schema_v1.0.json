@@ -1,0 +1,502 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/recap-voice-1.0.0.json",
+  "title": "RECAP-Voice v1.0",
+  "description": "Compact, evidence-grounded, uncertainty-aware conversational memory packet for voice interactions and channel handoff.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_name",
+    "schema_version",
+    "packet_type",
+    "conversation",
+    "state",
+    "interaction",
+    "repair_events",
+    "evidence",
+    "uncertainty",
+    "provenance"
+  ],
+  "properties": {
+    "schema_name": {
+      "const": "RECAP-Voice"
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "packet_type": {
+      "type": "string",
+      "enum": ["recap_voice", "gold_reference"]
+    },
+    "conversation": {
+      "$ref": "#/$defs/conversation"
+    },
+    "state": {
+      "$ref": "#/$defs/state"
+    },
+    "interaction": {
+      "$ref": "#/$defs/interaction"
+    },
+    "repair_events": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/repairEvent"
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidence"
+      }
+    },
+    "uncertainty": {
+      "$ref": "#/$defs/uncertainty"
+    },
+    "reference_turns": {
+      "type": "array",
+      "description": "Optional gold/reference annotations used only for evaluation; should normally be omitted from deployed packets.",
+      "items": {
+        "$ref": "#/$defs/referenceTurn"
+      }
+    },
+    "provenance": {
+      "$ref": "#/$defs/provenance"
+    }
+  },
+  "$defs": {
+    "field": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "confidence",
+        "evidence_ids",
+        "source_type",
+        "status"
+      ],
+      "properties": {
+        "value": {},
+        "confidence": {
+          "type": ["number", "null"],
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "source_type": {
+          "type": "string",
+          "enum": [
+            "synthetic_ground_truth",
+            "conversation_turn",
+            "dataset_metadata",
+            "asr",
+            "diarization",
+            "rule",
+            "llm",
+            "derived"
+          ]
+        },
+        "status": {
+          "type": "string"
+        }
+      }
+    },
+    "conversation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "conversation_id",
+        "channel",
+        "scenario",
+        "scenario_family",
+        "num_turns"
+      ],
+      "properties": {
+        "conversation_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "channel": {
+          "type": "string",
+          "enum": ["voice", "chat", "email", "unknown"]
+        },
+        "scenario": {
+          "type": ["string", "null"]
+        },
+        "scenario_family": {
+          "type": ["string", "null"]
+        },
+        "split": {
+          "type": ["string", "null"],
+          "enum": ["train", "validation", "test", null]
+        },
+        "num_turns": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "customer_speaker": {
+          "type": ["string", "null"]
+        },
+        "agent_speaker": {
+          "type": ["string", "null"]
+        },
+        "customer_gender": {
+          "type": ["string", "null"]
+        },
+        "agent_gender": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "agentAction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dialogue_act", "text", "evidence_ids"],
+      "properties": {
+        "dialogue_act": {
+          "type": ["string", "null"]
+        },
+        "text": {
+          "type": "string"
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "commitment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text", "status", "evidence_ids"],
+      "properties": {
+        "text": {"type": "string"},
+        "status": {"type": "string"},
+        "evidence_ids": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "unresolvedItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["item", "evidence_ids", "status"],
+      "properties": {
+        "item": {"type": "string"},
+        "evidence_ids": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "status": {"type": "string"}
+      }
+    },
+    "nextAction": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["value", "evidence_ids", "status"],
+      "properties": {
+        "value": {"type": "string"},
+        "evidence_ids": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "status": {"type": "string"}
+      }
+    },
+    "state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "intent",
+        "customer_goal",
+        "resolution_state",
+        "escalated",
+        "verification",
+        "entities",
+        "agent_actions",
+        "agent_commitments",
+        "unresolved_items",
+        "next_action"
+      ],
+      "properties": {
+        "intent": {"$ref": "#/$defs/field"},
+        "customer_goal": {"$ref": "#/$defs/field"},
+        "resolution_state": {"$ref": "#/$defs/field"},
+        "escalated": {"$ref": "#/$defs/field"},
+        "verification": {"$ref": "#/$defs/field"},
+        "entities": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/field"
+          }
+        },
+        "agent_actions": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/agentAction"}
+        },
+        "agent_commitments": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/commitment"}
+        },
+        "unresolved_items": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/unresolvedItem"}
+        },
+        "next_action": {
+          "$ref": "#/$defs/nextAction"
+        }
+      }
+    },
+    "interaction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "turn_count",
+        "customer_turn_count",
+        "agent_turn_count",
+        "customer_talk_ratio",
+        "mean_response_latency_ms",
+        "silence_event_count",
+        "overlap_rate",
+        "speaking_rate_distribution",
+        "prosody_summary"
+      ],
+      "properties": {
+        "turn_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "customer_turn_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "agent_turn_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "customer_talk_ratio": {
+          "type": ["number", "null"],
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        "mean_response_latency_ms": {
+          "type": ["number", "null"],
+          "minimum": 0.0
+        },
+        "silence_event_count": {
+          "type": ["integer", "null"],
+          "minimum": 0
+        },
+        "overlap_rate": {
+          "type": ["number", "null"],
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        "speaking_rate_distribution": {
+          "type": ["object", "null"]
+        },
+        "prosody_summary": {
+          "type": ["object", "null"]
+        }
+      }
+    },
+    "repairEvent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "event_id",
+        "type",
+        "description",
+        "turn_ids",
+        "confidence",
+        "evidence_ids"
+      ],
+      "properties": {
+        "event_id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "repetition",
+            "clarification",
+            "correction",
+            "reformulation",
+            "unresolved_request",
+            "commitment",
+            "other"
+          ]
+        },
+        "description": {
+          "type": "string"
+        },
+        "turn_ids": {
+          "type": "array",
+          "items": {}
+        },
+        "confidence": {
+          "type": ["number", "null"],
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_id",
+        "field",
+        "source_type",
+        "turn_ids",
+        "text"
+      ],
+      "properties": {
+        "evidence_id": {
+          "type": "string"
+        },
+        "field": {
+          "type": "string"
+        },
+        "source_type": {
+          "type": "string",
+          "enum": [
+            "conversation_turn",
+            "dataset_metadata",
+            "asr",
+            "diarization",
+            "rule",
+            "llm",
+            "derived"
+          ]
+        },
+        "turn_ids": {
+          "type": "array",
+          "items": {}
+        },
+        "text": {
+          "type": ["string", "null"]
+        },
+        "metadata_key": {
+          "type": ["string", "null"]
+        },
+        "start": {
+          "type": ["number", "null"],
+          "minimum": 0.0
+        },
+        "end": {
+          "type": ["number", "null"],
+          "minimum": 0.0
+        }
+      }
+    },
+    "speakerResolution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "confidence", "reason"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "RESOLVED",
+            "PARTIAL",
+            "UNRESOLVED",
+            "KNOWN_FROM_SYNTHETIC_METADATA"
+          ]
+        },
+        "confidence": {
+          "type": ["number", "null"],
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        "reason": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "uncertainty": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "overall_status",
+        "speaker_resolution",
+        "field_uncertainty"
+      ],
+      "properties": {
+        "overall_status": {
+          "type": "string",
+          "enum": ["GOLD_REFERENCE", "HIGH", "MEDIUM", "LOW", "UNRESOLVED"]
+        },
+        "speaker_resolution": {
+          "$ref": "#/$defs/speakerResolution"
+        },
+        "field_uncertainty": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["field", "confidence", "reason"],
+            "properties": {
+              "field": {"type": "string"},
+              "confidence": {
+                "type": ["number", "null"],
+                "minimum": 0.0,
+                "maximum": 1.0
+              },
+              "reason": {"type": "string"}
+            }
+          }
+        }
+      }
+    },
+    "referenceTurn": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "turn_id",
+        "role",
+        "dialogue_act",
+        "text",
+        "voice_attributes"
+      ],
+      "properties": {
+        "turn_id": {},
+        "role": {
+          "type": "string",
+          "enum": ["CUSTOMER", "AGENT"]
+        },
+        "dialogue_act": {
+          "type": ["string", "null"]
+        },
+        "text": {
+          "type": "string"
+        },
+        "voice_attributes": {
+          "type": "object"
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "mode", "generated_by"],
+      "properties": {
+        "source": {"type": "string"},
+        "mode": {
+          "type": "string",
+          "enum": ["synthetic_ground_truth", "model_prediction", "human_annotation", "hybrid"]
+        },
+        "generated_by": {"type": "string"}
+      }
+    }
+  }
+}

@@ -158,6 +158,52 @@ Each turn:
 
 ---
 
+## Evidence-backed cross-channel handover
+
+After ASR, diarization, and state extraction have been run, create a compact
+handover capsule for each call:
+
+```bash
+python 11_extract_state.py
+python 13_verify_handover.py --conversation-id conv_0001
+# Omit --conversation-id to process every prediction in recap_predictions.jsonl
+```
+
+`13_build_handover_capsules.py` combines the `recap_voice` predictions with the
+speaker transcript and WAV file. It writes per-call JSON capsules plus
+`handover_capsules.jsonl` in `handover_capsules/`. The capsule includes the
+customer goal, intent, resolution, actions, promises, unresolved items,
+confidence, and timestamped evidence references. It also calculates audio
+quality and interaction measures (RMS/peak level, clipping and silence ratios,
+talk ratio, estimated words per minute, turn gaps, and overlap).
+
+The evidence auditor checks that each cited evidence ID exists in the
+prediction packet. This is a traceability check, not an independent semantic
+proof that a claim is true. Claims with missing evidence are marked
+`needs_review`; predicted claims must not be treated as confirmed financial
+instructions. Acoustic features are descriptive and should not be interpreted
+as customer emotion or intent.
+
+Run the existing `12_evaluate_state.py` against prediction and gold-state
+directories for state extraction metrics. Keep the generated gold references
+out of the inference input: the handover builder accepts only `recap_voice`
+model predictions and explicitly rejects `gold_reference` packets.
+
+### Run the OpenAI handover demo
+
+Install the demo dependencies with `pip install openai streamlit python-dotenv`,
+then add `OPENAI_API_KEY=your-key-here` to `voice_phase2_dataset/.env`. The
+demo loads that file relative to its script location, so it works regardless
+of the current working directory. Existing environment variables take
+precedence over values in `.env`.
+
+```bash
+cd voice_phase2_dataset
+streamlit run 18_handover_demo.py
+```
+
+---
+
 ## Notes and troubleshooting
 
 | Problem | Fix |

@@ -34,6 +34,7 @@
 # ============================================================
 
 import json
+import os
 from pathlib import Path
 
 from pydub import AudioSegment
@@ -44,15 +45,15 @@ from pydub import AudioSegment
 # ============================================================
 
 INPUT_FILE = Path(
-    "data/emotional_conversations.json"
+    os.environ.get("VOICE_DATASET_FILE", "data/emotional_conversations.json")
 )
 
 TURNS_DIR = Path(
-    "new_generated_turns"
+    os.environ.get("VOICE_TURN_AUDIO_DIR", "new_generated_turns")
 )
 
 OUTPUT_DIR = Path(
-    "conversations_audio"
+    os.environ.get("VOICE_AUDIO_DIR", "conversations_audio")
 )
 
 

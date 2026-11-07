@@ -40,7 +40,14 @@ import json
 import os
 from pathlib import Path
 
+import soundfile as sf
+import torch
+from dotenv import load_dotenv
 from pyannote.audio import Pipeline
+from huggingface_hub import get_token
+
+
+load_dotenv(Path(__file__).resolve().parent / ".env", override=False)
 
 
 # ============================================================
@@ -48,23 +55,23 @@ from pyannote.audio import Pipeline
 # ============================================================
 
 AUDIO_DIR = Path(
-    "conversations_audio"
+    os.environ.get("VOICE_AUDIO_DIR", "conversations_audio")
 )
 
 DIARIZATION_DIR = Path(
-    "diarization"
+    os.environ.get("VOICE_DIARIZATION_DIR", "diarization")
 )
 
 RTTM_DIR = Path(
-    "diarization_rttm"
+    os.environ.get("VOICE_DIARIZATION_RTTM_DIR", "diarization_rttm")
 )
 
 SUMMARY_FILE = Path(
-    "diarization_summary.csv"
+    os.environ.get("VOICE_DIARIZATION_SUMMARY", "diarization_summary.csv")
 )
 
 MODEL_NAME = (
-    "pyannote/speaker-diarization-community-1"
+    os.environ.get("VOICE_DIARIZATION_MODEL", "pyannote/speaker-diarization-community-1")
 )
 
 # Keep this at 3 while testing.
@@ -74,7 +81,16 @@ MODEL_NAME = (
 # MAX_CONVERSATIONS = None
 #
 # when you are ready to process all conversations.
-MAX_CONVERSATIONS = None
+MAX_CONVERSATIONS = (
+    int(os.environ["VOICE_MAX_CONVERSATIONS"])
+    if os.environ.get("VOICE_MAX_CONVERSATIONS")
+    else None
+)
+CONVERSATION_IDS = {
+    item.strip()
+    for item in os.environ.get("VOICE_CONVERSATION_IDS", "").split(",")
+    if item.strip()
+}
 
 
 # ============================================================
@@ -98,7 +114,7 @@ RTTM_DIR.mkdir(
 
 HF_TOKEN = os.environ.get(
     "HF_TOKEN"
-)
+) or get_token()
 
 if not HF_TOKEN:
     raise EnvironmentError(
@@ -160,7 +176,9 @@ print(
 # ============================================================
 
 audio_files = sorted(
-    AUDIO_DIR.glob("*.wav")
+    audio_file
+    for audio_file in AUDIO_DIR.glob("*.wav")
+    if not CONVERSATION_IDS or audio_file.stem in CONVERSATION_IDS
 )
 
 if not audio_files:
@@ -211,8 +229,18 @@ def diarize_audio(
         "-" * 80
     )
 
-    output = pipeline(
+    audio, sample_rate = sf.read(
         str(audio_path),
+        dtype="float32",
+        always_2d=True,
+    )
+    waveform = torch.from_numpy(audio.T.copy())
+
+    output = pipeline(
+        {
+            "waveform": waveform,
+            "sample_rate": sample_rate,
+        },
         num_speakers=2
     )
 

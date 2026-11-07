@@ -13,6 +13,11 @@ import argparse, csv, json, os, re, time
 from pathlib import Path
 from typing import Any
 
+from dotenv import load_dotenv
+
+ROOT = Path(__file__).resolve().parent
+load_dotenv(ROOT / ".env", override=False)
+
 try:
     from openai import OpenAI
 except ImportError as exc:

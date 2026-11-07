@@ -1,5 +1,6 @@
 import gc
 import json
+import os
 import time
 from pathlib import Path
 
@@ -11,12 +12,14 @@ import whisperx
 # Configuration
 # ============================================================
 
-AUDIO_DIR = Path("conversations_audio")
+AUDIO_DIR = Path(os.environ.get("VOICE_AUDIO_DIR", "conversations_audio"))
 
-OUTPUT_DIR = Path("transcripts_whisperx")
-OUTPUT_TEXT_DIR = Path("transcripts_whisperx_text")
+OUTPUT_DIR = Path(os.environ.get("VOICE_WHISPERX_DIR", "transcripts_whisperx"))
+OUTPUT_TEXT_DIR = Path(
+    os.environ.get("VOICE_WHISPERX_TEXT_DIR", "transcripts_whisperx_text")
+)
 
-MODEL_DIR = Path("models/whisperx")
+MODEL_DIR = Path(os.environ.get("VOICE_WHISPERX_MODEL_DIR", "models/whisperx"))
 
 MODEL_NAME = "large-v3-turbo"
 
@@ -32,7 +35,16 @@ CHUNK_SIZE = 30
 
 # Initial validation run.
 # Change to None after validating the first 3-5 conversations.
-MAX_CONVERSATIONS = None
+MAX_CONVERSATIONS = (
+    int(os.environ["VOICE_MAX_CONVERSATIONS"])
+    if os.environ.get("VOICE_MAX_CONVERSATIONS")
+    else None
+)
+CONVERSATION_IDS = {
+    item.strip()
+    for item in os.environ.get("VOICE_CONVERSATION_IDS", "").split(",")
+    if item.strip()
+}
 
 
 # ============================================================
@@ -96,7 +108,9 @@ def main():
     # --------------------------------------------------------
 
     audio_files = sorted(
-        AUDIO_DIR.glob("*.wav")
+        audio_file
+        for audio_file in AUDIO_DIR.glob("*.wav")
+        if not CONVERSATION_IDS or audio_file.stem in CONVERSATION_IDS
     )
 
     if MAX_CONVERSATIONS is not None:
@@ -133,7 +147,6 @@ def main():
         compute_type=COMPUTE_TYPE,
         language=LANGUAGE,
         download_root=str(MODEL_DIR),
-        vad_method="silero",
     )
 
     print("ASR model loaded.")

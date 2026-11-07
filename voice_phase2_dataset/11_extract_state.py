@@ -394,6 +394,26 @@ def summarize_speaker_resolution(packet: dict[str, Any], turns: list[dict[str, A
     status = packet.get("role_mapping_status") or packet.get("mapping_status")
     detected = packet.get("num_speakers_detected")
 
+    if status == "RESOLVED_AGENT_LANGUAGE_CUES":
+        margin = packet.get("mapping_margin")
+        confidence = (
+            0.55 + 0.30 * (1.0 - math.exp(-float(margin) / 3.0))
+            if margin is not None
+            else 0.55
+        )
+        return (
+            "RESOLVED",
+            safe_confidence(confidence),
+            "Two speakers were mapped using agent-specific transcript language cues.",
+        )
+
+    if status == "UNRESOLVED_INSUFFICIENT_LANGUAGE_CUES":
+        return (
+            "PARTIAL",
+            0.40,
+            "Two speakers were detected, but transcript language cues were insufficient to assign customer/agent roles.",
+        )
+
     if status == "RESOLVED_TWO_SPEAKERS":
         margin = packet.get("mapping_margin_seconds")
         if margin is None:

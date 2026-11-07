@@ -33,6 +33,7 @@ import csv
 import glob
 import json
 import os
+import re
 import wave
 from itertools import permutations
 
@@ -41,21 +42,54 @@ from itertools import permutations
 # CONFIGURATION
 # ============================================================
 
-WHISPERX_DIR = "transcripts_whisperx"
-DIARIZATION_DIR = "diarization"
-METADATA_FILE = "data/emotional_conversations.json"
-TURN_AUDIO_DIR = "new_generated_turns"
+WHISPERX_DIR = os.environ.get("VOICE_WHISPERX_DIR", "transcripts_whisperx")
+DIARIZATION_DIR = os.environ.get("VOICE_DIARIZATION_DIR", "diarization")
+METADATA_FILE = os.environ.get("VOICE_METADATA_FILE", "data/emotional_conversations.json")
+TURN_AUDIO_DIR = os.environ.get("VOICE_TURN_AUDIO_DIR", "new_generated_turns")
 
-OUTPUT_JSON_DIR = "wordlevel_speaker_transcripts"
-OUTPUT_TEXT_DIR = "wordlevel_speaker_transcripts_text"
-SUMMARY_FILE = "wordlevel_speaker_summary.csv"
+OUTPUT_JSON_DIR = os.environ.get("VOICE_WORDLEVEL_DIR", "wordlevel_speaker_transcripts")
+OUTPUT_TEXT_DIR = os.environ.get(
+    "VOICE_WORDLEVEL_TEXT_DIR", "wordlevel_speaker_transcripts_text"
+)
+SUMMARY_FILE = os.environ.get(
+    "VOICE_WORDLEVEL_SUMMARY", "wordlevel_speaker_summary.csv"
+)
 
 # Set to None to process all conversations
-MAX_CONVERSATIONS = None
+MAX_CONVERSATIONS = (
+    int(os.environ["VOICE_MAX_CONVERSATIONS"])
+    if os.environ.get("VOICE_MAX_CONVERSATIONS")
+    else None
+)
+CONVERSATION_IDS = {
+    item.strip()
+    for item in os.environ.get("VOICE_CONVERSATION_IDS", "").split(",")
+    if item.strip()
+}
 
 # When grouping consecutive words into speaker turns,
 # a larger gap starts a new turn.
 MAX_WORD_GAP_FOR_SAME_TURN = 1.0
+
+AGENT_LANGUAGE_CUES = (
+    r"\bhow (?:can|may) i help\b",
+    r"\bthank you for calling\b",
+    r"\bfor (?:security|verification)\b",
+    r"\blet me (?:check|look|review)\b",
+    r"\bi can (?:help|check|assist|review|look)\b",
+    r"\bplease (?:verify|confirm|provide|share)\b",
+    r"\bmay i (?:have|ask)\b",
+    r"\byour (?:account|card|transaction|request)\b",
+    r"\bi(?:'ll| will) (?:check|review|raise|submit|process|escalate|help)\b",
+    r"\bwe(?:'ll| will) (?:check|review|raise|submit|process|escalate|help)\b",
+    r"\bi have (?:blocked|placed|raised|submitted|processed|updated|escalated)\b",
+)
+
+CUSTOMER_LANGUAGE_CUES = (
+    r"\bi (?:would like|want|need|am calling|received|noticed|did not|didn't)\b",
+    r"\bmy (?:card|account|payment|transaction|money|phone|points|cashback)\b",
+    r"\bthere (?:is|was) (?:a )?(?:charge|payment|transaction|problem|issue)\b",
+)
 
 
 # ============================================================
@@ -510,6 +544,79 @@ def calculate_speaker_role_mapping(
     }
 
 
+def infer_speaker_roles_from_language(words, diarization_segments):
+    """Infer roles from transcript wording without consulting gold turn timing."""
+    speakers = sorted({segment["speaker"] for segment in diarization_segments})
+    if len(speakers) != 2:
+        if not speakers:
+            status = "UNRESOLVED_NO_SPEAKERS"
+        elif len(speakers) == 1:
+            status = "UNRESOLVED_ONE_SPEAKER"
+        else:
+            status = "UNRESOLVED_UNSUPPORTED_SPEAKER_COUNT"
+        return {
+            "status": status,
+            "mapping": {speaker: None for speaker in speakers},
+            "best_score": 0.0,
+            "mapping_margin": 0.0,
+            "source": "agent_language_cues",
+        }
+
+    speaker_words = {speaker: [] for speaker in speakers}
+    for word in words:
+        start = float(word["start"])
+        end = float(word["end"])
+        best_speaker = None
+        best_overlap = 0.0
+        for segment in diarization_segments:
+            overlap = overlap_seconds(start, end, segment["start"], segment["end"])
+            if overlap > best_overlap:
+                best_speaker = segment["speaker"]
+                best_overlap = overlap
+        if best_speaker is not None:
+            speaker_words[best_speaker].append(str(word.get("word", "")))
+
+    role_scores = {}
+    for speaker, tokens in speaker_words.items():
+        text = " ".join(tokens).casefold()
+        agent_score = sum(len(re.findall(pattern, text)) for pattern in AGENT_LANGUAGE_CUES)
+        customer_score = sum(len(re.findall(pattern, text)) for pattern in CUSTOMER_LANGUAGE_CUES)
+        role_scores[speaker] = (agent_score, customer_score)
+
+    ranked = sorted(
+        speakers,
+        key=lambda speaker: role_scores[speaker][0] - role_scores[speaker][1],
+        reverse=True,
+    )
+    agent, customer = ranked
+    agent_margin = (
+        role_scores[agent][0] - role_scores[agent][1]
+        - role_scores[customer][0] + role_scores[customer][1]
+    )
+
+    if role_scores[agent][0] < 1 or agent_margin < 1:
+        mapping = {speaker: None for speaker in speakers}
+        status = "UNRESOLVED_INSUFFICIENT_LANGUAGE_CUES"
+    else:
+        mapping = {agent: "AGENT", customer: "CUSTOMER"}
+        status = "RESOLVED_AGENT_LANGUAGE_CUES"
+
+    return {
+        "status": status,
+        "mapping": mapping,
+        "best_score": float(role_scores[agent][0]),
+        "mapping_margin": float(agent_margin),
+        "source": "agent_language_cues",
+        "speaker_role_cue_scores": {
+            speaker: {
+                "agent_cues": scores[0],
+                "customer_cues": scores[1],
+            }
+            for speaker, scores in role_scores.items()
+        },
+    }
+
+
 # ============================================================
 # WORD -> PYANNOTE SPEAKER ASSIGNMENT
 # ============================================================
@@ -871,11 +978,14 @@ def calculate_summary(
         "role_accuracy":
             role_accuracy,
 
-        "mapping_score_seconds":
+        "mapping_score":
             mapping_info["best_score"],
 
-        "mapping_margin_seconds":
+        "mapping_margin":
             mapping_info["mapping_margin"],
+
+        "role_mapping_source":
+            mapping_info.get("source", "agent_language_cues"),
     }
 
 
@@ -901,6 +1011,12 @@ def main():
             )
         )
     )
+    if CONVERSATION_IDS:
+        whisperx_files = [
+            path
+            for path in whisperx_files
+            if os.path.splitext(os.path.basename(path))[0] in CONVERSATION_IDS
+        ]
 
     if MAX_CONVERSATIONS is not None:
         whisperx_files = whisperx_files[
@@ -1029,15 +1145,16 @@ def main():
             f"{len(speakers)}"
         )
 
-        # ----------------------------------------------------
-        # Speaker -> role mapping
-        # ----------------------------------------------------
+        # Gold-overlap role mapping is used only to produce evaluation labels.
+        gold_mapping_info = calculate_speaker_role_mapping(
+            diarization_segments,
+            reference_turns
+        )
 
-        mapping_info = (
-            calculate_speaker_role_mapping(
-                diarization_segments,
-                reference_turns
-            )
+        # Predicted role labels must not use the ground-truth turn timeline.
+        mapping_info = infer_speaker_roles_from_language(
+            words,
+            diarization_segments
         )
 
         print(
@@ -1131,10 +1248,25 @@ def main():
             "speaker_to_role":
                 mapping_info["mapping"],
 
-            "mapping_score_seconds":
+            "role_mapping_source":
+                mapping_info["source"],
+
+            "role_mapping_diagnostics":
+                {
+                    "predicted_language_cues": mapping_info,
+                    "gold_overlap_evaluation_only": gold_mapping_info,
+                },
+
+            "gold_mapping_score_seconds":
+                gold_mapping_info["best_score"],
+
+            "gold_mapping_margin_seconds":
+                gold_mapping_info["mapping_margin"],
+
+            "mapping_score":
                 mapping_info["best_score"],
 
-            "mapping_margin_seconds":
+            "mapping_margin":
                 mapping_info["mapping_margin"],
 
             "words":

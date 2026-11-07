@@ -212,13 +212,13 @@ def main() -> None:
     parser.add_argument("--audio-dir", type=Path, default=Path("conversations_audio"))
     parser.add_argument("--turn-dir", type=Path, default=Path("speaker_transcripts"))
     parser.add_argument("--output", type=Path, default=Path("acoustic_features"))
-    parser.add_argument("--conversation-id", default=None)
+    parser.add_argument("--conversation-id", action="append", default=None)
     args = parser.parse_args()
 
     args.output.mkdir(parents=True, exist_ok=True)
 
     if args.conversation_id:
-        ids = [args.conversation_id]
+        ids = args.conversation_id
     else:
         ids = sorted(
             p.stem for p in args.audio_dir.glob("*.wav")

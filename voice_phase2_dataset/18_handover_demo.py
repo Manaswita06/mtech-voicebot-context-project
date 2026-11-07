@@ -50,9 +50,9 @@ from dotenv import load_dotenv
 
 load_dotenv(Path(__file__).resolve().parent / ".env", override=False)
 
-AUDIO_DIR = Path("conversations_audio")
-TRANSCRIPT_DIR = Path("wordlevel_speaker_transcripts")
-CAPSULE_DIR = Path("handover_capsules")
+AUDIO_DIR = Path("robustness/audio/telephone_8khz")
+TRANSCRIPT_DIR = Path("robustness/pipeline/seed_42_test_python312/telephone_8khz/wordlevel_speaker_transcripts")
+CAPSULE_DIR = Path("robustness/handover_test/capsules")
 
 
 # ---------------------------------------------------------------------------
@@ -272,7 +272,7 @@ with st.sidebar:
 
 if not CAPSULE_DIR.exists():
     st.error(
-        "handover_capsules/ does not exist. "
+        "robustness/handover_test/capsules/ does not exist. "
         "Run stages 13 → 15 first."
     )
     st.stop()

@@ -1,5 +1,6 @@
 import csv
 import json
+import os
 import wave
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
@@ -9,12 +10,20 @@ from typing import Dict, List, Optional, Tuple
 # Configuration
 # ============================================================
 
-DATASET_FILE = Path("data/emotional_conversations.json")
+DATASET_FILE = Path(
+    os.environ.get("VOICE_METADATA_FILE", "data/emotional_conversations.json")
+)
 
-TURN_AUDIO_DIR = Path("new_generated_turns")
-DIARIZATION_DIR = Path("diarization")
+TURN_AUDIO_DIR = Path(
+    os.environ.get("VOICE_TURN_AUDIO_DIR", "new_generated_turns")
+)
+DIARIZATION_DIR = Path(
+    os.environ.get("VOICE_DIARIZATION_DIR", "diarization")
+)
 
-OUTPUT_DIR = Path("diarization_evaluation")
+OUTPUT_DIR = Path(
+    os.environ.get("VOICE_DIARIZATION_EVALUATION_DIR", "diarization_evaluation")
+)
 
 SUMMARY_FILE = (
     OUTPUT_DIR / "diarization_evaluation_summary.csv"
@@ -27,6 +36,11 @@ DATASET_SUMMARY_FILE = (
 # Initial test.
 # Set to None after validating the first few conversations.
 MAX_CONVERSATIONS = None
+CONVERSATION_IDS = {
+    item.strip()
+    for item in os.environ.get("VOICE_CONVERSATION_IDS", "").split(",")
+    if item.strip()
+}
 
 # Evaluation time resolution in seconds.
 #
@@ -909,6 +923,12 @@ def main():
     conversation_ids = sorted(
         conversations.keys()
     )
+    if CONVERSATION_IDS:
+        conversation_ids = [
+            conversation_id
+            for conversation_id in conversation_ids
+            if conversation_id in CONVERSATION_IDS
+        ]
 
     if MAX_CONVERSATIONS is not None:
 

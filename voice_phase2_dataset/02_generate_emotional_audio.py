@@ -11,10 +11,13 @@
 #     customer_speaker
 #     agent_speaker
 #
-# For now, only the first 3 conversations are generated.
+# By default, only the first 3 conversations are generated. Set
+# VOICE_MAX_CONVERSATIONS=0 to render all; set VOICE_OVERWRITE_TURNS=1 to
+# replace turn audio after rewriting the conversation text.
 # ============================================================
 
 import json
+import os
 from pathlib import Path
 
 import torch
@@ -26,12 +29,21 @@ from qwen_tts import Qwen3TTSModel
 # CONFIGURATION
 # ============================================================
 
-INPUT_FILE = Path("data/emotional_conversations.json")
+INPUT_FILE = Path(
+    os.environ.get("VOICE_DATASET_FILE", "data/emotional_conversations.json")
+)
 
-OUTPUT_DIR = Path("new_generated_turns")
+OUTPUT_DIR = Path(
+    os.environ.get("VOICE_TURN_AUDIO_DIR", "new_generated_turns")
+)
 
-# Keep this as 3 for now.
-NUM_CONVERSATIONS_TO_GENERATE = 3
+NUM_CONVERSATIONS_TO_GENERATE = int(
+    os.environ.get("VOICE_MAX_CONVERSATIONS", "3")
+)
+OVERWRITE_EXISTING_TURNS = os.environ.get(
+    "VOICE_OVERWRITE_TURNS", "0"
+).strip().casefold() in {"1", "true", "yes"}
+TTS_BATCH_SIZE = int(os.environ.get("VOICE_TTS_BATCH_SIZE", "4"))
 
 
 OUTPUT_DIR.mkdir(
@@ -45,13 +57,15 @@ OUTPUT_DIR.mkdir(
 # ============================================================
 
 MODEL_NAME = "Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice"
+MODEL_DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
-print("Loading Qwen3-TTS model...")
+print(f"Loading Qwen3-TTS model on {MODEL_DEVICE}...")
 
 tts_model = Qwen3TTSModel.from_pretrained(
     MODEL_NAME,
     dtype=torch.float32
 )
+tts_model.model.to(MODEL_DEVICE)
 
 print("Qwen3-TTS model loaded successfully.")
 
@@ -109,86 +123,37 @@ def build_voice_instruction(
 
 
 # ============================================================
-# GENERATE ONE TURN
+# GENERATE A TURN BATCH
 # ============================================================
 
-def generate_turn_audio(
-    text,
-    role,
-    speaker,
-    voice_attributes,
-    output_path
-):
-    instruction = build_voice_instruction(
-        role=role,
-        emotion=voice_attributes["emotion"],
-        intensity=voice_attributes["emotion_intensity"],
-        speaking_rate=voice_attributes["speaking_rate"],
-        prosody=voice_attributes["prosody"]
-    )
-
-    print("\n" + "=" * 70)
-    print(f"Generating {role} audio")
-    print(f"Speaker: {speaker}")
-    print(f"Emotion: {voice_attributes['emotion']}")
-    print(
-        f"Intensity: "
-        f"{voice_attributes['emotion_intensity']}"
-    )
-    print(
-        f"Speaking Rate: "
-        f"{voice_attributes['speaking_rate']}"
-    )
-    print(
-        f"Prosody: "
-        f"{voice_attributes['prosody']}"
-    )
-
-    print("\nText:")
-    print(text)
-
-    print("\nInstruction:")
-    print(instruction)
-
-    print("=" * 70)
-
-    # --------------------------------------------------------
-    # GENERATE AUDIO
-    # --------------------------------------------------------
-
+def generate_turn_audio_batch(turns):
+    instructions = [
+        build_voice_instruction(
+            role=turn["role"],
+            emotion=turn["voice_attributes"]["emotion"],
+            intensity=turn["voice_attributes"]["emotion_intensity"],
+            speaking_rate=turn["voice_attributes"]["speaking_rate"],
+            prosody=turn["voice_attributes"]["prosody"],
+        )
+        for turn in turns
+    ]
     wavs, sample_rate = tts_model.generate_custom_voice(
-        text=text,
-        language="English",
-        speaker=speaker,
-        instruct=instruction,
+        text=[turn["text"] for turn in turns],
+        language=["English"] * len(turns),
+        speaker=[turn["speaker"] for turn in turns],
+        instruct=instructions,
         do_sample=True,
         temperature=0.7,
         top_p=0.9,
-        repetition_penalty=1.05
+        repetition_penalty=1.05,
     )
-
-    # --------------------------------------------------------
-    # ENSURE OUTPUT DIRECTORY EXISTS
-    # --------------------------------------------------------
-
-    output_path = Path(output_path)
-
-    output_path.parent.mkdir(
-        parents=True,
-        exist_ok=True
-    )
-
-    # --------------------------------------------------------
-    # SAVE WAV FILE
-    # --------------------------------------------------------
-
-    sf.write(
-        str(output_path),
-        wavs[0],
-        sample_rate
-    )
-
-    print(f"\nSaved: {output_path}")
+    if len(wavs) != len(turns):
+        raise RuntimeError(f"TTS returned {len(wavs)} clips for {len(turns)} turns")
+    for turn, wav in zip(turns, wavs):
+        output_path = Path(turn["output_path"])
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        sf.write(str(output_path), wav, sample_rate)
+        print(f"Saved: {output_path}")
 
 
 # ============================================================
@@ -203,19 +168,25 @@ with open(
     conversations = json.load(f)
 
 
+if NUM_CONVERSATIONS_TO_GENERATE < 0:
+    raise ValueError("VOICE_MAX_CONVERSATIONS must be zero or positive.")
+if TTS_BATCH_SIZE < 1:
+    raise ValueError("VOICE_TTS_BATCH_SIZE must be positive.")
+
 print(
     f"\nLoaded {len(conversations)} conversations."
 )
 
-
 # ============================================================
-# GENERATE ONLY FIRST 3 CONVERSATIONS
+# SELECT CONVERSATIONS TO GENERATE
 # ============================================================
 
-# conversations_to_generate = conversations[
-#     :NUM_CONVERSATIONS_TO_GENERATE
-# ]
-conversations_to_generate = conversations
+conversations_to_generate = (
+    conversations[:NUM_CONVERSATIONS_TO_GENERATE]
+    if NUM_CONVERSATIONS_TO_GENERATE
+    else conversations
+)
+generation_failures = []
 
 
 print(
@@ -303,9 +274,10 @@ for conversation_index, conversation in enumerate(
     )
 
     # ========================================================
-    # GENERATE EACH TURN
+    # PREPARE TURNS FOR BATCHED SYNTHESIS
     # ========================================================
 
+    pending_turns = []
     for turn in conversation["turns"]:
 
         turn_id = turn["turn_id"]
@@ -346,7 +318,7 @@ for conversation_index, conversation in enumerate(
         # SKIP EXISTING FILES
         # ----------------------------------------------------
 
-        if output_file.exists():
+        if output_file.exists() and not OVERWRITE_EXISTING_TURNS:
 
             print(
                 f"Skipping existing file: "
@@ -355,35 +327,31 @@ for conversation_index, conversation in enumerate(
 
             continue
 
-        # ----------------------------------------------------
-        # GENERATE AUDIO
-        # ----------------------------------------------------
+        pending_turns.append(
+            {
+                "conversation_id": conversation_id,
+                "turn_id": turn_id,
+                "text": text,
+                "role": role,
+                "speaker": selected_speaker,
+                "voice_attributes": voice_attributes,
+                "output_path": output_file,
+            }
+        )
 
+    for offset in range(0, len(pending_turns), TTS_BATCH_SIZE):
+        batch = pending_turns[offset : offset + TTS_BATCH_SIZE]
         try:
-
-            generate_turn_audio(
-                text=text,
-                role=role,
-                speaker=selected_speaker,
-                voice_attributes=voice_attributes,
-                output_path=output_file
+            generate_turn_audio_batch(batch)
+        except Exception as error:
+            turn_labels = ", ".join(
+                f"{item['conversation_id']} turn {item['turn_id']}" for item in batch
             )
-
-        except Exception as e:
-
-            print(
-                f"\nERROR generating "
-                f"{conversation_id}, "
-                f"turn {turn_id}"
+            print(f"\nERROR generating batch ({turn_labels}): {error}")
+            generation_failures.extend(
+                f"{item['conversation_id']} turn {item['turn_id']}: {error}"
+                for item in batch
             )
-
-            print(f"Role: {role}")
-
-            print(
-                f"Speaker: {selected_speaker}"
-            )
-
-            print(f"Error: {e}")
 
 
 # ============================================================
@@ -397,3 +365,9 @@ print("All audio generation completed.")
 print(f"Output directory: {OUTPUT_DIR}")
 
 print("=" * 80)
+
+if generation_failures:
+    raise SystemExit(
+        f"Audio generation failed for {len(generation_failures)} turns; "
+        "see errors above and rerun to resume."
+    )

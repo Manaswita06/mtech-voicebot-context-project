@@ -63,14 +63,17 @@ pip install torch soundfile pydub
 brew install ffmpeg          # macOS
 ```
 
+ASR and diarization use a separately pinned Python 3.12 environment; see the
+speech pipeline setup in [`experiments/README.md`](experiments/README.md).
+
 The model `Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice` is downloaded from Hugging Face
-on the first run of stage 03 and loaded in `float32` (CPU-friendly).
+on the first run of stage 02 and loaded in `float32` (CPU-friendly).
 
 ---
 
 ## Usage
 
-Run the stages in order **from inside this folder** (all paths are relative):
+Run the generation stages **from inside this folder** (all paths are relative):
 
 ```bash
 cd voice_phase2_dataset
@@ -105,20 +108,32 @@ Renders each turn with Qwen3-TTS.
   style is frustrated … speak noticeably faster than normal …") passed to the
   model via `instruct`, together with `temperature=0.7`, `top_p=0.9`,
   `repetition_penalty=1.05`.
-* **Output.** `generated_turns/<conversation_id>/turn_<turn_id>_<role>_<speaker>.wav`.
+* **Output.** `new_generated_turns/<conversation_id>/turn_<turn_id>_<role>_<speaker>.wav`.
   Existing files are skipped, so generation is resumable; errors on a single turn
   are reported and do not stop the run.
 
-> The loop is currently limited to the first conversations
-> (`for ... in enumerate(conversations[:2], start=1)`).
-> Remove the `[:2]` slice to render the whole dataset.
+> The default is three conversations. Set `VOICE_MAX_CONVERSATIONS` to the
+> desired positive limit; set it to `0` to render all conversations. To
+> replace existing turn WAVs after revising dialogue text, also set
+> `VOICE_OVERWRITE_TURNS=1`.
 
-### 04 — `04_merge_conversations.py`
+### 03 — `03_merge_conversations.py`
 Rebuilds the speaker-suffixed turn file names from
 `emotional_conversations.json` + `speaker_assignments.json`, inserts
 `pause_before` / `pause_after` silence around each turn and exports
 `conversations_audio/<conversation_id>.wav`. Missing turn files are printed as
 `Missing: ...` and skipped instead of aborting the run.
+
+### 04 — `04_validate_audio_dataset.py`
+Checks the generated metadata, per-turn WAV files, and merged call audio.
+
+The downstream ASR, diarization, state extraction, handover, robustness,
+error-propagation, emotion-audit, and human-rating workflows are documented in
+[`experiments/README.md`](experiments/README.md). In particular, the current
+base dataset contains 500 text conversations, but stage 02 currently renders
+only three calls by default; set `VOICE_MAX_CONVERSATIONS=0` to render all.
+The robustness dataset now contains only the `telephone_8khz` variants; the
+original merged WAVs remain the clean baseline.
 
 ---
 
@@ -165,13 +180,15 @@ handover capsule for each call:
 
 ```bash
 python 11_extract_state.py
+python 14_extract_acoustic_context.py --conversation-id conv_0001
 python 13_verify_handover.py --conversation-id conv_0001
+python 15_build_handover_capsules.py --conversation-id conv_0001
 # Omit --conversation-id to process every prediction in recap_predictions.jsonl
 ```
 
-`13_build_handover_capsules.py` combines the `recap_voice` predictions with the
-speaker transcript and WAV file. It writes per-call JSON capsules plus
-`handover_capsules.jsonl` in `handover_capsules/`. The capsule includes the
+`15_build_handover_capsules.py` combines each `recap_voice` prediction with its
+verification report and acoustic features. It writes per-call JSON capsules in
+`handover_capsules/`. Each capsule includes the
 customer goal, intent, resolution, actions, promises, unresolved items,
 confidence, and timestamped evidence references. It also calculates audio
 quality and interaction measures (RMS/peak level, clipping and silence ratios,
@@ -209,8 +226,8 @@ streamlit run 18_handover_demo.py
 | Problem | Fix |
 |---|---|
 | `FileNotFoundError: data/...` | Run the scripts from inside `voice_phase2_dataset` |
-| Only two conversations rendered | Remove the `[:2]` slice in stage 03 |
-| `Missing: generated_turns/...` in stage 04 | That turn was not generated yet — rerun stage 03 |
+| Only three conversations rendered | Set `VOICE_MAX_CONVERSATIONS` for stage 02 (`0` means all) |
+| `Missing: new_generated_turns/...` in stage 03 | That turn was not generated yet — rerun stage 02 |
 | `Couldn't find ffmpeg or avconv` | Install `ffmpeg`, required by `pydub` |
 | Want to regenerate a turn | Delete the WAV — existing files are skipped |
 | Want different voices | Edit `CUSTOMER_SPEAKERS` / `AGENT_SPEAKERS` in stage 03 and delete `data/speaker_assignments.json` |
